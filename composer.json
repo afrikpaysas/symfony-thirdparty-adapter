@@ -59,10 +59,5 @@
             "allow-contrib": false,
             "require": "5.4.*"
         }
-    },
-    "replace": {
-        "symfony/polyfill-ctype": "*",
-        "symfony/polyfill-iconv": "*",
-        "symfony/polyfill-php72": "*"
     }
 }
