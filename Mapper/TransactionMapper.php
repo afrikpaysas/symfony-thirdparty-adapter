@@ -15,10 +15,10 @@
 namespace Afrikpaysas\Mapper;
 
 use Afrikpaysas\Entity\Transaction;
-use Lib\Dto\TransactionDTO;
-use Lib\Mapper\TransactionMapper as BaseTransactionMapper;
-use Lib\Model\TransactionCollection;
-use Lib\Model\TransactionDTOCollection;
+use Afrikpaysas\Lib\Dto\TransactionDTO;
+use Afrikpaysas\Lib\Mapper\TransactionMapper as BaseTransactionMapper;
+use Afrikpaysas\Lib\Model\TransactionCollection;
+use Afrikpaysas\Lib\Model\TransactionDTOCollection;
 
 /**
  * TransactionMapper.

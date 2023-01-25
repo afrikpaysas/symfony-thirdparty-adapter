@@ -14,7 +14,7 @@
  */
 namespace Afrikpaysas\Dto;
 
-use Lib\Dto\ReferenceApiResponse as BaseReferenceApiResponse;
+use Afrikpaysas\Lib\Dto\ReferenceApiResponse as BaseReferenceApiResponse;
 
 /**
  * ReferenceApiResponse.

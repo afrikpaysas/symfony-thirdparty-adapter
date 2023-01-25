@@ -1,25 +1,25 @@
 services:
   PaymentRequestConverter:
-    class: 'Lib\Converter\PaymentRequestConverter'
+    class: 'Afrikpaysas\Lib\Converter\PaymentRequestConverter'
     tags:
       - { name: request.param_converter, converter: PaymentRequestConverter }
 
   VerifyRequestConverter:
-    class: 'Lib\Converter\VerifyRequestConverter'
+    class: 'Afrikpaysas\Lib\Converter\VerifyRequestConverter'
     tags:
       - { name: request.param_converter, converter: VerifyRequestConverter }
 
   StatusRequestConverter:
-    class: 'Lib\Converter\StatusRequestConverter'
+    class: 'Afrikpaysas\Lib\Converter\StatusRequestConverter'
     tags:
       - { name: request.param_converter, converter: StatusRequestConverter }
 
   OptionRequestConverter:
-    class: 'Lib\Converter\OptionRequestConverter'
+    class: 'Afrikpaysas\Lib\Converter\OptionRequestConverter'
     tags:
       - { name: request.param_converter, converter: OptionRequestConverter }
 
   ConfirmRequestConverter:
-    class: 'Lib\Converter\ConfirmRequestConverter'
+    class: 'Afrikpaysas\Lib\Converter\ConfirmRequestConverter'
     tags:
       - { name: request.param_converter, converter: ConfirmRequestConverter }

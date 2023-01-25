@@ -14,15 +14,15 @@
  */
 namespace Afrikpaysas\Service;
 
-use Lib\Dto\ProviderPaymentResponse as BaseProviderPaymentResponse;
-use Lib\Entity\Transaction;
-use Lib\Exception\PaymentApplicationException;
-use Lib\Model\AppConstants;
-use Lib\Model\ApplicationExceptionMessage;
-use Lib\Model\Status;
-use Lib\Service\PaymentSuccessService as BasePaymentSuccessService;
-use Lib\Service\ReferenceService;
-use Lib\Service\TransactionService;
+use Afrikpaysas\Lib\Dto\ProviderPaymentResponse as BaseProviderPaymentResponse;
+use Afrikpaysas\Lib\Entity\Transaction;
+use Afrikpaysas\Lib\Exception\PaymentApplicationException;
+use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Model\ApplicationExceptionMessage;
+use Afrikpaysas\Lib\Model\Status;
+use Afrikpaysas\Lib\Service\PaymentSuccessService as BasePaymentSuccessService;
+use Afrikpaysas\Lib\Service\ReferenceService;
+use Afrikpaysas\Lib\Service\TransactionService;
 
 /**
  * PaymentSuccessService.

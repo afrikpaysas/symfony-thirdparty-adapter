@@ -13,12 +13,12 @@
  */
 namespace Afrikpaysas\Service;
 
-use Lib\Entity\Transaction;
-use Lib\Exception\IllegalStatusCancelException;
-use Lib\Model\Status;
-use Lib\Service\CancelService as BaseCancelService;
-use Lib\Service\ReferenceService;
-use Lib\Service\TransactionService;
+use Afrikpaysas\Lib\Entity\Transaction;
+use Afrikpaysas\Lib\Exception\IllegalStatusCancelException;
+use Afrikpaysas\Lib\Model\Status;
+use Afrikpaysas\Lib\Service\CancelService as BaseCancelService;
+use Afrikpaysas\Lib\Service\ReferenceService;
+use Afrikpaysas\Lib\Service\TransactionService;
 
 /**
  * CancelService.

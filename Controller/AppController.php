@@ -15,8 +15,8 @@
 namespace Afrikpaysas\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Route;
-use Lib\Controller\AppController as BaseAppController;
-use Lib\Dto\AppResponse;
+use Afrikpaysas\Lib\Controller\AppController as BaseAppController;
+use Afrikpaysas\Lib\Dto\AppResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**

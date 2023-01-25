@@ -16,23 +16,23 @@ namespace Afrikpaysas\Service;
 
 use Afrikpaysas\Entity\Option as EntityOption;
 use Afrikpaysas\Mapper\OptionRequestMapper;
-use Lib\Dto\OptionRequest;
-use Lib\Dto\OptionRequestCollectionRequest;
-use Lib\Entity\Option;
-use Lib\Exception\BadReferenceException;
-use Lib\Exception\EntityNotFoundException;
-use Lib\Exception\InvalidReferenceSlugOptionException;
-use Lib\Exception\MapperException;
-use Lib\Exception\OptionAlreadyExistException;
-use Lib\Exception\OptionApiDisabledException;
-use Lib\Exception\OptionListEmptyException;
-use Lib\Exception\RequiredOptionAmountException;
-use Lib\Exception\RequiredOptionNameException;
-use Lib\Model\AppConstants;
-use Lib\Model\Collection;
-use Lib\Model\OptionCollection;
-use Lib\Repository\OptionRepository;
-use Lib\Service\OptionService as BaseOptionService;
+use Afrikpaysas\Lib\Dto\OptionRequest;
+use Afrikpaysas\Lib\Dto\OptionRequestCollectionRequest;
+use Afrikpaysas\Lib\Entity\Option;
+use Afrikpaysas\Lib\Exception\BadReferenceException;
+use Afrikpaysas\Lib\Exception\EntityNotFoundException;
+use Afrikpaysas\Lib\Exception\InvalidReferenceSlugOptionException;
+use Afrikpaysas\Lib\Exception\MapperException;
+use Afrikpaysas\Lib\Exception\OptionAlreadyExistException;
+use Afrikpaysas\Lib\Exception\OptionApiDisabledException;
+use Afrikpaysas\Lib\Exception\OptionListEmptyException;
+use Afrikpaysas\Lib\Exception\RequiredOptionAmountException;
+use Afrikpaysas\Lib\Exception\RequiredOptionNameException;
+use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Model\Collection;
+use Afrikpaysas\Lib\Model\OptionCollection;
+use Afrikpaysas\Lib\Repository\OptionRepository;
+use Afrikpaysas\Lib\Service\OptionService as BaseOptionService;
 
 /**
  * OptionService.

@@ -15,12 +15,12 @@
 namespace Afrikpaysas\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Route;
-use Lib\Controller\ConfigController as BaseConfigController;
-use Lib\Dto\ArrayResponse;
-use Lib\Exception\ConfigException;
-use Lib\Model\AppConstants;
-use Lib\Model\SystemExceptionMessage;
-use Lib\Service\UtilService;
+use Afrikpaysas\Lib\Controller\ConfigController as BaseConfigController;
+use Afrikpaysas\Lib\Dto\ArrayResponse;
+use Afrikpaysas\Lib\Exception\ConfigException;
+use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Model\SystemExceptionMessage;
+use Afrikpaysas\Lib\Service\UtilService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use \ReflectionClass;
 

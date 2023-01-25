@@ -14,12 +14,12 @@
  */
 namespace Afrikpaysas\Service;
 
-use Lib\Entity\Transaction as BaseTransaction;
-use Lib\Model\AppConstants;
-use Lib\Service\MessagingService;
-use Lib\Service\NotificationService as BaseNotificationService;
-use Lib\Service\ReferenceService;
-use Lib\Service\VerifyService;
+use Afrikpaysas\Lib\Entity\Transaction as BaseTransaction;
+use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Service\MessagingService;
+use Afrikpaysas\Lib\Service\NotificationService as BaseNotificationService;
+use Afrikpaysas\Lib\Service\ReferenceService;
+use Afrikpaysas\Lib\Service\VerifyService;
 use \DateTimeZone;
 use \DateTime;
 

@@ -14,12 +14,12 @@
  */
 namespace Afrikpaysas\Service;
 
-use Lib\Entity\Parameter;
+use Afrikpaysas\Lib\Entity\Parameter;
 use Afrikpaysas\Entity\Parameter as EntityParameter;
-use Lib\Exception\ParameterEnvNotFoundException;
-use Lib\Exception\ParameterNotFoundException;
-use Lib\Repository\ParameterRepository;
-use Lib\Service\ParameterService as BaseParameterService;
+use Afrikpaysas\Lib\Exception\ParameterEnvNotFoundException;
+use Afrikpaysas\Lib\Exception\ParameterNotFoundException;
+use Afrikpaysas\Lib\Repository\ParameterRepository;
+use Afrikpaysas\Lib\Service\ParameterService as BaseParameterService;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 /**

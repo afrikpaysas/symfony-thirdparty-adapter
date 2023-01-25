@@ -15,17 +15,17 @@
 namespace Afrikpaysas\Service;
 
 use Afrikpaysas\Dto\ProviderPaymentResponse;
-use Lib\Entity\Transaction;
+use Afrikpaysas\Lib\Entity\Transaction;
 use Afrikpaysas\Entity\Transaction as EntityTransaction;
-use Lib\Dto\PaymentRequest;
-use Lib\Exception\BadApiResponse;
-use Lib\Exception\PaymentAPIException;
-use Lib\Exception\ReferencePaidException;
-use Lib\Model\AppConstants;
-use Lib\Model\Status;
-use Lib\Service\PaymentService as BasePaymentService;
-use Lib\Service\ReferenceService;
-use Lib\Service\TransactionService;
+use Afrikpaysas\Lib\Dto\PaymentRequest;
+use Afrikpaysas\Lib\Exception\BadApiResponse;
+use Afrikpaysas\Lib\Exception\PaymentAPIException;
+use Afrikpaysas\Lib\Exception\ReferencePaidException;
+use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Model\Status;
+use Afrikpaysas\Lib\Service\PaymentService as BasePaymentService;
+use Afrikpaysas\Lib\Service\ReferenceService;
+use Afrikpaysas\Lib\Service\TransactionService;
 use \DateTimeZone;
 use \DateTime;
 

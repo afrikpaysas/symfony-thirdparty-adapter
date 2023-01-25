@@ -16,10 +16,10 @@ namespace Afrikpaysas\Repository;
 
 use Afrikpaysas\Entity\Parameter;
 use Doctrine\Persistence\ManagerRegistry;
-use Lib\Exception\EntityNotFoundException;
-use Lib\Model\AppConstants;
-use Lib\Model\ParameterCollection;
-use Lib\Repository\ParameterRepository as BaseParameterRepository;
+use Afrikpaysas\Lib\Exception\EntityNotFoundException;
+use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Model\ParameterCollection;
+use Afrikpaysas\Lib\Repository\ParameterRepository as BaseParameterRepository;
 
 /**
  * ParameterRepository.

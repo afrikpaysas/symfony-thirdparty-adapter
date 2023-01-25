@@ -14,14 +14,14 @@
  */
 namespace Afrikpaysas\Service;
 
-use Lib\Entity\Transaction as BaseTransaction;
-use Lib\Exception\GeneralException;
-use Lib\Exception\RegulateException;
-use Lib\Model\AppConstants;
-use Lib\Model\Status;
-use Lib\Model\SystemExceptionMessage;
-use Lib\Service\PaymentErrorService as BasePaymentErrorService;
-use Lib\Service\TransactionService;
+use Afrikpaysas\Lib\Entity\Transaction as BaseTransaction;
+use Afrikpaysas\Lib\Exception\GeneralException;
+use Afrikpaysas\Lib\Exception\RegulateException;
+use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Model\Status;
+use Afrikpaysas\Lib\Model\SystemExceptionMessage;
+use Afrikpaysas\Lib\Service\PaymentErrorService as BasePaymentErrorService;
+use Afrikpaysas\Lib\Service\TransactionService;
 
 /**
  * PaymentErrorService.

@@ -14,12 +14,12 @@
  */
 namespace Afrikpaysas\Service;
 
-use Lib\Exception\GeneralNetworkException;
-use Lib\Exception\HTTPTokenException;
-use Lib\Exception\NetworkException;
-use Lib\Model\AppConstants;
-use Lib\Service\HttpService as BaseHttpService;
-use Lib\Service\ParameterService;
+use Afrikpaysas\Lib\Exception\GeneralNetworkException;
+use Afrikpaysas\Lib\Exception\HTTPTokenException;
+use Afrikpaysas\Lib\Exception\NetworkException;
+use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Service\HttpService as BaseHttpService;
+use Afrikpaysas\Lib\Service\ParameterService;
 use \DateTime;
 use \DateTimeZone;
 use \DateInterval;

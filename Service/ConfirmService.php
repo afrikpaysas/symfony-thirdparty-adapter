@@ -14,16 +14,16 @@
  */
 namespace Afrikpaysas\Service;
 
-use Lib\Entity\Transaction;
-use Lib\Dto\ConfirmRequest;
-use Lib\Exception\IllegalProviderConfirmException;
-use Lib\Exception\IllegalStatusConfirmException;
-use Lib\Exception\RequiredProviderIdException;
-use Lib\Model\Status;
-use Lib\Service\ConfirmService as BaseConfirmService;
-use Lib\Service\ReferenceService;
-use Lib\Service\TransactionService;
-use Lib\Service\PaymentVerifyService;
+use Afrikpaysas\Lib\Entity\Transaction;
+use Afrikpaysas\Lib\Dto\ConfirmRequest;
+use Afrikpaysas\Lib\Exception\IllegalProviderConfirmException;
+use Afrikpaysas\Lib\Exception\IllegalStatusConfirmException;
+use Afrikpaysas\Lib\Exception\RequiredProviderIdException;
+use Afrikpaysas\Lib\Model\Status;
+use Afrikpaysas\Lib\Service\ConfirmService as BaseConfirmService;
+use Afrikpaysas\Lib\Service\ReferenceService;
+use Afrikpaysas\Lib\Service\TransactionService;
+use Afrikpaysas\Lib\Service\PaymentVerifyService;
 
 /**
  * ConfirmService.

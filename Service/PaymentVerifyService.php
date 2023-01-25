@@ -14,23 +14,23 @@
  */
 namespace Afrikpaysas\Service;
 
-use Lib\Dto\PaymentRequest;
-use Lib\Exception\DuplicateApplicationIdException;
-use Lib\Exception\DuplicateExternalIdException;
-use Lib\Exception\DuplicateFinancialIdException;
-use Lib\Exception\DuplicateProviderIdException;
-use Lib\Exception\DuplicateRequestIdException;
-use Lib\Exception\PaymentException;
-use Lib\Exception\RequiredAccountNameException;
-use Lib\Exception\RequiredAccountNumberException;
-use Lib\Exception\RequiredApplicationIdException;
-use Lib\Exception\RequiredExternalIdException;
-use Lib\Exception\RequiredFinancialIdException;
-use Lib\Exception\RequiredProviderIdException;
-use Lib\Exception\RequiredRequestIdException;
-use Lib\Service\PaymentVerifyService as BasePaymentVerifyService;
-use Lib\Service\TransactionService;
-use Lib\Service\VerifyService;
+use Afrikpaysas\Lib\Dto\PaymentRequest;
+use Afrikpaysas\Lib\Exception\DuplicateApplicationIdException;
+use Afrikpaysas\Lib\Exception\DuplicateExternalIdException;
+use Afrikpaysas\Lib\Exception\DuplicateFinancialIdException;
+use Afrikpaysas\Lib\Exception\DuplicateProviderIdException;
+use Afrikpaysas\Lib\Exception\DuplicateRequestIdException;
+use Afrikpaysas\Lib\Exception\PaymentException;
+use Afrikpaysas\Lib\Exception\RequiredAccountNameException;
+use Afrikpaysas\Lib\Exception\RequiredAccountNumberException;
+use Afrikpaysas\Lib\Exception\RequiredApplicationIdException;
+use Afrikpaysas\Lib\Exception\RequiredExternalIdException;
+use Afrikpaysas\Lib\Exception\RequiredFinancialIdException;
+use Afrikpaysas\Lib\Exception\RequiredProviderIdException;
+use Afrikpaysas\Lib\Exception\RequiredRequestIdException;
+use Afrikpaysas\Lib\Service\PaymentVerifyService as BasePaymentVerifyService;
+use Afrikpaysas\Lib\Service\TransactionService;
+use Afrikpaysas\Lib\Service\VerifyService;
 
 /**
  * PaymentVerifyService.

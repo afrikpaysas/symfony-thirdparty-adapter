@@ -15,10 +15,10 @@
 namespace Afrikpaysas\Mapper;
 
 use Afrikpaysas\Entity\Reference;
-use Lib\Dto\ReferenceApiResponse;
-use Lib\Mapper\ReferenceApiResponseMapper as BaseRefApiRespMapper;
-use Lib\Model\ReferenceApiResponseCollection;
-use Lib\Model\ReferenceCollection;
+use Afrikpaysas\Lib\Dto\ReferenceApiResponse;
+use Afrikpaysas\Lib\Mapper\ReferenceApiResponseMapper as BaseRefApiRespMapper;
+use Afrikpaysas\Lib\Model\ReferenceApiResponseCollection;
+use Afrikpaysas\Lib\Model\ReferenceCollection;
 
 /**
  * ReferenceApiResponseMapper.

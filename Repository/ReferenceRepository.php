@@ -16,11 +16,11 @@ namespace Afrikpaysas\Repository;
 
 use Afrikpaysas\Entity\Reference;
 use Doctrine\Persistence\ManagerRegistry;
-use Lib\Exception\EntityNotFoundException;
-use Lib\Model\AppConstants;
-use Lib\Model\ReferenceCollection;
-use Lib\Model\Status;
-use Lib\Repository\ReferenceRepository as BaseReferenceRepository;
+use Afrikpaysas\Lib\Exception\EntityNotFoundException;
+use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Model\ReferenceCollection;
+use Afrikpaysas\Lib\Model\Status;
+use Afrikpaysas\Lib\Repository\ReferenceRepository as BaseReferenceRepository;
 
 /**
  * ReferenceRepository.

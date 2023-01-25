@@ -16,22 +16,22 @@ namespace Afrikpaysas\Service;
 
 use Afrikpaysas\Mapper\ReferenceApiResponseMapper;
 use Afrikpaysas\Model\AppConstants as LocalAppConstants;
-use Lib\Dto\Reference as ReferenceDTO;
-use Lib\Dto\ReferenceApiResponse as BaseReferenceApiResponse;
-use Lib\Entity\Reference;
+use Afrikpaysas\Lib\Dto\Reference as ReferenceDTO;
+use Afrikpaysas\Lib\Dto\ReferenceApiResponse as BaseReferenceApiResponse;
+use Afrikpaysas\Lib\Entity\Reference;
 use Afrikpaysas\Entity\Reference as EntityReference;
-use Lib\Exception\BadApiResponse;
-use Lib\Exception\MapperException;
-use Lib\Exception\PaymentAPIException;
-use Lib\Exception\ReferenceNotFoundException;
-use Lib\Model\AppConstants;
-use Lib\Model\ReferenceApiResponseCollection;
-use Lib\Model\Status;
-use Lib\Repository\ReferenceRepository;
-use Lib\Service\HttpService;
-use Lib\Service\OptionService;
-use Lib\Service\ReferenceService as BaseReferenceService;
-use Lib\Service\UtilService;
+use Afrikpaysas\Lib\Exception\BadApiResponse;
+use Afrikpaysas\Lib\Exception\MapperException;
+use Afrikpaysas\Lib\Exception\PaymentAPIException;
+use Afrikpaysas\Lib\Exception\ReferenceNotFoundException;
+use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Model\ReferenceApiResponseCollection;
+use Afrikpaysas\Lib\Model\Status;
+use Afrikpaysas\Lib\Repository\ReferenceRepository;
+use Afrikpaysas\Lib\Service\HttpService;
+use Afrikpaysas\Lib\Service\OptionService;
+use Afrikpaysas\Lib\Service\ReferenceService as BaseReferenceService;
+use Afrikpaysas\Lib\Service\UtilService;
 
 /**
  * ReferenceService.

@@ -16,9 +16,9 @@ namespace Afrikpaysas\Repository;
 
 use Afrikpaysas\Entity\Option;
 use Doctrine\Persistence\ManagerRegistry;
-use Lib\Model\AppConstants;
-use Lib\Model\OptionCollection;
-use Lib\Repository\OptionRepository as BaseOptionRepository;
+use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Model\OptionCollection;
+use Afrikpaysas\Lib\Repository\OptionRepository as BaseOptionRepository;
 
 /**
  * OptionRepository.

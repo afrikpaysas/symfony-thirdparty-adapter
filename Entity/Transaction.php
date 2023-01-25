@@ -16,8 +16,8 @@ namespace Afrikpaysas\Entity;
 
 use Afrikpaysas\Repository\TransactionRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Lib\Entity\Transaction as BaseTransaction;
-use Lib\Model\Status;
+use Afrikpaysas\Lib\Entity\Transaction as BaseTransaction;
+use Afrikpaysas\Lib\Model\Status;
 
 /**
  * Transaction.

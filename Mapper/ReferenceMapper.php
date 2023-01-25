@@ -15,10 +15,10 @@
 namespace Afrikpaysas\Mapper;
 
 use Afrikpaysas\Entity\Reference;
-use Lib\Dto\ReferenceDTO;
-use Lib\Mapper\ReferenceMapper as BaseReferenceMapper;
-use Lib\Model\ReferenceCollection;
-use Lib\Model\ReferenceDTOCollection;
+use Afrikpaysas\Lib\Dto\ReferenceDTO;
+use Afrikpaysas\Lib\Mapper\ReferenceMapper as BaseReferenceMapper;
+use Afrikpaysas\Lib\Model\ReferenceCollection;
+use Afrikpaysas\Lib\Model\ReferenceDTOCollection;
 
 /**
  * ReferenceMapper.

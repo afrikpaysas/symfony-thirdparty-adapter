@@ -14,15 +14,15 @@
  */
 namespace Afrikpaysas\Service;
 
-use Lib\Entity\Transaction;
-use Lib\Dto\StatusRequest;
-use Lib\Exception\BadReferenceException;
-use Lib\Exception\InvalidAmountException;
-use Lib\Mapper\ReferenceMapper;
-use Lib\Mapper\TransactionMapper;
-use Lib\Service\ReferenceService;
-use Lib\Service\StatusService as BaseStatusService;
-use Lib\Service\TransactionService;
+use Afrikpaysas\Lib\Entity\Transaction;
+use Afrikpaysas\Lib\Dto\StatusRequest;
+use Afrikpaysas\Lib\Exception\BadReferenceException;
+use Afrikpaysas\Lib\Exception\InvalidAmountException;
+use Afrikpaysas\Lib\Mapper\ReferenceMapper;
+use Afrikpaysas\Lib\Mapper\TransactionMapper;
+use Afrikpaysas\Lib\Service\ReferenceService;
+use Afrikpaysas\Lib\Service\StatusService as BaseStatusService;
+use Afrikpaysas\Lib\Service\TransactionService;
 
 /**
  * StatusService.

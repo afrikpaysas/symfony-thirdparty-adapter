@@ -16,8 +16,8 @@ namespace Afrikpaysas\Entity;
 
 use Afrikpaysas\Repository\ParameterRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Lib\Entity\Parameter as BaseParameter;
-use Lib\Model\Status;
+use Afrikpaysas\Lib\Entity\Parameter as BaseParameter;
+use Afrikpaysas\Lib\Model\Status;
 
 /**
  * Parameter.

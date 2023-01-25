@@ -14,7 +14,7 @@
  */
 namespace Afrikpaysas\Dto;
 
-use Lib\Dto\ProviderPaymentResponse as BaseProviderPaymentResponse;
+use Afrikpaysas\Lib\Dto\ProviderPaymentResponse as BaseProviderPaymentResponse;
 
 /**
  * ProviderPaymentResponse.

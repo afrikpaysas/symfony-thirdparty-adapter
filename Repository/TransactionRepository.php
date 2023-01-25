@@ -16,12 +16,12 @@ namespace Afrikpaysas\Repository;
 
 use Afrikpaysas\Entity\Transaction;
 use Doctrine\Persistence\ManagerRegistry;
-use Lib\Entity\Transaction as BaseTransaction;
-use Lib\Exception\EntityNotFoundException;
-use Lib\Model\AppConstants;
-use Lib\Model\Status;
-use Lib\Model\TransactionCollection;
-use Lib\Repository\TransactionRepository as BaseTransactionRepository;
+use Afrikpaysas\Lib\Entity\Transaction as BaseTransaction;
+use Afrikpaysas\Lib\Exception\EntityNotFoundException;
+use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Model\Status;
+use Afrikpaysas\Lib\Model\TransactionCollection;
+use Afrikpaysas\Lib\Repository\TransactionRepository as BaseTransactionRepository;
 
 /**
  * TransactionRepository.

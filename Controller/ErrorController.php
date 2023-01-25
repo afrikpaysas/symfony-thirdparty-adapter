@@ -16,11 +16,11 @@ namespace Afrikpaysas\Controller;
 
 use Doctrine\DBAL\Exception\ConnectionException;
 use FOS\RestBundle\Controller\Annotations\Route;
-use Lib\Controller\ErrorController as BaseErrorController;
-use Lib\Dto\ErrorResponse;
-use Lib\Exception\GeneralException;
-use Lib\Model\AppConstants;
-use Lib\Model\SystemExceptionMessage;
+use Afrikpaysas\Lib\Controller\ErrorController as BaseErrorController;
+use Afrikpaysas\Lib\Dto\ErrorResponse;
+use Afrikpaysas\Lib\Exception\GeneralException;
+use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Model\SystemExceptionMessage;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;

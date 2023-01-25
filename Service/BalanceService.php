@@ -14,10 +14,10 @@
  */
 namespace Afrikpaysas\Service;
 
-use Lib\Exception\BalanceApplicationException;
-use Lib\Model\AppConstants;
-use Lib\Service\BalanceService as BaseBalanceService;
-use Lib\Service\ParameterService;
+use Afrikpaysas\Lib\Exception\BalanceApplicationException;
+use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Service\BalanceService as BaseBalanceService;
+use Afrikpaysas\Lib\Service\ParameterService;
 
 /**
  * BalanceService.

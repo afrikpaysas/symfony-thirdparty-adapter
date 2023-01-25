@@ -16,8 +16,8 @@ namespace Afrikpaysas\Entity;
 
 use Afrikpaysas\Repository\ReferenceRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Lib\Entity\Reference as BaseReference;
-use Lib\Model\Status;
+use Afrikpaysas\Lib\Entity\Reference as BaseReference;
+use Afrikpaysas\Lib\Model\Status;
 
 /**
  * Reference.

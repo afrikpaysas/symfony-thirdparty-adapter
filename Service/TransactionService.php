@@ -14,12 +14,12 @@
  */
 namespace Afrikpaysas\Service;
 
-use Lib\Entity\Transaction;
-use Lib\Exception\EntityAlReadyExistException;
-use Lib\Exception\EntityNotFoundException;
-use Lib\Model\Status;
-use Lib\Repository\TransactionRepository;
-use Lib\Service\TransactionService as BaseTransactionService;
+use Afrikpaysas\Lib\Entity\Transaction;
+use Afrikpaysas\Lib\Exception\EntityAlReadyExistException;
+use Afrikpaysas\Lib\Exception\EntityNotFoundException;
+use Afrikpaysas\Lib\Model\Status;
+use Afrikpaysas\Lib\Repository\TransactionRepository;
+use Afrikpaysas\Lib\Service\TransactionService as BaseTransactionService;
 
 /**
  * TransactionService.

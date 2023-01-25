@@ -14,7 +14,7 @@
  */
 namespace Afrikpaysas\Service;
 
-use Lib\Service\UtilService as BaseUtilService;
+use Afrikpaysas\Lib\Service\UtilService as BaseUtilService;
 use \DateTimeZone;
 use \DateTime;
 

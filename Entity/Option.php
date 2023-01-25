@@ -16,8 +16,8 @@ namespace Afrikpaysas\Entity;
 
 use Afrikpaysas\Repository\OptionRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Lib\Entity\Option as BaseOption;
-use Lib\Model\Status;
+use Afrikpaysas\Lib\Entity\Option as BaseOption;
+use Afrikpaysas\Lib\Model\Status;
 
 /**
  * Option.

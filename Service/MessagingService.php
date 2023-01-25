@@ -14,14 +14,14 @@
  */
 namespace Afrikpaysas\Service;
 
-use Lib\Dto\Email;
-use Lib\Dto\SMS;
-use Lib\Exception\EmailApiDisabled;
-use Lib\Exception\GeneralNetworkException;
-use Lib\Exception\NetworkException;
-use Lib\Exception\SMSApiDisabled;
-use Lib\Model\AppConstants;
-use Lib\Service\MessagingService as BaseMessagingService;
+use Afrikpaysas\Lib\Dto\Email;
+use Afrikpaysas\Lib\Dto\SMS;
+use Afrikpaysas\Lib\Exception\EmailApiDisabled;
+use Afrikpaysas\Lib\Exception\GeneralNetworkException;
+use Afrikpaysas\Lib\Exception\NetworkException;
+use Afrikpaysas\Lib\Exception\SMSApiDisabled;
+use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Service\MessagingService as BaseMessagingService;
 
 /**
  * MessagingService.

@@ -14,8 +14,8 @@
  */
 namespace Afrikpaysas\Mapper;
 
-use Lib\Mapper\BaseEntityMapper as BaseBaseEntityMapper;
-use Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Mapper\BaseEntityMapper as BaseBaseEntityMapper;
+use Afrikpaysas\Lib\Model\AppConstants;
 
 /**
  * BaseEntityMapper.

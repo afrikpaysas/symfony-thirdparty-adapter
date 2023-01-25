@@ -15,10 +15,10 @@
 namespace Afrikpaysas\Mapper;
 
 use Afrikpaysas\Entity\Parameter;
-use Lib\Dto\ParameterDTO;
-use Lib\Mapper\ParameterMapper as BaseParameterMapper;
-use Lib\Model\ParameterCollection;
-use Lib\Model\ParameterDTOCollection;
+use Afrikpaysas\Lib\Dto\ParameterDTO;
+use Afrikpaysas\Lib\Mapper\ParameterMapper as BaseParameterMapper;
+use Afrikpaysas\Lib\Model\ParameterCollection;
+use Afrikpaysas\Lib\Model\ParameterDTOCollection;
 
 /**
  * ParameterMapper.

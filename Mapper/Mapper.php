@@ -14,11 +14,11 @@
  */
 namespace Afrikpaysas\Mapper;
 
-use Lib\Exception\MapperException;
-use Lib\Mapper\Mapper as BaseMapper;
-use Lib\Model\AppConstants;
-use Lib\Model\Collection;
-use Lib\Model\Status;
+use Afrikpaysas\Lib\Exception\MapperException;
+use Afrikpaysas\Lib\Mapper\Mapper as BaseMapper;
+use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Model\Collection;
+use Afrikpaysas\Lib\Model\Status;
 use \DateTime;
 use \DateTimeZone;
 use \ReflectionClass;

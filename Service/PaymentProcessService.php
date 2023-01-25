@@ -16,11 +16,11 @@ namespace Afrikpaysas\Service;
 
 use Afrikpaysas\Dto\ProviderPaymentResponse;
 use Afrikpaysas\Model\AppConstants as LocalAppConstants;
-use Lib\Dto\ProviderPaymentResponse as BaseProviderPaymentResponse;
-use Lib\Entity\Transaction as BaseTransaction;
-use Lib\Exception\PaymentAPIException;
-use Lib\Service\HttpService;
-use Lib\Service\PaymentProcessService as BasePaymentProcessService;
+use Afrikpaysas\Lib\Dto\ProviderPaymentResponse as BaseProviderPaymentResponse;
+use Afrikpaysas\Lib\Entity\Transaction as BaseTransaction;
+use Afrikpaysas\Lib\Exception\PaymentAPIException;
+use Afrikpaysas\Lib\Service\HttpService;
+use Afrikpaysas\Lib\Service\PaymentProcessService as BasePaymentProcessService;
 
 /**
  * PHP Version 8.1

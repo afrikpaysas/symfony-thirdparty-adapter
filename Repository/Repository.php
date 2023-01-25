@@ -20,12 +20,12 @@ use Doctrine\Inflector\Inflector;
 use Doctrine\Inflector\InflectorFactory;
 use Doctrine\ORM\Repository\Exception\InvalidMagicMethodCall;
 use Doctrine\Persistence\ManagerRegistry;
-use Lib\Exception\EntityNotFoundException;
-use Lib\Exception\ListEntityNotFoundException;
-use Lib\Model\AppConstants;
-use Lib\Model\Collection;
-use Lib\Model\SystemExceptionMessage;
-use Lib\Repository\ServiceEntityRepositoryInterface as BaseRepoInterface;
+use Afrikpaysas\Lib\Exception\EntityNotFoundException;
+use Afrikpaysas\Lib\Exception\ListEntityNotFoundException;
+use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Model\Collection;
+use Afrikpaysas\Lib\Model\SystemExceptionMessage;
+use Afrikpaysas\Lib\Repository\ServiceEntityRepositoryInterface as BaseRepoInterface;
 use \DateTime;
 use \DateTimeZone;
 

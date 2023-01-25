@@ -14,16 +14,16 @@
  */
 namespace Afrikpaysas\Service;
 
-use Lib\Dto\VerifyRequest;
-use Lib\Exception\BadEmailException;
-use Lib\Exception\BadPhoneException;
-use Lib\Exception\BadReferenceException;
-use Lib\Exception\InvalidAmountException;
-use Lib\Exception\InvalidAmountOptionException;
-use Lib\Exception\InvalidOptionException;
-use Lib\Exception\ReferenceApiDisabledException;
-use Lib\Model\AppConstants;
-use Lib\Service\VerifyService as BaseVerifyService;
+use Afrikpaysas\Lib\Dto\VerifyRequest;
+use Afrikpaysas\Lib\Exception\BadEmailException;
+use Afrikpaysas\Lib\Exception\BadPhoneException;
+use Afrikpaysas\Lib\Exception\BadReferenceException;
+use Afrikpaysas\Lib\Exception\InvalidAmountException;
+use Afrikpaysas\Lib\Exception\InvalidAmountOptionException;
+use Afrikpaysas\Lib\Exception\InvalidOptionException;
+use Afrikpaysas\Lib\Exception\ReferenceApiDisabledException;
+use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Service\VerifyService as BaseVerifyService;
 
 /**
  * VerifyService.

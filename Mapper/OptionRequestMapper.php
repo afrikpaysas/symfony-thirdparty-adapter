@@ -15,10 +15,10 @@
 namespace Afrikpaysas\Mapper;
 
 use Afrikpaysas\Entity\Option;
-use Lib\Dto\OptionRequest;
-use Lib\Mapper\OptionRequestMapper as BaseOptionRequestMapper;
-use Lib\Model\OptionCollection;
-use Lib\Model\OptionRequestCollection;
+use Afrikpaysas\Lib\Dto\OptionRequest;
+use Afrikpaysas\Lib\Mapper\OptionRequestMapper as BaseOptionRequestMapper;
+use Afrikpaysas\Lib\Model\OptionCollection;
+use Afrikpaysas\Lib\Model\OptionRequestCollection;
 
 /**
  * OptionRequestMapper.

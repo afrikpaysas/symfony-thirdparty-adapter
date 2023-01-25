@@ -16,10 +16,10 @@ namespace Afrikpaysas\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\Annotations\Route;
-use Lib\Controller\VerifyController as BaseVerifyController;
-use Lib\Dto\VerifyRequest;
-use Lib\Dto\VerifyResponse;
-use Lib\Service\VerifyService;
+use Afrikpaysas\Lib\Controller\VerifyController as BaseVerifyController;
+use Afrikpaysas\Lib\Dto\VerifyRequest;
+use Afrikpaysas\Lib\Dto\VerifyResponse;
+use Afrikpaysas\Lib\Service\VerifyService;
 use Nelmio\ApiDocBundle\Annotation\Security;
 use OpenApi\Annotations as OA;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;

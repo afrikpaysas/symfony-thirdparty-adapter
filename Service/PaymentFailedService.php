@@ -14,11 +14,11 @@
  */
 namespace Afrikpaysas\Service;
 
-use Lib\Entity\Transaction as BaseTransaction;
-use Lib\Exception\PaymentAPIException;
-use Lib\Model\Status;
-use Lib\Service\PaymentFailedService as BasePaymentFailedService;
-use Lib\Service\TransactionService;
+use Afrikpaysas\Lib\Entity\Transaction as BaseTransaction;
+use Afrikpaysas\Lib\Exception\PaymentAPIException;
+use Afrikpaysas\Lib\Model\Status;
+use Afrikpaysas\Lib\Service\PaymentFailedService as BasePaymentFailedService;
+use Afrikpaysas\Lib\Service\TransactionService;
 
 /**
  * PaymentFailedService.
