@@ -1,0 +1,278 @@
+<?php
+
+/**
+ * PHP Version 8.1
+ * TransactionRepository.
+ *
+ * @category Repository
+ * @package  App\Repository
+ * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Repository/TransactionRepository.php
+ *
+ * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ */
+namespace App\Repository;
+
+use App\Entity\Transaction;
+use Doctrine\Persistence\ManagerRegistry;
+use Lib\Entity\Transaction as BaseTransaction;
+use Lib\Exception\EntityNotFoundException;
+use Lib\Model\AppConstants;
+use Lib\Model\Status;
+use Lib\Model\TransactionCollection;
+use Lib\Repository\TransactionRepository as BaseTransactionRepository;
+
+/**
+ * TransactionRepository.
+ *
+ * @template-extends    Repository<Transaction>
+ * @template-implements BaseTransactionRepository
+ *
+ * @category Repository
+ * @package  App\Repository
+ * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Repository/TransactionRepository.php
+ *
+ * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ *
+ * @SuppressWarnings(PHPMD.TooManyPublicMethods)
+ */
+class TransactionRepository extends Repository implements BaseTransactionRepository
+{
+    /**
+     * Constructor.
+     *
+     * @param ManagerRegistry $registry registry
+     *
+     * @return void
+     */
+    public function __construct(ManagerRegistry $registry)
+    {
+        parent::__construct(
+            $registry,
+            Transaction::class,
+            TransactionCollection::class
+        );
+    }
+
+    /**
+     * FindOneByTransactionId.
+     *
+     * @param int  $transactionId transactionId
+     * @param bool $throw         throw
+     *
+     * @return Transaction|null
+     *
+     * @throws EntityNotFoundException
+     *
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+     */
+    public function findOneByTransactionId(
+        int $transactionId,
+        bool $throw = true
+    ): ?Transaction {
+        return parent::findOneWith(
+            [AppConstants::TRANSACTION_ID => $transactionId],
+            $throw
+        );
+    }
+
+    /**
+     * FindOneByFinancialId.
+     *
+     * @param string $financialId financialId
+     * @param bool   $throw       throw
+     *
+     * @return Transaction|null
+     *
+     * @throws EntityNotFoundException
+     *
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+     */
+    public function findOneByFinancialId(
+        string $financialId,
+        bool $throw = true
+    ): ?Transaction {
+        return parent::findOneWith(
+            [AppConstants::FINANCIAL_ID => $financialId],
+            $throw
+        );
+    }
+
+    /**
+     * FindOneByApplicationId.
+     *
+     * @param string $applicationId applicationId
+     * @param bool   $throw         throw
+     *
+     * @return Transaction|null
+     *
+     * @throws EntityNotFoundException
+     *
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+     */
+    public function findOneByApplicationId(
+        string $applicationId,
+        bool $throw = true
+    ): ?Transaction {
+        return parent::findOneWith(
+            [AppConstants::APPLICATION_ID => $applicationId],
+            $throw
+        );
+    }
+
+    /**
+     * FindOneByExternalId.
+     *
+     * @param string $externalId externalId
+     * @param bool   $throw      throw
+     *
+     * @return Transaction|null
+     *
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+     *
+     * @throws EntityNotFoundException
+     */
+    public function findOneByExternalId(
+        string $externalId,
+        bool $throw = true
+    ): ?Transaction {
+        return parent::findOneWith(
+            [AppConstants::EXTERNAL_ID => $externalId],
+            $throw
+        );
+    }
+
+    /**
+     * FindOneByRequestId.
+     *
+     * @param string $requestId requestId
+     * @param bool   $throw     throw
+     *
+     * @return Transaction|null
+     *
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+     *
+     * @throws EntityNotFoundException
+     */
+    public function findOneByRequestId(
+        string $requestId,
+        bool $throw = true
+    ): ?Transaction {
+        return parent::findOneWith([AppConstants::REQUEST_ID => $requestId], $throw);
+    }
+
+    /**
+     * FindOneByProviderId.
+     *
+     * @param string $providerId providerId
+     * @param bool   $throw      throw
+     *
+     * @return Transaction|null
+     *
+     * @throws EntityNotFoundException
+     *
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+     */
+    public function findOneByProviderId(
+        string $providerId,
+        bool $throw = true
+    ): ?Transaction {
+        return parent::findOneWith(
+            [AppConstants::PROVIDER_ID => $providerId],
+            $throw
+        );
+    }
+
+    /**
+     * UpdateProviderId.
+     *
+     * @param int    $id         id
+     * @param string $providerId providerId
+     *
+     * @return Transaction
+     *
+     * @throws \Exception
+     *
+     * @SuppressWarnings(PHPMD.ShortVariable)
+     */
+    public function updateProviderId(int $id, string $providerId): Transaction
+    {
+        return parent::updateWith(
+            AppConstants::ID,
+            $id,
+            AppConstants::PROVIDER_ID,
+            $providerId
+        );
+    }
+
+    /**
+     * UpdateStatus.
+     *
+     * @param int    $id     id
+     * @param Status $status status
+     *
+     * @return Transaction
+     *
+     * @throws \Exception
+     *
+     * @SuppressWarnings(PHPMD.ShortVariable)
+     */
+    public function updateStatus(int $id, Status $status): Transaction
+    {
+        return parent::updateWith(
+            AppConstants::ID,
+            $id,
+            AppConstants::STATUS,
+            $status
+        );
+    }
+
+    /**
+     * UpdateProviderIdStatus.
+     *
+     * @param int    $id         id
+     * @param string $providerId providerId
+     * @param Status $status     status
+     *
+     * @return Transaction
+     *
+     * @throws \Exception
+     *
+     * @SuppressWarnings(PHPMD.ShortVariable)
+     */
+    public function updateProviderIdStatus(
+        int $id,
+        string $providerId,
+        Status $status
+    ): Transaction {
+        return parent::updateValues(
+            $id,
+            [
+                AppConstants::PROVIDER_ID => $providerId,
+                AppConstants::STATUS => $status
+            ]
+        );
+    }
+
+    /**
+     * UpdateProviderData
+     *
+     * @param int             $id          id
+     * @param BaseTransaction $transaction transaction
+     *
+     * @return Transaction
+     *
+     * @throws \Exception
+     *
+     * @SuppressWarnings(PHPMD.ShortVariable)
+     */
+    public function updateProviderData(
+        int $id,
+        BaseTransaction $transaction
+    ): Transaction {
+        return parent::updateEntity($id, $transaction);
+    }
+}

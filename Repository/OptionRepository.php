@@ -1,0 +1,161 @@
+<?php
+
+/**
+ * PHP Version 8.1
+ * OptionRepository.
+ *
+ * @category Repository
+ * @package  App\Repository
+ * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Repository/OptionRepository.php
+ *
+ * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ */
+namespace App\Repository;
+
+use App\Entity\Option;
+use Doctrine\Persistence\ManagerRegistry;
+use Lib\Model\AppConstants;
+use Lib\Model\OptionCollection;
+use Lib\Repository\OptionRepository as BaseOptionRepository;
+
+/**
+ * OptionRepository.
+ *
+ * @template-extends    Repository<Option>
+ * @template-implements BaseOptionRepository
+ *
+ * @category Repository
+ * @package  App\Repository
+ * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Repository/OptionRepository.php
+ *
+ * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ */
+class OptionRepository extends Repository implements BaseOptionRepository
+{
+    /**
+     * Constructor.
+     *
+     * @param ManagerRegistry $registry registry
+     *
+     * @return void
+     */
+    public function __construct(ManagerRegistry $registry)
+    {
+        parent::__construct($registry, Option::class, OptionCollection::class);
+    }
+
+    /**
+     * FindOneByOptionId.
+     *
+     * @param int  $optionId optionId
+     * @param bool $throw    throw
+     *
+     * @return Option|null
+     *
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+     */
+    public function findOneByOptionId(int $optionId, bool $throw = true): ?Option
+    {
+        return parent::findOneWith([AppConstants::OPTION_ID => $optionId], $throw);
+    }
+
+    /**
+     * FindOneBySlug.
+     *
+     * @param string $slug  slug
+     * @param bool   $throw throw
+     *
+     * @return Option|null
+     *
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+     */
+    public function findOneBySlug(string $slug, bool $throw = true): ?Option
+    {
+        return parent::findOneWith([AppConstants::SLUG => $slug], $throw);
+    }
+
+    /**
+     * FindByReference.
+     *
+     * @param string $reference reference
+     * @param bool   $throw     throw
+     *
+     * @return OptionCollection|null
+     *
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+     */
+    public function findByReference(
+        string $reference,
+        bool $throw = true
+    ): ?OptionCollection {
+        return parent::findWith([AppConstants::REFERENCE => $reference], $throw);
+    }
+
+    /**
+     * FindOneByReferenceAndSlug.
+     *
+     * @param string $reference reference
+     * @param string $slug      slug
+     * @param bool   $throw     throw
+     *
+     * @return Option|null
+     *
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+     */
+    public function findOneByReferenceAndSlug(
+        string $reference,
+        string $slug,
+        bool $throw = true
+    ): ?Option {
+        return parent::findOneWith(
+            [
+                AppConstants::REFERENCE => $reference,
+                AppConstants::SLUG => $slug,
+            ],
+            $throw
+        );
+    }
+
+    /**
+     * FindAllByReference.
+     *
+     * @param string|null $reference reference
+     *
+     * @return array
+     */
+    public function findAllByReference(?string $reference = null): array
+    {
+        $entityManager = $this->getEntityManager();
+
+        $where = '';
+
+        if ($reference) {
+            $where = 'WHERE r.reference = :reference';
+        }
+
+        $query = <<<EOF
+SELECT
+    r.optionId,
+    r.name,
+    r.slug,
+    r.amount,
+    r.reference,
+    r.status,
+    DATE_FORMAT(r.createdDate, '%Y-%m-%d %H:%i:%s') as date
+FROM App\Entity\Option r 
+$where ORDER BY r.amount ASC
+EOF;
+
+        $query = $entityManager->createQuery($query);
+
+        if ($reference) {
+            $query->setParameter('reference', $reference);
+        }
+
+        return $query->getArrayResult();
+    }
+}
