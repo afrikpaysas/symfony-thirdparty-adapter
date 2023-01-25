@@ -41,7 +41,6 @@
     },
     "config": {
         "allow-plugins": {
-            "composer/package-versions-deprecated": true,
             "symfony/flex": true,
             "symfony/runtime": true,
             "dealerdirect/phpcodesniffer-composer-installer": true
@@ -52,28 +51,6 @@
         },
         "sort-packages": true
     },
-    "autoload": {
-        "psr-4": {
-            "Afrikpaysas\\SymfonyThirdpartyAdapter\\": "/"
-        }
-    },
-    "replace": {
-        "symfony/polyfill-ctype": "*",
-        "symfony/polyfill-iconv": "*",
-        "symfony/polyfill-php72": "*"
-    },
-    "scripts": {
-        "auto-scripts": {
-            "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd"
-        },
-        "post-install-cmd": [
-            "@auto-scripts"
-        ],
-        "post-update-cmd": [
-            "@auto-scripts"
-        ]
-    },
     "conflict": {
         "symfony/symfony": "*"
     },
@@ -83,15 +60,9 @@
             "require": "5.4.*"
         }
     },
-    "require-dev": {
-        "nunomaduro/phpinsights": "^2.6",
-        "phpmd/phpmd": "^2.13",
-        "phpstan/phpstan": "^1.9",
-        "phpunit/phpunit": "^9.5",
-        "squizlabs/php_codesniffer": "^3.7",
-        "symfony/browser-kit": "5.4.*",
-        "symfony/css-selector": "5.4.*",
-        "symfony/phpunit-bridge": "^6.2",
-        "vimeo/psalm": "^5.4"
+    "replace": {
+        "symfony/polyfill-ctype": "*",
+        "symfony/polyfill-iconv": "*",
+        "symfony/polyfill-php72": "*"
     }
 }
