@@ -11,6 +11,11 @@
             "email": "willy.damtchou@afrikpay.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Afrikpaysas\\SymfonyThirdpartyAdapter\\": "/"
+        }
+    },
     "require": {
         "php": ">=8.1",
         "ext-ctype": "*",
