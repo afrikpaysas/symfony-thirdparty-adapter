@@ -5,16 +5,16 @@
  * Reference.
  *
  * @category Entity
- * @package  App\Entity
+ * @package  Afrikpaysas\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Entity/Reference.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Entity/Reference.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Entity;
+namespace Afrikpaysas\Entity;
 
-use App\Repository\ReferenceRepository;
+use Afrikpaysas\Repository\ReferenceRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Lib\Entity\Reference as BaseReference;
 use Lib\Model\Status;
@@ -23,18 +23,17 @@ use Lib\Model\Status;
  * Reference.
  *
  * @category Entity
- * @package  App\Entity
+ * @package  Afrikpaysas\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Entity/Reference.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Entity/Reference.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @SuppressWarnings(PHPMD.ShortVariable)
  *
  * @psalm-suppress PropertyNotSetInConstructor
  */
-#[ORM\Entity(repositoryClass: ReferenceRepository::class)]
 class Reference extends BaseReference
 {
     #[ORM\Id]

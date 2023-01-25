@@ -5,14 +5,14 @@
  * UtilService.
  *
  * @category Service
- * @package  App\Service
+ * @package  Afrikpaysas\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/UtilService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/UtilService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Service;
+namespace Afrikpaysas\Service;
 
 use Lib\Service\UtilService as BaseUtilService;
 use \DateTimeZone;
@@ -23,12 +23,12 @@ use \DateTime;
  * UtilService.
  *
  * @category Service
- * @package  App\Service
+ * @package  Afrikpaysas\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/UtilService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/UtilService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 class UtilService implements BaseUtilService
 {

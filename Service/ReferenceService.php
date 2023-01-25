@@ -5,21 +5,21 @@
  * ReferenceService.
  *
  * @category Service
- * @package  App\Service
+ * @package  Afrikpaysas\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/ReferenceService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/ReferenceService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Service;
+namespace Afrikpaysas\Service;
 
-use App\Mapper\ReferenceApiResponseMapper;
-use App\Model\AppConstants as LocalAppConstants;
+use Afrikpaysas\Mapper\ReferenceApiResponseMapper;
+use Afrikpaysas\Model\AppConstants as LocalAppConstants;
 use Lib\Dto\Reference as ReferenceDTO;
 use Lib\Dto\ReferenceApiResponse as BaseReferenceApiResponse;
 use Lib\Entity\Reference;
-use App\Entity\Reference as EntityReference;
+use Afrikpaysas\Entity\Reference as EntityReference;
 use Lib\Exception\BadApiResponse;
 use Lib\Exception\MapperException;
 use Lib\Exception\PaymentAPIException;
@@ -37,12 +37,12 @@ use Lib\Service\UtilService;
  * ReferenceService.
  *
  * @category Service
- * @package  App\Service
+ * @package  Afrikpaysas\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/ReferenceService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/ReferenceService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */

@@ -5,28 +5,28 @@
  * ErrorController.
  *
  * @category Controller
- * @package  Lib\Controller
+ * @package  Afrikpaysas\Lib\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Controller/ErrorController.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Controller/ErrorController.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Controller;
+namespace Afrikpaysas\Lib\Controller;
 
-use Lib\Dto\ErrorResponse;
+use Afrikpaysas\Lib\Dto\ErrorResponse;
 use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
 
 /**
  * ErrorController.
  *
  * @category Controller
- * @package  Lib\Controller
+ * @package  Afrikpaysas\Lib\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Controller/ErrorController.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Controller/ErrorController.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 interface ErrorController
 {

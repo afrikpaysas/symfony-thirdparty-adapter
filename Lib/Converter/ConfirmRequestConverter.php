@@ -5,17 +5,17 @@
  * ConfirmRequestConverter.
  *
  * @category Converter
- * @package  Lib\Converter
+ * @package  Afrikpaysas\Lib\Converter
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Converter/ConfirmRequestConverter.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Converter/ConfirmRequestConverter.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Converter;
+namespace Afrikpaysas\Lib\Converter;
 
-use Lib\Dto\ConfirmRequest;
-use Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Dto\ConfirmRequest;
+use Afrikpaysas\Lib\Model\AppConstants;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -23,12 +23,12 @@ use Symfony\Component\HttpFoundation\Request;
  * ConfirmRequestConverter.
  *
  * @category Converter
- * @package  Lib\Converter
+ * @package  Afrikpaysas\Lib\Converter
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Converter/ConfirmRequestConverter.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Converter/ConfirmRequestConverter.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 class ConfirmRequestConverter extends BasicConverter
 {

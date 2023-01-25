@@ -5,30 +5,30 @@
  * ConfirmService.
  *
  * @category Service
- * @package  Lib\Service
+ * @package  Afrikpaysas\Lib\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/ConfirmService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Service/ConfirmService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Service;
+namespace Afrikpaysas\Lib\Service;
 
-use Lib\Dto\ConfirmRequest;
-use Lib\Entity\Transaction;
-use Lib\Exception\IllegalStatusConfirmException;
-use Lib\Exception\RequiredProviderIdException;
+use Afrikpaysas\Lib\Dto\ConfirmRequest;
+use Afrikpaysas\Lib\Entity\Transaction;
+use Afrikpaysas\Lib\Exception\IllegalStatusConfirmException;
+use Afrikpaysas\Lib\Exception\RequiredProviderIdException;
 
 /**
  * ConfirmService.
  *
  * @category Service
- * @package  Lib\Service
+ * @package  Afrikpaysas\Lib\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/ConfirmService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Service/ConfirmService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 interface ConfirmService
 {

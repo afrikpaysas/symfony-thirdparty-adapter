@@ -5,27 +5,27 @@
  * Transaction.
  *
  * @category Entity
- * @package  Lib\Entity
+ * @package  Afrikpaysas\Lib\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Entity/Transaction.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Entity/Transaction.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Entity;
+namespace Afrikpaysas\Lib\Entity;
 
-use Lib\Model\BaseEntity;
+use Afrikpaysas\Lib\Model\BaseEntity;
 
 /**
  * Transaction.
  *
  * @category Entity
- * @package  Lib\Entity
+ * @package  Afrikpaysas\Lib\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Entity/Transaction.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Entity/Transaction.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @SuppressWarnings(PHPMD.TooManyFields)
  * @SuppressWarnings(PHPMD.ShortVariable)

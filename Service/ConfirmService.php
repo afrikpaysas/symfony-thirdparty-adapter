@@ -5,14 +5,14 @@
  * ConfirmService.
  *
  * @category Service
- * @package  App\Service
+ * @package  Afrikpaysas\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/CancelService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/CancelService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Service;
+namespace Afrikpaysas\Service;
 
 use Lib\Entity\Transaction;
 use Lib\Dto\ConfirmRequest;
@@ -29,12 +29,12 @@ use Lib\Service\PaymentVerifyService;
  * ConfirmService.
  *
  * @category ConfirmService
- * @package  App\ConfirmService
+ * @package  Afrikpaysas\ConfirmService
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/ConfirmService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/ConfirmService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 class ConfirmService implements BaseConfirmService
 {

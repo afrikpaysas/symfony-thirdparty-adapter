@@ -5,26 +5,26 @@
  * UtilService.
  *
  * @category Service
- * @package  Lib\Service
+ * @package  Afrikpaysas\Lib\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/UtilService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Service/UtilService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Service;
+namespace Afrikpaysas\Lib\Service;
 
 /**
  * PHP Version 8.1
  * UtilService.
  *
  * @category Service
- * @package  Lib\Service
+ * @package  Afrikpaysas\Lib\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/UtilService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Service/UtilService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 interface UtilService
 {

@@ -5,17 +5,17 @@
  * ParameterService.
  *
  * @category Service
- * @package  App\Service
+ * @package  Afrikpaysas\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/ParameterService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/ParameterService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Service;
+namespace Afrikpaysas\Service;
 
 use Lib\Entity\Parameter;
-use App\Entity\Parameter as EntityParameter;
+use Afrikpaysas\Entity\Parameter as EntityParameter;
 use Lib\Exception\ParameterEnvNotFoundException;
 use Lib\Exception\ParameterNotFoundException;
 use Lib\Repository\ParameterRepository;
@@ -26,12 +26,12 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
  * ParameterService.
  *
  * @category Service
- * @package  App\Service
+ * @package  Afrikpaysas\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/ParameterService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/ParameterService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 class ParameterService implements BaseParameterService
 {

@@ -5,16 +5,16 @@
  * ReferenceRepository.
  *
  * @category Repository
- * @package  App\Repository
+ * @package  Afrikpaysas\Repository
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Repository/ReferenceRepository.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Repository/ReferenceRepository.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Repository;
+namespace Afrikpaysas\Repository;
 
-use App\Entity\Reference;
+use Afrikpaysas\Entity\Reference;
 use Doctrine\Persistence\ManagerRegistry;
 use Lib\Exception\EntityNotFoundException;
 use Lib\Model\AppConstants;
@@ -29,12 +29,12 @@ use Lib\Repository\ReferenceRepository as BaseReferenceRepository;
  * @template-implements BaseReferenceRepository
  *
  * @category Repository
- * @package  App\Repository
+ * @package  Afrikpaysas\Repository
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Repository/ReferenceRepository.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Repository/ReferenceRepository.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 class ReferenceRepository extends Repository implements BaseReferenceRepository
 {

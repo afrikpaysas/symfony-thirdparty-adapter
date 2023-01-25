@@ -5,17 +5,17 @@
  * PaymentRequestConverter.
  *
  * @category Converter
- * @package  Lib\Converter
+ * @package  Afrikpaysas\Lib\Converter
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Converter/PaymentRequestConverter.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Converter/PaymentRequestConverter.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Converter;
+namespace Afrikpaysas\Lib\Converter;
 
-use Lib\Dto\PaymentRequest;
-use Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Dto\PaymentRequest;
+use Afrikpaysas\Lib\Model\AppConstants;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -24,12 +24,12 @@ use Symfony\Component\HttpFoundation\Request;
  * PaymentRequestConverter.
  *
  * @category Converter
- * @package  Lib\Converter
+ * @package  Afrikpaysas\Lib\Converter
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Converter/PaymentRequestConverter.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Converter/PaymentRequestConverter.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 class PaymentRequestConverter extends BasicConverter
 {

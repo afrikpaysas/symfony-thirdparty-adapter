@@ -5,14 +5,14 @@
  * Mapper.
  *
  * @category Mapper
- * @package  App\Mapper
+ * @package  Afrikpaysas\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Mapper/Mapper.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Mapper/Mapper.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Mapper;
+namespace Afrikpaysas\Mapper;
 
 use Lib\Exception\MapperException;
 use Lib\Mapper\Mapper as BaseMapper;
@@ -27,12 +27,12 @@ use \ReflectionClass;
  * Mapper.
  *
  * @category Mapper
- * @package  App\Mapper
+ * @package  Afrikpaysas\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Mapper/Mapper.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Mapper/Mapper.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @template T of object
  * @template K of object

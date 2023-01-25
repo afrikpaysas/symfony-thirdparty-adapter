@@ -5,17 +5,17 @@
  * Mapper.
  *
  * @category Mapper
- * @package  Lib\Mapper
+ * @package  Afrikpaysas\Lib\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Mapper/Mapper.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Mapper/Mapper.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Mapper;
+namespace Afrikpaysas\Lib\Mapper;
 
-use Lib\Model\Collection;
-use Lib\Model\Status;
+use Afrikpaysas\Lib\Model\Collection;
+use Afrikpaysas\Lib\Model\Status;
 
 /**
  * Mapper.
@@ -26,12 +26,12 @@ use Lib\Model\Status;
  * @template S of object
  *
  * @category Mapper
- * @package  Lib\Mapper
+ * @package  Afrikpaysas\Lib\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Mapper/Mapper.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Mapper/Mapper.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 interface Mapper
 {

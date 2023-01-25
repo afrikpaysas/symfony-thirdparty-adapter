@@ -5,28 +5,28 @@
  * StatusService.
  *
  * @category Service
- * @package  Lib\Service
+ * @package  Afrikpaysas\Lib\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/StatusService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Service/StatusService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Service;
+namespace Afrikpaysas\Lib\Service;
 
-use Lib\Dto\StatusRequest;
-use Lib\Entity\Transaction;
+use Afrikpaysas\Lib\Dto\StatusRequest;
+use Afrikpaysas\Lib\Entity\Transaction;
 
 /**
  * StatusService.
  *
  * @category Service
- * @package  Lib\Service
+ * @package  Afrikpaysas\Lib\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/StatusService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Service/StatusService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 interface StatusService
 {

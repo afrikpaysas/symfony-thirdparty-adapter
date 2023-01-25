@@ -5,27 +5,27 @@
  * ReferenceResponse.
  *
  * @category Model
- * @package  Lib\Model
+ * @package  Afrikpaysas\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Model/ReferenceResponse.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/ReferenceResponse.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Model;
+namespace Afrikpaysas\Lib\Model;
 
-use Lib\Dto\ReferenceDTO;
+use Afrikpaysas\Lib\Dto\ReferenceDTO;
 
 /**
  * ReferenceResponse.
  *
  * @category Model
- * @package  Lib\Model
+ * @package  Afrikpaysas\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Model/ReferenceResponse.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/ReferenceResponse.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @psalm-suppress MissingConstructor
  */

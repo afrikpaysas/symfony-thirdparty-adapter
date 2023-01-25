@@ -5,32 +5,32 @@
  * MessagingService.
  *
  * @category Service
- * @package  Lib\Service
+ * @package  Afrikpaysas\Lib\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/MessagingService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Service/MessagingService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Service;
+namespace Afrikpaysas\Lib\Service;
 
-use Lib\Dto\Email;
-use Lib\Dto\SMS;
-use Lib\Exception\EmailApiDisabled;
-use Lib\Exception\GeneralNetworkException;
-use Lib\Exception\NetworkException;
-use Lib\Exception\SMSApiDisabled;
+use Afrikpaysas\Lib\Dto\Email;
+use Afrikpaysas\Lib\Dto\SMS;
+use Afrikpaysas\Lib\Exception\EmailApiDisabled;
+use Afrikpaysas\Lib\Exception\GeneralNetworkException;
+use Afrikpaysas\Lib\Exception\NetworkException;
+use Afrikpaysas\Lib\Exception\SMSApiDisabled;
 
 /**
  * MessagingService.
  *
  * @category Service
- * @package  Lib\Service
+ * @package  Afrikpaysas\Lib\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/MessagingService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Service/MessagingService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 interface MessagingService
 {

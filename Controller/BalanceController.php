@@ -5,14 +5,14 @@
  * BalanceController.
  *
  * @category Controller
- * @package  App\Controller
+ * @package  Afrikpaysas\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Controller/BalanceController.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/BalanceController.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Controller;
+namespace Afrikpaysas\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Get;
 use FOS\RestBundle\Controller\Annotations\Post;
@@ -30,12 +30,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  * BalanceController.
  *
  * @category Controller
- * @package  App\Controller
+ * @package  Afrikpaysas\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Controller/BalanceController.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/BalanceController.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @psalm-suppress PropertyNotSetInConstructor
  */

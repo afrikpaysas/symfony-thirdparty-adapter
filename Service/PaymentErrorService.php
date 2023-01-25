@@ -5,14 +5,14 @@
  * PaymentErrorService.
  *
  * @category Service
- * @package  App\Service
+ * @package  Afrikpaysas\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/PaymentErrorService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/PaymentErrorService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Service;
+namespace Afrikpaysas\Service;
 
 use Lib\Entity\Transaction as BaseTransaction;
 use Lib\Exception\GeneralException;
@@ -27,12 +27,12 @@ use Lib\Service\TransactionService;
  * PaymentErrorService.
  *
  * @category Service
- * @package  App\Service
+ * @package  Afrikpaysas\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/PaymentErrorService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/PaymentErrorService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 class PaymentErrorService implements BasePaymentErrorService
 {

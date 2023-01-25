@@ -5,19 +5,19 @@
  * TransactionMapper.
  *
  * @category Mapper
- * @package  Lib\Mapper
+ * @package  Afrikpaysas\Lib\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Mapper/TransactionMapper.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Mapper/TransactionMapper.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Mapper;
+namespace Afrikpaysas\Lib\Mapper;
 
-use Lib\Entity\Transaction;
-use Lib\Dto\TransactionDTO as TransactionDTO;
-use Lib\Model\TransactionCollection;
-use Lib\Model\TransactionDTOCollection;
+use Afrikpaysas\Lib\Entity\Transaction;
+use Afrikpaysas\Lib\Dto\TransactionDTO as TransactionDTO;
+use Afrikpaysas\Lib\Model\TransactionCollection;
+use Afrikpaysas\Lib\Model\TransactionDTOCollection;
 
 /**
  * TransactionMapper.
@@ -27,12 +27,12 @@ use Lib\Model\TransactionDTOCollection;
  * @codingStandardsIgnoreEnd
  *
  * @category Mapper
- * @package  Lib\Mapper
+ * @package  Afrikpaysas\Lib\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Mapper/TransactionMapper.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Mapper/TransactionMapper.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 interface TransactionMapper extends BaseEntityMapper
 {

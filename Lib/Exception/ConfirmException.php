@@ -5,25 +5,25 @@
  * ConfirmException.
  *
  * @category Exception
- * @package  Lib\Exception
+ * @package  Afrikpaysas\Lib\Exception
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Exception/ConfirmException.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Exception/ConfirmException.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Exception;
+namespace Afrikpaysas\Lib\Exception;
 
 /**
  * ConfirmException.
  *
  * @category Exception
- * @package  Lib\Exception
+ * @package  Afrikpaysas\Lib\Exception
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Exception/ConfirmException.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Exception/ConfirmException.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 class ConfirmException extends GeneralException
 {

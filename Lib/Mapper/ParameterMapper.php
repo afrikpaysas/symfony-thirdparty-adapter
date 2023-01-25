@@ -5,19 +5,19 @@
  * ParameterMapper.
  *
  * @category Mapper
- * @package  Lib\Mapper
+ * @package  Afrikpaysas\Lib\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Mapper/ParameterMapper.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Mapper/ParameterMapper.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Mapper;
+namespace Afrikpaysas\Lib\Mapper;
 
-use Lib\Dto\ParameterDTO;
-use Lib\Entity\Parameter;
-use Lib\Model\ParameterCollection;
-use Lib\Model\ParameterDTOCollection;
+use Afrikpaysas\Lib\Dto\ParameterDTO;
+use Afrikpaysas\Lib\Entity\Parameter;
+use Afrikpaysas\Lib\Model\ParameterCollection;
+use Afrikpaysas\Lib\Model\ParameterDTOCollection;
 
 /**
  * ParameterMapper.
@@ -27,12 +27,12 @@ use Lib\Model\ParameterDTOCollection;
  * @codingStandardsIgnoreEnd
  *
  * @category Mapper
- * @package  Lib\Mapper
+ * @package  Afrikpaysas\Lib\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Mapper/ParameterMapper.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Mapper/ParameterMapper.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 interface ParameterMapper extends BaseEntityMapper
 {

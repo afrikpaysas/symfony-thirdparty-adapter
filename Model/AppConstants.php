@@ -5,25 +5,25 @@
  * AppConstants.
  *
  * @category Model
- * @package  App\Model
+ * @package  Afrikpaysas\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Model/AppConstants.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Model/AppConstants.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Model;
+namespace Afrikpaysas\Model;
 
 /**
  * AppConstants.
  *
  * @category Model
- * @package  App\Model
+ * @package  Afrikpaysas\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Model/AppConstants.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Model/AppConstants.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 class AppConstants
 {

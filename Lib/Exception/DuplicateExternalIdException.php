@@ -5,28 +5,28 @@
  * DuplicateExternalIdException.
  *
  * @category Exception
- * @package  Lib\Exception
+ * @package  Afrikpaysas\Lib\Exception
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Exception/DuplicateExternalIdException.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Exception/DuplicateExternalIdException.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Exception;
+namespace Afrikpaysas\Lib\Exception;
 
-use Lib\Model\AppConstants;
-use Lib\Model\SystemExceptionMessage;
+use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Model\SystemExceptionMessage;
 
 /**
  * DuplicateExternalIdException.
  *
  * @category Exception
- * @package  Lib\Exception
+ * @package  Afrikpaysas\Lib\Exception
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Exception/DuplicateExternalIdException.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Exception/DuplicateExternalIdException.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 class DuplicateExternalIdException extends PaymentException
 {

@@ -5,14 +5,14 @@
  * Repository.
  *
  * @category Repository
- * @package  App\Repository
+ * @package  Afrikpaysas\Repository
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Repository/Repository.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Repository/Repository.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Repository;
+namespace Afrikpaysas\Repository;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\DBAL\LockMode;
@@ -37,12 +37,12 @@ use \DateTimeZone;
  * @template-implements ServiceEntityRepositoryInterface<T>
  *
  * @category Repository
- * @package  App\Repository
+ * @package  Afrikpaysas\Repository
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Repository/Repository.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Repository/Repository.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)

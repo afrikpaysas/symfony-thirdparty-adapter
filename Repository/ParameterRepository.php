@@ -5,16 +5,16 @@
  * ParameterRepository.
  *
  * @category Repository
- * @package  App\Repository
+ * @package  Afrikpaysas\Repository
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Repository/OptionRepository.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Repository/OptionRepository.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Repository;
+namespace Afrikpaysas\Repository;
 
-use App\Entity\Parameter;
+use Afrikpaysas\Entity\Parameter;
 use Doctrine\Persistence\ManagerRegistry;
 use Lib\Exception\EntityNotFoundException;
 use Lib\Model\AppConstants;
@@ -28,12 +28,12 @@ use Lib\Repository\ParameterRepository as BaseParameterRepository;
  * @template-implements BaseParameterRepository
  *
  * @category Repository
- * @package  App\Repository
+ * @package  Afrikpaysas\Repository
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Repository/OptionRepository.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Repository/OptionRepository.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 class ParameterRepository extends Repository implements BaseParameterRepository
 {

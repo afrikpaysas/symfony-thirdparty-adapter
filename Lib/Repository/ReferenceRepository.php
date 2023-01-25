@@ -5,18 +5,18 @@
  * ReferenceRepository.
  *
  * @category Model
- * @package  Lib\Model
+ * @package  Afrikpaysas\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Model/ReferenceRepository.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/ReferenceRepository.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Repository;
+namespace Afrikpaysas\Lib\Repository;
 
-use Lib\Entity\Reference;
-use Lib\Exception\EntityNotFoundException;
-use Lib\Model\Status;
+use Afrikpaysas\Lib\Entity\Reference;
+use Afrikpaysas\Lib\Exception\EntityNotFoundException;
+use Afrikpaysas\Lib\Model\Status;
 use PHPUnit\Util\Exception;
 
 /**
@@ -27,12 +27,12 @@ use PHPUnit\Util\Exception;
  * @template-extends ServiceEntityRepositoryInterface<Reference>
  *
  * @category Model
- * @package  Lib\Model
+ * @package  Afrikpaysas\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Model/ReferenceRepository.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/ReferenceRepository.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 interface ReferenceRepository extends ServiceEntityRepositoryInterface
 {

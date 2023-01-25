@@ -5,28 +5,28 @@
  * Option.
  *
  * @category Entity
- * @package  Lib\Entity
+ * @package  Afrikpaysas\Lib\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Entity/Option.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Entity/Option.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Entity;
+namespace Afrikpaysas\Lib\Entity;
 
-use Lib\Model\BaseEntity;
+use Afrikpaysas\Lib\Model\BaseEntity;
 
 /**
  * PHP Version 8.1
  * AppResponse.
  *
  * @category Entity
- * @package  Lib\Entity
+ * @package  Afrikpaysas\Lib\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Entity/Option.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Entity/Option.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @SuppressWarnings(PHPMD.ShortVariable)
  *

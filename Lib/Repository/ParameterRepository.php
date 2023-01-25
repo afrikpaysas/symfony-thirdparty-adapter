@@ -5,17 +5,17 @@
  * ParameterRepository.
  *
  * @category Model
- * @package  Lib\Model
+ * @package  Afrikpaysas\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Model/ParameterRepository.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/ParameterRepository.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Repository;
+namespace Afrikpaysas\Lib\Repository;
 
-use Lib\Entity\Parameter;
-use Lib\Exception\EntityNotFoundException;
+use Afrikpaysas\Lib\Entity\Parameter;
+use Afrikpaysas\Lib\Exception\EntityNotFoundException;
 
 /**
  * ParameterRepository.
@@ -25,12 +25,12 @@ use Lib\Exception\EntityNotFoundException;
  * @template-extends ServiceEntityRepositoryInterface<Parameter>
  *
  * @category Model
- * @package  Lib\Model
+ * @package  Afrikpaysas\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Model/ParameterRepository.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/ParameterRepository.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 interface ParameterRepository extends ServiceEntityRepositoryInterface
 {

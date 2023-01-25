@@ -5,16 +5,16 @@
  * ReferenceApiResponseMapper.
  *
  * @category Mapper
- * @package  App\Mapper
+ * @package  Afrikpaysas\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Mapper/ReferenceApiResponseMapper.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Mapper/ReferenceApiResponseMapper.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Mapper;
+namespace Afrikpaysas\Mapper;
 
-use App\Entity\Reference;
+use Afrikpaysas\Entity\Reference;
 use Lib\Dto\ReferenceApiResponse;
 use Lib\Mapper\ReferenceApiResponseMapper as BaseRefApiRespMapper;
 use Lib\Model\ReferenceApiResponseCollection;
@@ -24,12 +24,12 @@ use Lib\Model\ReferenceCollection;
  * ReferenceApiResponseMapper.
  *
  * @category Mapper
- * @package  App\Mapper
+ * @package  Afrikpaysas\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Mapper/ReferenceApiResponseMapper.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Mapper/ReferenceApiResponseMapper.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @psalm-suppress PropertyNotSetInConstructor
  *

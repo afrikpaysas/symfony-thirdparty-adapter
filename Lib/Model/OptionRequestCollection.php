@@ -5,16 +5,16 @@
  * OptionRequestCollection.
  *
  * @category Model
- * @package  Lib\Model
+ * @package  Afrikpaysas\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Model/OptionRequestCollection.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/OptionRequestCollection.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Model;
+namespace Afrikpaysas\Lib\Model;
 
-use Lib\Dto\OptionRequest;
+use Afrikpaysas\Lib\Dto\OptionRequest;
 
 /**
  * OptionRequestCollection.
@@ -22,12 +22,12 @@ use Lib\Dto\OptionRequest;
  * @template-extends Collection<OptionRequest>
  *
  * @category Model
- * @package  Lib\Model
+ * @package  Afrikpaysas\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Model/OptionRequestCollection.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/OptionRequestCollection.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 class OptionRequestCollection extends Collection
 {

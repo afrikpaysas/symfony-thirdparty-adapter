@@ -5,14 +5,14 @@
  * BaseEntityMapper.
  *
  * @category Mapper
- * @package  App\Mapper
+ * @package  Afrikpaysas\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Mapper/BaseEntityMapper.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Mapper/BaseEntityMapper.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Mapper;
+namespace Afrikpaysas\Mapper;
 
 use Lib\Mapper\BaseEntityMapper as BaseBaseEntityMapper;
 use Lib\Model\AppConstants;
@@ -21,12 +21,12 @@ use Lib\Model\AppConstants;
  * BaseEntityMapper.
  *
  * @category Mapper
- * @package  App\Mapper
+ * @package  Afrikpaysas\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Mapper/BaseEntityMapper.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Mapper/BaseEntityMapper.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @template T of object
  * @template K of object

@@ -5,28 +5,28 @@
  * CancelService.
  *
  * @category Service
- * @package  Lib\Service
+ * @package  Afrikpaysas\Lib\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/CancelService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Service/CancelService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Service;
+namespace Afrikpaysas\Lib\Service;
 
-use Lib\Entity\Transaction;
-use Lib\Exception\IllegalStatusCancelException;
+use Afrikpaysas\Lib\Entity\Transaction;
+use Afrikpaysas\Lib\Exception\IllegalStatusCancelException;
 
 /**
  * CancelService.
  *
  * @category Service
- * @package  Lib\Service
+ * @package  Afrikpaysas\Lib\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/CancelService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Service/CancelService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 interface CancelService
 {

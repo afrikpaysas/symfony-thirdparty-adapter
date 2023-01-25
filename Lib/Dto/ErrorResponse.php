@@ -5,28 +5,28 @@
  * ErrorResponse.
  *
  * @category Dto
- * @package  Lib\Dto
+ * @package  Afrikpaysas\Lib\Dto
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Dto/ErrorResponse.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Dto/ErrorResponse.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Dto;
+namespace Afrikpaysas\Lib\Dto;
 
-use Lib\Model\BasicResponse as ModelBasicResponse;
+use Afrikpaysas\Lib\Model\BasicResponse as ModelBasicResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * ErrorResponse.
  *
  * @category Dto
- * @package  Lib\Dto
+ * @package  Afrikpaysas\Lib\Dto
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Dto/ErrorResponse.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Dto/ErrorResponse.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @psalm-suppress PropertyNotSetInConstructor
  */

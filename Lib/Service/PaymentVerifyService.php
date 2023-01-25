@@ -5,30 +5,30 @@
  * PaymentVerifyService.
  *
  * @category Service
- * @package  Lib\Service
+ * @package  Afrikpaysas\Lib\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/PaymentVerifyService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Service/PaymentVerifyService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Service;
+namespace Afrikpaysas\Lib\Service;
 
-use Lib\Dto\PaymentRequest;
-use Lib\Exception\DuplicateProviderIdException;
-use Lib\Exception\PaymentException;
-use Lib\Exception\RequiredProviderIdException;
+use Afrikpaysas\Lib\Dto\PaymentRequest;
+use Afrikpaysas\Lib\Exception\DuplicateProviderIdException;
+use Afrikpaysas\Lib\Exception\PaymentException;
+use Afrikpaysas\Lib\Exception\RequiredProviderIdException;
 
 /**
  * PaymentVerifyService.
  *
  * @category Service
- * @package  Lib\Service
+ * @package  Afrikpaysas\Lib\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/PaymentVerifyService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Service/PaymentVerifyService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 interface PaymentVerifyService
 {

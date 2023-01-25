@@ -5,18 +5,18 @@
  * ReferenceMapper.
  *
  * @category Mapper
- * @package  Lib\Mapper
+ * @package  Afrikpaysas\Lib\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Mapper/ReferenceMapper.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Mapper/ReferenceMapper.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Mapper;
+namespace Afrikpaysas\Lib\Mapper;
 
-use Lib\Entity\Reference;
-use Lib\Dto\ReferenceDTO;
-use Lib\Model\ReferenceDTOCollection;
+use Afrikpaysas\Lib\Entity\Reference;
+use Afrikpaysas\Lib\Dto\ReferenceDTO;
+use Afrikpaysas\Lib\Model\ReferenceDTOCollection;
 
 /**
  * ReferenceMapper.
@@ -26,12 +26,12 @@ use Lib\Model\ReferenceDTOCollection;
  * @codingStandardsIgnoreEnd
  *
  * @category Mapper
- * @package  Lib\Mapper
+ * @package  Afrikpaysas\Lib\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Mapper/ReferenceMapper.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Mapper/ReferenceMapper.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 interface ReferenceMapper extends BaseEntityMapper
 {

@@ -5,14 +5,14 @@
  * ErrorController.
  *
  * @category Controller
- * @package  App\Controller
+ * @package  Afrikpaysas\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Controller/ErrorController.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/ErrorController.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Controller;
+namespace Afrikpaysas\Controller;
 
 use Doctrine\DBAL\Exception\ConnectionException;
 use FOS\RestBundle\Controller\Annotations\Route;
@@ -29,12 +29,12 @@ use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
  * ErrorController.
  *
  * @category Controller
- * @package  App\Controller
+ * @package  Afrikpaysas\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Controller/ErrorController.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/ErrorController.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 #[Route('/error')]
 class ErrorController extends AbstractController implements BaseErrorController

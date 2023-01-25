@@ -5,16 +5,16 @@
  * ReferenceApiResponseCollection.
  *
  * @category Model
- * @package  Lib\Model
+ * @package  Afrikpaysas\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Model/ReferenceApiResponseCollection.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/ReferenceApiResponseCollection.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Model;
+namespace Afrikpaysas\Lib\Model;
 
-use Lib\Dto\ReferenceApiResponse;
+use Afrikpaysas\Lib\Dto\ReferenceApiResponse;
 
 /**
  * ReferenceApiResponseCollection.
@@ -22,12 +22,12 @@ use Lib\Dto\ReferenceApiResponse;
  * @template-extends Collection<ReferenceApiResponse>
  *
  * @category Model
- * @package  Lib\Model
+ * @package  Afrikpaysas\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Model/ReferenceApiResponseCollection.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/ReferenceApiResponseCollection.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 class ReferenceApiResponseCollection extends Collection
 {

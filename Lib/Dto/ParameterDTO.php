@@ -5,28 +5,28 @@
  * ParameterDTO.
  *
  * @category Dto
- * @package  Lib\Dto
+ * @package  Afrikpaysas\Lib\Dto
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Dto/ParameterDTO.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Dto/ParameterDTO.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Dto;
+namespace Afrikpaysas\Lib\Dto;
 
-use Lib\Model\BaseEntityDTO;
+use Afrikpaysas\Lib\Model\BaseEntityDTO;
 
 /**
  * PHP Version 8.1
  * ParameterDTO.
  *
  * @category Dto
- * @package  Lib\Dto
+ * @package  Afrikpaysas\Lib\Dto
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Dto/ParameterDTO.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Dto/ParameterDTO.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @psalm-suppress MissingConstructor
  */

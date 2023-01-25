@@ -5,28 +5,28 @@
  * CancelController.
  *
  * @category Controller
- * @package  Lib\Controller
+ * @package  Afrikpaysas\Lib\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Controller/CancelController.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Controller/CancelController.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Controller;
+namespace Afrikpaysas\Lib\Controller;
 
-use Lib\Dto\PaymentResponse;
-use Lib\Exception\PaymentException;
+use Afrikpaysas\Lib\Dto\PaymentResponse;
+use Afrikpaysas\Lib\Exception\PaymentException;
 
 /**
  * CancelController.
  *
  * @category Controller
- * @package  Lib\Controller
+ * @package  Afrikpaysas\Lib\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Controller/CancelController.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Controller/CancelController.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 interface CancelController
 {

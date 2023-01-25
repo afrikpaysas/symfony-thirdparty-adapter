@@ -5,27 +5,27 @@
  * AppController.
  *
  * @category Controller
- * @package  Lib\Controller
+ * @package  Afrikpaysas\Lib\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Controller/AppController.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Controller/AppController.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Controller;
+namespace Afrikpaysas\Lib\Controller;
 
-use Lib\Dto\AppResponse;
+use Afrikpaysas\Lib\Dto\AppResponse;
 
 /**
  * AppController.
  *
  * @category Controller
- * @package  Lib\Controller
+ * @package  Afrikpaysas\Lib\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Controller/AppController.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Controller/AppController.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 interface AppController
 {

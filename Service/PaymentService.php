@@ -5,18 +5,18 @@
  * PaymentService.
  *
  * @category Service
- * @package  App\Service
+ * @package  Afrikpaysas\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/PaymentService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/PaymentService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Service;
+namespace Afrikpaysas\Service;
 
-use App\Dto\ProviderPaymentResponse;
+use Afrikpaysas\Dto\ProviderPaymentResponse;
 use Lib\Entity\Transaction;
-use App\Entity\Transaction as EntityTransaction;
+use Afrikpaysas\Entity\Transaction as EntityTransaction;
 use Lib\Dto\PaymentRequest;
 use Lib\Exception\BadApiResponse;
 use Lib\Exception\PaymentAPIException;
@@ -33,12 +33,12 @@ use \DateTime;
  * PaymentService.
  *
  * @category Service
- * @package  App\Service
+ * @package  Afrikpaysas\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/PaymentService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/PaymentService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */

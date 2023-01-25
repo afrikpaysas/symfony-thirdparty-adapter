@@ -5,14 +5,14 @@
  * StatusController.
  *
  * @category Controller
- * @package  App\Controller
+ * @package  Afrikpaysas\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Controller/StatusController.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/StatusController.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Controller;
+namespace Afrikpaysas\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\Annotations\Route;
@@ -34,12 +34,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  * StatusController.
  *
  * @category Controller
- * @package  App\Controller
+ * @package  Afrikpaysas\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Controller/StatusController.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/StatusController.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @psalm-suppress PropertyNotSetInConstructor
  */

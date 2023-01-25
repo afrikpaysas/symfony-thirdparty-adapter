@@ -5,27 +5,27 @@
  * Parameter.
  *
  * @category Entity
- * @package  Lib\Entity
+ * @package  Afrikpaysas\Lib\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Entity/Parameter.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Entity/Parameter.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Entity;
+namespace Afrikpaysas\Lib\Entity;
 
-use Lib\Model\BaseEntity;
+use Afrikpaysas\Lib\Model\BaseEntity;
 
 /**
  * Parameter.
  *
  * @category Entity
- * @package  Lib\Parameter
+ * @package  Afrikpaysas\Lib\Parameter
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Entity/Parameter.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Entity/Parameter.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @SuppressWarnings(PHPMD.ShortVariable)
  *

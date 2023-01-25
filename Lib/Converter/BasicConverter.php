@@ -5,14 +5,14 @@
  * BasicConverter.
  *
  * @category Converter
- * @package  Lib\Converter
+ * @package  Afrikpaysas\Lib\Converter
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Converter/BasicConverter.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Converter/BasicConverter.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Converter;
+namespace Afrikpaysas\Lib\Converter;
 
 //@codingStandardsIgnoreStart
 
@@ -29,12 +29,12 @@ use Symfony\Component\HttpFoundation\Request;
  * BasicConverter.
  *
  * @category Converter
- * @package  Lib\Converter
+ * @package  Afrikpaysas\Lib\Converter
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Converter/BasicConverter.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Converter/BasicConverter.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 abstract class BasicConverter implements ParamConverterInterface
 {

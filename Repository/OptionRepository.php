@@ -5,16 +5,16 @@
  * OptionRepository.
  *
  * @category Repository
- * @package  App\Repository
+ * @package  Afrikpaysas\Repository
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Repository/OptionRepository.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Repository/OptionRepository.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Repository;
+namespace Afrikpaysas\Repository;
 
-use App\Entity\Option;
+use Afrikpaysas\Entity\Option;
 use Doctrine\Persistence\ManagerRegistry;
 use Lib\Model\AppConstants;
 use Lib\Model\OptionCollection;
@@ -27,12 +27,12 @@ use Lib\Repository\OptionRepository as BaseOptionRepository;
  * @template-implements BaseOptionRepository
  *
  * @category Repository
- * @package  App\Repository
+ * @package  Afrikpaysas\Repository
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Repository/OptionRepository.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Repository/OptionRepository.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 class OptionRepository extends Repository implements BaseOptionRepository
 {
@@ -146,7 +146,7 @@ SELECT
     r.reference,
     r.status,
     DATE_FORMAT(r.createdDate, '%Y-%m-%d %H:%i:%s') as date
-FROM App\Entity\Option r 
+FROM Afrikpaysas\Entity\Option r 
 $where ORDER BY r.amount ASC
 EOF;
 

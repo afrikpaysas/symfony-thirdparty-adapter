@@ -5,25 +5,25 @@
  * BalanceException.
  *
  * @category Exception
- * @package  Lib\Exception
+ * @package  Afrikpaysas\Lib\Exception
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Exception/BalanceException.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Exception/BalanceException.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Exception;
+namespace Afrikpaysas\Lib\Exception;
 
 /**
  * BalanceException.
  *
  * @category Exception
- * @package  Lib\Exception
+ * @package  Afrikpaysas\Lib\Exception
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Exception/BalanceException.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Exception/BalanceException.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 class BalanceException extends GeneralException
 {

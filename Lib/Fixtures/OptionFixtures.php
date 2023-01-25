@@ -5,21 +5,21 @@
  * OptionFixtures.
  *
  * @category Exception
- * @package  Lib\Fixtures
+ * @package  Afrikpaysas\Lib\Fixtures
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Fixtures/OptionFixtures.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Fixtures/OptionFixtures.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Fixtures;
+namespace Afrikpaysas\Lib\Fixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use Lib\Dto\OptionRequest;
-use Lib\Dto\OptionRequestCollectionRequest;
-use Lib\Model\AppConstants;
-use Lib\Service\OptionService;
+use Afrikpaysas\Lib\Dto\OptionRequest;
+use Afrikpaysas\Lib\Dto\OptionRequestCollectionRequest;
+use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\Lib\Service\OptionService;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Yaml\Yaml;
 
@@ -27,12 +27,12 @@ use Symfony\Component\Yaml\Yaml;
  * OptionFixtures.
  *
  * @category Fixtures
- * @package  Lib\Fixtures
+ * @package  Afrikpaysas\Lib\Fixtures
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Fixtures/OptionFixtures.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Fixtures/OptionFixtures.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @psalm-suppress PropertyNotSetInConstructor
  */

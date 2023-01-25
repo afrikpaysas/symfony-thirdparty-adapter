@@ -1,0 +1,9 @@
+/.dist
+/.idea
+/.env.local
+/.env.local.php
+/.env.*.local
+/Resources/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/

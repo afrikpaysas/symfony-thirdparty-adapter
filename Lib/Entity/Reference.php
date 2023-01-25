@@ -5,29 +5,29 @@
  * Reference.
  *
  * @category Entity
- * @package  Lib\Entity
+ * @package  Afrikpaysas\Lib\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Entity/Reference.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Entity/Reference.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Entity;
+namespace Afrikpaysas\Lib\Entity;
 
-use Lib\Model\BaseEntity;
-use Lib\Model\Collection;
-use Lib\Model\OptionCollection;
+use Afrikpaysas\Lib\Model\BaseEntity;
+use Afrikpaysas\Lib\Model\Collection;
+use Afrikpaysas\Lib\Model\OptionCollection;
 
 /**
  * Reference.
  *
  * @category Entity
- * @package  Lib\Entity
+ * @package  Afrikpaysas\Lib\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Entity/Reference.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Entity/Reference.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @SuppressWarnings(PHPMD.ShortVariable)
  *

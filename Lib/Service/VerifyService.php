@@ -5,34 +5,34 @@
  * VerifyService.
  *
  * @category Service
- * @package  Lib\Service
+ * @package  Afrikpaysas\Lib\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/VerifyService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Service/VerifyService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Service;
+namespace Afrikpaysas\Lib\Service;
 
-use Lib\Dto\VerifyRequest;
-use Lib\Exception\BadEmailException;
-use Lib\Exception\BadPhoneException;
-use Lib\Exception\BadReferenceException;
-use Lib\Exception\InvalidAmountException;
-use Lib\Exception\InvalidAmountOptionException;
-use Lib\Exception\InvalidOptionException;
-use Lib\Exception\ReferenceApiDisabledException;
+use Afrikpaysas\Lib\Dto\VerifyRequest;
+use Afrikpaysas\Lib\Exception\BadEmailException;
+use Afrikpaysas\Lib\Exception\BadPhoneException;
+use Afrikpaysas\Lib\Exception\BadReferenceException;
+use Afrikpaysas\Lib\Exception\InvalidAmountException;
+use Afrikpaysas\Lib\Exception\InvalidAmountOptionException;
+use Afrikpaysas\Lib\Exception\InvalidOptionException;
+use Afrikpaysas\Lib\Exception\ReferenceApiDisabledException;
 
 /**
  * VerifyService.
  *
  * @category Service
- * @package  Lib\Service
+ * @package  Afrikpaysas\Lib\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/VerifyService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Service/VerifyService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 interface VerifyService
 {

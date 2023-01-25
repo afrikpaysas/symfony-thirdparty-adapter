@@ -5,17 +5,17 @@
  * PaymentProcessService.
  *
  * @category Service
- * @package  App\Service
+ * @package  Afrikpaysas\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/PaymentProcessService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/PaymentProcessService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Service;
+namespace Afrikpaysas\Service;
 
-use App\Dto\ProviderPaymentResponse;
-use App\Model\AppConstants as LocalAppConstants;
+use Afrikpaysas\Dto\ProviderPaymentResponse;
+use Afrikpaysas\Model\AppConstants as LocalAppConstants;
 use Lib\Dto\ProviderPaymentResponse as BaseProviderPaymentResponse;
 use Lib\Entity\Transaction as BaseTransaction;
 use Lib\Exception\PaymentAPIException;
@@ -27,12 +27,12 @@ use Lib\Service\PaymentProcessService as BasePaymentProcessService;
  * PaymentProcessService.
  *
  * @category Service
- * @package  App\Service
+ * @package  Afrikpaysas\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Service/PaymentProcessService.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/PaymentProcessService.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 class PaymentProcessService implements BasePaymentProcessService
 {

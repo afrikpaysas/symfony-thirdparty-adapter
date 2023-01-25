@@ -5,29 +5,29 @@
  * VerifyController.
  *
  * @category Controller
- * @package  Lib\Controller
+ * @package  Afrikpaysas\Lib\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Controller/VerifyController.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Controller/VerifyController.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Controller;
+namespace Afrikpaysas\Lib\Controller;
 
-use Lib\Dto\VerifyRequest;
-use Lib\Dto\VerifyResponse;
-use Lib\Exception\VerifyException;
+use Afrikpaysas\Lib\Dto\VerifyRequest;
+use Afrikpaysas\Lib\Dto\VerifyResponse;
+use Afrikpaysas\Lib\Exception\VerifyException;
 
 /**
  * VerifyController.
  *
  * @category Controller
- * @package  Lib\Controller
+ * @package  Afrikpaysas\Lib\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Controller/VerifyController.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Controller/VerifyController.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 interface VerifyController
 {

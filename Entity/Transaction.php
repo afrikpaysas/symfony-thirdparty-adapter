@@ -5,16 +5,16 @@
  * Transaction.
  *
  * @category Entity
- * @package  App\Entity
+ * @package  Afrikpaysas\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Entity/Transaction.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Entity/Transaction.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Entity;
+namespace Afrikpaysas\Entity;
 
-use App\Repository\TransactionRepository;
+use Afrikpaysas\Repository\TransactionRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Lib\Entity\Transaction as BaseTransaction;
 use Lib\Model\Status;
@@ -23,19 +23,18 @@ use Lib\Model\Status;
  * Transaction.
  *
  * @category Entity
- * @package  App\Entity
+ * @package  Afrikpaysas\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Entity/Transaction.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Entity/Transaction.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @SuppressWarnings(PHPMD.ShortVariable)
  * @SuppressWarnings(PHPMD.TooManyFields)
  *
  * @psalm-suppress PropertyNotSetInConstructor
  */
-#[ORM\Entity(repositoryClass: TransactionRepository::class)]
 class Transaction extends BaseTransaction
 {
     #[ORM\Id]

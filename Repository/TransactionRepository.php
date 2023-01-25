@@ -5,16 +5,16 @@
  * TransactionRepository.
  *
  * @category Repository
- * @package  App\Repository
+ * @package  Afrikpaysas\Repository
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Repository/TransactionRepository.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Repository/TransactionRepository.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Repository;
+namespace Afrikpaysas\Repository;
 
-use App\Entity\Transaction;
+use Afrikpaysas\Entity\Transaction;
 use Doctrine\Persistence\ManagerRegistry;
 use Lib\Entity\Transaction as BaseTransaction;
 use Lib\Exception\EntityNotFoundException;
@@ -30,12 +30,12 @@ use Lib\Repository\TransactionRepository as BaseTransactionRepository;
  * @template-implements BaseTransactionRepository
  *
  * @category Repository
- * @package  App\Repository
+ * @package  Afrikpaysas\Repository
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Repository/TransactionRepository.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Repository/TransactionRepository.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */

@@ -5,29 +5,29 @@
  * OptionListResponse.
  *
  * @category Dto
- * @package  Lib\Dto
+ * @package  Afrikpaysas\Lib\Dto
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Dto/OptionListResponse.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Dto/OptionListResponse.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Lib\Dto;
+namespace Afrikpaysas\Lib\Dto;
 
-use Lib\Entity\Option;
-use Lib\Model\Collection;
-use Lib\Model\OptionDTOCollection;
+use Afrikpaysas\Lib\Entity\Option;
+use Afrikpaysas\Lib\Model\Collection;
+use Afrikpaysas\Lib\Model\OptionDTOCollection;
 
 /**
  * OptionListResponse.
  *
  * @category Dto
- * @package  Lib\Dto
+ * @package  Afrikpaysas\Lib\Dto
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Dto/OptionListResponse.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Dto/OptionListResponse.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @psalm-suppress PropertyNotSetInConstructor
  */

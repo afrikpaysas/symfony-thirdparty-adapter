@@ -5,14 +5,14 @@
  * ProviderPaymentResponse.
  *
  * @category Dto
- * @package  App\Dto
+ * @package  Afrikpaysas\Dto
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Dto/ProviderPaymentResponse.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Dto/ProviderPaymentResponse.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace App\Dto;
+namespace Afrikpaysas\Dto;
 
 use Lib\Dto\ProviderPaymentResponse as BaseProviderPaymentResponse;
 
@@ -20,12 +20,12 @@ use Lib\Dto\ProviderPaymentResponse as BaseProviderPaymentResponse;
  * ProviderPaymentResponse.
  *
  * @category Dto
- * @package  App\Dto
+ * @package  Afrikpaysas\Dto
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/wilydamtchou/symfony-thirdparty-adapter/blob/master/Dto/ProviderPaymentResponse.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Dto/ProviderPaymentResponse.php
  *
- * @see https://github.com/wilydamtchou/symfony-thirdparty-adapter
+ * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 class ProviderPaymentResponse extends BaseProviderPaymentResponse
 {
