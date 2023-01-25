@@ -1,6 +1,6 @@
 <?php
 
-namespace Afrikpaysas\SymfonyThirdpartyAdapter\SymfonyThirdpartyAdapter;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

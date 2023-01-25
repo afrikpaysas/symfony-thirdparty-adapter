@@ -1,6 +1,6 @@
 <?php
 
-namespace Afrikpaysas\SymfonyThirdpartyAdapter\SymfonyThirdpartyAdapter\DependencyInjection;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
