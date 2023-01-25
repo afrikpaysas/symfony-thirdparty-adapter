@@ -4,7 +4,7 @@ afrikpaysas_symfony_thirdparty_adapter_app_default:
 
 afrikpaysas_symfony_thirdparty_adapter_app_error:
   path: /error
-  controller: Afrikpaysas\SymfonyThirdpartyAdapter\Controller\AppController::error
+  controller: Afrikpaysas\SymfonyThirdpartyAdapter\Controller\ErrorController::error
 
 afrikpaysas_symfony_thirdparty_adapter_config_parameters:
   path: /config/parameters
