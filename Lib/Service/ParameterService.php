@@ -5,24 +5,24 @@
  * ParameterService.
  *
  * @category Service
- * @package  Afrikpaysas\Lib\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Service/ParameterService.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Service;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service;
 
-use Afrikpaysas\Lib\Entity\Parameter;
-use Afrikpaysas\Lib\Exception\ParameterEnvNotFoundException;
-use Afrikpaysas\Lib\Exception\ParameterNotFoundException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Parameter;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\ParameterEnvNotFoundException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\ParameterNotFoundException;
 
 /**
  * ParameterService.
  *
  * @category Service
- * @package  Afrikpaysas\Lib\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Service/ParameterService.php

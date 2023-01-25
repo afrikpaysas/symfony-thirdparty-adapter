@@ -1,25 +1,25 @@
 services:
   PaymentRequestConverter:
-    class: 'Afrikpaysas\Lib\Converter\PaymentRequestConverter'
+    class: 'Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Converter\PaymentRequestConverter'
     tags:
       - { name: request.param_converter, converter: PaymentRequestConverter }
 
   VerifyRequestConverter:
-    class: 'Afrikpaysas\Lib\Converter\VerifyRequestConverter'
+    class: 'Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Converter\VerifyRequestConverter'
     tags:
       - { name: request.param_converter, converter: VerifyRequestConverter }
 
   StatusRequestConverter:
-    class: 'Afrikpaysas\Lib\Converter\StatusRequestConverter'
+    class: 'Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Converter\StatusRequestConverter'
     tags:
       - { name: request.param_converter, converter: StatusRequestConverter }
 
   OptionRequestConverter:
-    class: 'Afrikpaysas\Lib\Converter\OptionRequestConverter'
+    class: 'Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Converter\OptionRequestConverter'
     tags:
       - { name: request.param_converter, converter: OptionRequestConverter }
 
   ConfirmRequestConverter:
-    class: 'Afrikpaysas\Lib\Converter\ConfirmRequestConverter'
+    class: 'Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Converter\ConfirmRequestConverter'
     tags:
       - { name: request.param_converter, converter: ConfirmRequestConverter }

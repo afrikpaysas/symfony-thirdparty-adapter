@@ -5,20 +5,20 @@
  * Option.
  *
  * @category Model
- * @package  Afrikpaysas\Lib\Model
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/Option.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Model;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model;
 
 /**
  * Option.
  *
  * @category Model
- * @package  Afrikpaysas\Lib\Model
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/Option.php

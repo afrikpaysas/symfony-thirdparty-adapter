@@ -5,16 +5,16 @@
  * OptionDTOCollection.
  *
  * @category Model
- * @package  Afrikpaysas\Lib\Model
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/OptionDTOCollection.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Model;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model;
 
-use Afrikpaysas\Lib\Dto\OptionDTO;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionDTO;
 
 /**
  * OptionDTOCollection.
@@ -22,7 +22,7 @@ use Afrikpaysas\Lib\Dto\OptionDTO;
  * @template-extends Collection<OptionDTO>
  *
  * @category Model
- * @package  Afrikpaysas\Lib\Model
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/OptionDTOCollection.php

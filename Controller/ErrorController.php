@@ -5,22 +5,22 @@
  * ErrorController.
  *
  * @category Controller
- * @package  Afrikpaysas\Controller
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/ErrorController.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Controller;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 
 use Doctrine\DBAL\Exception\ConnectionException;
 use FOS\RestBundle\Controller\Annotations\Route;
-use Afrikpaysas\Lib\Controller\ErrorController as BaseErrorController;
-use Afrikpaysas\Lib\Dto\ErrorResponse;
-use Afrikpaysas\Lib\Exception\GeneralException;
-use Afrikpaysas\Lib\Model\AppConstants;
-use Afrikpaysas\Lib\Model\SystemExceptionMessage;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\ErrorController as BaseErrorController;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ErrorResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\GeneralException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\SystemExceptionMessage;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
@@ -29,7 +29,7 @@ use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
  * ErrorController.
  *
  * @category Controller
- * @package  Afrikpaysas\Controller
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/ErrorController.php

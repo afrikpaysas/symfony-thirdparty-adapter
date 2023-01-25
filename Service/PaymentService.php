@@ -5,27 +5,27 @@
  * PaymentService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/PaymentService.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Service;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
-use Afrikpaysas\Dto\ProviderPaymentResponse;
-use Afrikpaysas\Lib\Entity\Transaction;
-use Afrikpaysas\Entity\Transaction as EntityTransaction;
-use Afrikpaysas\Lib\Dto\PaymentRequest;
-use Afrikpaysas\Lib\Exception\BadApiResponse;
-use Afrikpaysas\Lib\Exception\PaymentAPIException;
-use Afrikpaysas\Lib\Exception\ReferencePaidException;
-use Afrikpaysas\Lib\Model\AppConstants;
-use Afrikpaysas\Lib\Model\Status;
-use Afrikpaysas\Lib\Service\PaymentService as BasePaymentService;
-use Afrikpaysas\Lib\Service\ReferenceService;
-use Afrikpaysas\Lib\Service\TransactionService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Dto\ProviderPaymentResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Transaction as EntityTransaction;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentRequest;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\BadApiResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentAPIException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\ReferencePaidException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentService as BasePaymentService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
 use \DateTimeZone;
 use \DateTime;
 
@@ -33,7 +33,7 @@ use \DateTime;
  * PaymentService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/PaymentService.php

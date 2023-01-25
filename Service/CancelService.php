@@ -4,27 +4,27 @@
  * CancelService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/CancelService.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Service;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
-use Afrikpaysas\Lib\Entity\Transaction;
-use Afrikpaysas\Lib\Exception\IllegalStatusCancelException;
-use Afrikpaysas\Lib\Model\Status;
-use Afrikpaysas\Lib\Service\CancelService as BaseCancelService;
-use Afrikpaysas\Lib\Service\ReferenceService;
-use Afrikpaysas\Lib\Service\TransactionService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\IllegalStatusCancelException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\CancelService as BaseCancelService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
 
 /**
  * CancelService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/CancelService.php

@@ -5,26 +5,26 @@
  * StatusController.
  *
  * @category Controller
- * @package  Afrikpaysas\Controller
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/StatusController.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Controller;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\Annotations\Route;
-use Afrikpaysas\Lib\Controller\StatusController as BaseStatusController;
-use Afrikpaysas\Lib\Dto\PaymentResponse;
-use Afrikpaysas\Lib\Dto\StatusRequest;
-use Afrikpaysas\Lib\Exception\MapperException;
-use Afrikpaysas\Lib\Mapper\ReferenceMapper;
-use Afrikpaysas\Lib\Mapper\TransactionMapper;
-use Afrikpaysas\Lib\Service\PaymentService;
-use Afrikpaysas\Lib\Service\ReferenceService;
-use Afrikpaysas\Lib\Service\StatusService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\StatusController as BaseStatusController;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\StatusRequest;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\ReferenceMapper;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\TransactionMapper;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\StatusService;
 use Nelmio\ApiDocBundle\Annotation\Security;
 use OpenApi\Annotations as OA;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -34,7 +34,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  * StatusController.
  *
  * @category Controller
- * @package  Afrikpaysas\Controller
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/StatusController.php

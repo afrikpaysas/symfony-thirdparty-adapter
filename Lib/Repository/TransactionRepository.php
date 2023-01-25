@@ -5,19 +5,19 @@
  * TransactionRepository.
  *
  * @category Model
- * @package  Afrikpaysas\Lib\Model
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/TransactionRepository.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Repository;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository;
 
-use Afrikpaysas\Lib\Entity\Transaction;
-use Afrikpaysas\Lib\Exception\EntityAlReadyExistException;
-use Afrikpaysas\Lib\Exception\EntityNotFoundException;
-use Afrikpaysas\Lib\Model\Status;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\EntityAlReadyExistException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\EntityNotFoundException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
 
 /**
  * TransactionRepository.
@@ -27,7 +27,7 @@ use Afrikpaysas\Lib\Model\Status;
  * @template-extends ServiceEntityRepositoryInterface<Transaction>
  *
  * @category Model
- * @package  Afrikpaysas\Lib\Model
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/TransactionRepository.php

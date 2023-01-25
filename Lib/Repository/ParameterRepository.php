@@ -5,17 +5,17 @@
  * ParameterRepository.
  *
  * @category Model
- * @package  Afrikpaysas\Lib\Model
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/ParameterRepository.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Repository;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository;
 
-use Afrikpaysas\Lib\Entity\Parameter;
-use Afrikpaysas\Lib\Exception\EntityNotFoundException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Parameter;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\EntityNotFoundException;
 
 /**
  * ParameterRepository.
@@ -25,7 +25,7 @@ use Afrikpaysas\Lib\Exception\EntityNotFoundException;
  * @template-extends ServiceEntityRepositoryInterface<Parameter>
  *
  * @category Model
- * @package  Afrikpaysas\Lib\Model
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/ParameterRepository.php

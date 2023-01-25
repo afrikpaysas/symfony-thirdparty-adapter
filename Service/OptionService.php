@@ -5,40 +5,40 @@
  * OptionService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/OptionService.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Service;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
-use Afrikpaysas\Entity\Option as EntityOption;
-use Afrikpaysas\Mapper\OptionRequestMapper;
-use Afrikpaysas\Lib\Dto\OptionRequest;
-use Afrikpaysas\Lib\Dto\OptionRequestCollectionRequest;
-use Afrikpaysas\Lib\Entity\Option;
-use Afrikpaysas\Lib\Exception\BadReferenceException;
-use Afrikpaysas\Lib\Exception\EntityNotFoundException;
-use Afrikpaysas\Lib\Exception\InvalidReferenceSlugOptionException;
-use Afrikpaysas\Lib\Exception\MapperException;
-use Afrikpaysas\Lib\Exception\OptionAlreadyExistException;
-use Afrikpaysas\Lib\Exception\OptionApiDisabledException;
-use Afrikpaysas\Lib\Exception\OptionListEmptyException;
-use Afrikpaysas\Lib\Exception\RequiredOptionAmountException;
-use Afrikpaysas\Lib\Exception\RequiredOptionNameException;
-use Afrikpaysas\Lib\Model\AppConstants;
-use Afrikpaysas\Lib\Model\Collection;
-use Afrikpaysas\Lib\Model\OptionCollection;
-use Afrikpaysas\Lib\Repository\OptionRepository;
-use Afrikpaysas\Lib\Service\OptionService as BaseOptionService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Option as EntityOption;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Mapper\OptionRequestMapper;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequest;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequestCollectionRequest;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Option;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\BadReferenceException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\EntityNotFoundException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidReferenceSlugOptionException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\OptionAlreadyExistException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\OptionApiDisabledException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\OptionListEmptyException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredOptionAmountException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredOptionNameException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Collection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\OptionCollection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\OptionRepository;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\OptionService as BaseOptionService;
 
 /**
  * OptionService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/OptionService.php

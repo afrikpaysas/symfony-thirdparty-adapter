@@ -5,25 +5,25 @@
  * CancelController.
  *
  * @category Controller
- * @package  Afrikpaysas\Controller
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/CancelController.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Controller;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\Annotations\Route;
-use Afrikpaysas\Lib\Controller\CancelController as BaseCancelController;
-use Afrikpaysas\Lib\Dto\PaymentResponse;
-use Afrikpaysas\Lib\Exception\CancelException;
-use Afrikpaysas\Lib\Exception\MapperException;
-use Afrikpaysas\Lib\Mapper\ReferenceMapper;
-use Afrikpaysas\Lib\Mapper\TransactionMapper;
-use Afrikpaysas\Lib\Service\CancelService;
-use Afrikpaysas\Lib\Service\ReferenceService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\CancelController as BaseCancelController;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\CancelException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\ReferenceMapper;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\TransactionMapper;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\CancelService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
 use Nelmio\ApiDocBundle\Annotation\Security;
 use OpenApi\Annotations as OA;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -32,7 +32,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  * CancelController.
  *
  * @category Controller
- * @package  Afrikpaysas\Controller
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/CancelController.php

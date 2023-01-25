@@ -5,38 +5,38 @@
  * PaymentVerifyService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/PaymentVerifyService.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Service;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
-use Afrikpaysas\Lib\Dto\PaymentRequest;
-use Afrikpaysas\Lib\Exception\DuplicateApplicationIdException;
-use Afrikpaysas\Lib\Exception\DuplicateExternalIdException;
-use Afrikpaysas\Lib\Exception\DuplicateFinancialIdException;
-use Afrikpaysas\Lib\Exception\DuplicateProviderIdException;
-use Afrikpaysas\Lib\Exception\DuplicateRequestIdException;
-use Afrikpaysas\Lib\Exception\PaymentException;
-use Afrikpaysas\Lib\Exception\RequiredAccountNameException;
-use Afrikpaysas\Lib\Exception\RequiredAccountNumberException;
-use Afrikpaysas\Lib\Exception\RequiredApplicationIdException;
-use Afrikpaysas\Lib\Exception\RequiredExternalIdException;
-use Afrikpaysas\Lib\Exception\RequiredFinancialIdException;
-use Afrikpaysas\Lib\Exception\RequiredProviderIdException;
-use Afrikpaysas\Lib\Exception\RequiredRequestIdException;
-use Afrikpaysas\Lib\Service\PaymentVerifyService as BasePaymentVerifyService;
-use Afrikpaysas\Lib\Service\TransactionService;
-use Afrikpaysas\Lib\Service\VerifyService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentRequest;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateApplicationIdException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateExternalIdException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateFinancialIdException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateProviderIdException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateRequestIdException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredAccountNameException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredAccountNumberException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredApplicationIdException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredExternalIdException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredFinancialIdException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredProviderIdException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredRequestIdException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentVerifyService as BasePaymentVerifyService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\VerifyService;
 
 /**
  * PaymentVerifyService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/PaymentVerifyService.php

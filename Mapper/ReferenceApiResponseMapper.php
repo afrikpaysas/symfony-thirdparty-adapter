@@ -5,26 +5,26 @@
  * ReferenceApiResponseMapper.
  *
  * @category Mapper
- * @package  Afrikpaysas\Mapper
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Mapper/ReferenceApiResponseMapper.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Mapper;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Mapper;
 
-use Afrikpaysas\Entity\Reference;
-use Afrikpaysas\Lib\Dto\ReferenceApiResponse;
-use Afrikpaysas\Lib\Mapper\ReferenceApiResponseMapper as BaseRefApiRespMapper;
-use Afrikpaysas\Lib\Model\ReferenceApiResponseCollection;
-use Afrikpaysas\Lib\Model\ReferenceCollection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Reference;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ReferenceApiResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\ReferenceApiResponseMapper as BaseRefApiRespMapper;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ReferenceApiResponseCollection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ReferenceCollection;
 
 /**
  * ReferenceApiResponseMapper.
  *
  * @category Mapper
- * @package  Afrikpaysas\Mapper
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Mapper/ReferenceApiResponseMapper.php

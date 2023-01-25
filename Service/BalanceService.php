@@ -5,25 +5,25 @@
  * BalanceService
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/BalanceService.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Service;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
-use Afrikpaysas\Lib\Exception\BalanceApplicationException;
-use Afrikpaysas\Lib\Model\AppConstants;
-use Afrikpaysas\Lib\Service\BalanceService as BaseBalanceService;
-use Afrikpaysas\Lib\Service\ParameterService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\BalanceApplicationException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\BalanceService as BaseBalanceService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ParameterService;
 
 /**
  * BalanceService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/BalanceService.php

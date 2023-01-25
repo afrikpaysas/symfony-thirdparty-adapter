@@ -5,22 +5,22 @@
  * Parameter.
  *
  * @category Entity
- * @package  Afrikpaysas\Lib\Entity
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Entity/Parameter.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Entity;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity;
 
-use Afrikpaysas\Lib\Model\BaseEntity;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\BaseEntity;
 
 /**
  * Parameter.
  *
  * @category Entity
- * @package  Afrikpaysas\Lib\Parameter
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Parameter
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Entity/Parameter.php

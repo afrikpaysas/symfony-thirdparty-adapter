@@ -5,25 +5,25 @@
  * Parameter.
  *
  * @category Entity
- * @package  Afrikpaysas\Entity
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Entity/Parameter.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Entity;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Entity;
 
-use Afrikpaysas\Repository\ParameterRepository;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Repository\ParameterRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Afrikpaysas\Lib\Entity\Parameter as BaseParameter;
-use Afrikpaysas\Lib\Model\Status;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Parameter as BaseParameter;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
 
 /**
  * Parameter.
  *
  * @category Entity
- * @package  Afrikpaysas\Entity
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Entity/Parameter.php

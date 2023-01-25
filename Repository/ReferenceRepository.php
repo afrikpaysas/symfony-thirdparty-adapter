@@ -5,22 +5,22 @@
  * ReferenceRepository.
  *
  * @category Repository
- * @package  Afrikpaysas\Repository
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Repository
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Repository/ReferenceRepository.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Repository;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Repository;
 
-use Afrikpaysas\Entity\Reference;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Reference;
 use Doctrine\Persistence\ManagerRegistry;
-use Afrikpaysas\Lib\Exception\EntityNotFoundException;
-use Afrikpaysas\Lib\Model\AppConstants;
-use Afrikpaysas\Lib\Model\ReferenceCollection;
-use Afrikpaysas\Lib\Model\Status;
-use Afrikpaysas\Lib\Repository\ReferenceRepository as BaseReferenceRepository;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\EntityNotFoundException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ReferenceCollection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\ReferenceRepository as BaseReferenceRepository;
 
 /**
  * ReferenceRepository.
@@ -29,7 +29,7 @@ use Afrikpaysas\Lib\Repository\ReferenceRepository as BaseReferenceRepository;
  * @template-implements BaseReferenceRepository
  *
  * @category Repository
- * @package  Afrikpaysas\Repository
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Repository
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Repository/ReferenceRepository.php

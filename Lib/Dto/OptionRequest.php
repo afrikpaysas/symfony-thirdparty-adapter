@@ -5,14 +5,14 @@
  * OptionRequest.
  *
  * @category Dto
- * @package  Afrikpaysas\Lib\Dto
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Dto/OptionRequest.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Dto;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto;
 
 use JMS\Serializer\Annotation as Serializer;
 
@@ -21,7 +21,7 @@ use JMS\Serializer\Annotation as Serializer;
  * OptionRequest.
  *
  * @category Dto
- * @package  Afrikpaysas\Lib\Dto
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Dto/OptionRequest.php

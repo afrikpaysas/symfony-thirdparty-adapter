@@ -5,25 +5,25 @@
  * Option.
  *
  * @category Entity
- * @package  Afrikpaysas\Entity
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Entity/Option.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Entity;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Entity;
 
-use Afrikpaysas\Repository\OptionRepository;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Repository\OptionRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Afrikpaysas\Lib\Entity\Option as BaseOption;
-use Afrikpaysas\Lib\Model\Status;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Option as BaseOption;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
 
 /**
  * Option.
  *
  * @category Entity
- * @package  Afrikpaysas\Entity
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Entity/Option.php

@@ -5,26 +5,26 @@
  * OptionController.
  *
  * @category Controller
- * @package  Afrikpaysas\Lib\Controller
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Controller/OptionController.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Controller;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller;
 
-use Afrikpaysas\Lib\Dto\OptionListResponse;
-use Afrikpaysas\Lib\Dto\OptionRequest;
-use Afrikpaysas\Lib\Dto\OptionResponse;
-use Afrikpaysas\Lib\Exception\OptionException;
-use Afrikpaysas\Lib\Exception\VerifyException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionListResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequest;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\OptionException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\VerifyException;
 
 /**
  * OptionController.
  *
  * @category Controller
- * @package  Afrikpaysas\Lib\Controller
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Controller/OptionController.php

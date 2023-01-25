@@ -5,14 +5,14 @@
  * BaseEntityCollection.
  *
  * @category Model
- * @package  Afrikpaysas\Lib\Model
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/BaseEntityCollection.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Model;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model;
 
 /**
  * BaseEntityCollection.
@@ -22,7 +22,7 @@ namespace Afrikpaysas\Lib\Model;
  * @template-extends Collection<BaseEntity>
  *
  * @category Model
- * @package  Afrikpaysas\Lib\Model
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/BaseEntityCollection.php

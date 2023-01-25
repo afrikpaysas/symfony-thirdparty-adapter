@@ -5,31 +5,31 @@
  * ConfirmService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/CancelService.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Service;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
-use Afrikpaysas\Lib\Entity\Transaction;
-use Afrikpaysas\Lib\Dto\ConfirmRequest;
-use Afrikpaysas\Lib\Exception\IllegalProviderConfirmException;
-use Afrikpaysas\Lib\Exception\IllegalStatusConfirmException;
-use Afrikpaysas\Lib\Exception\RequiredProviderIdException;
-use Afrikpaysas\Lib\Model\Status;
-use Afrikpaysas\Lib\Service\ConfirmService as BaseConfirmService;
-use Afrikpaysas\Lib\Service\ReferenceService;
-use Afrikpaysas\Lib\Service\TransactionService;
-use Afrikpaysas\Lib\Service\PaymentVerifyService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ConfirmRequest;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\IllegalProviderConfirmException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\IllegalStatusConfirmException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredProviderIdException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ConfirmService as BaseConfirmService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentVerifyService;
 
 /**
  * ConfirmService.
  *
  * @category ConfirmService
- * @package  Afrikpaysas\ConfirmService
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\ConfirmService
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/ConfirmService.php

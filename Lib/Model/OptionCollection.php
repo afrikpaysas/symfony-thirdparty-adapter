@@ -5,16 +5,16 @@
  * OptionCollection.
  *
  * @category Model
- * @package  Afrikpaysas\Lib\Model
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/OptionCollection.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Model;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model;
 
-use Afrikpaysas\Lib\Entity\Option;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Option;
 
 /**
  * OptionCollection.
@@ -22,7 +22,7 @@ use Afrikpaysas\Lib\Entity\Option;
  * @template-extends Collection<Option>
  *
  * @category Model
- * @package  Afrikpaysas\Lib\Model
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/OptionCollection.php

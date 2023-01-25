@@ -5,14 +5,14 @@
  * Repository.
  *
  * @category Repository
- * @package  Afrikpaysas\Repository
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Repository
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Repository/Repository.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Repository;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Repository;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\DBAL\LockMode;
@@ -20,12 +20,12 @@ use Doctrine\Inflector\Inflector;
 use Doctrine\Inflector\InflectorFactory;
 use Doctrine\ORM\Repository\Exception\InvalidMagicMethodCall;
 use Doctrine\Persistence\ManagerRegistry;
-use Afrikpaysas\Lib\Exception\EntityNotFoundException;
-use Afrikpaysas\Lib\Exception\ListEntityNotFoundException;
-use Afrikpaysas\Lib\Model\AppConstants;
-use Afrikpaysas\Lib\Model\Collection;
-use Afrikpaysas\Lib\Model\SystemExceptionMessage;
-use Afrikpaysas\Lib\Repository\ServiceEntityRepositoryInterface as BaseRepoInterface;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\EntityNotFoundException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\ListEntityNotFoundException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Collection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\SystemExceptionMessage;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\ServiceEntityRepositoryInterface as BaseRepoInterface;
 use \DateTime;
 use \DateTimeZone;
 
@@ -37,7 +37,7 @@ use \DateTimeZone;
  * @template-implements ServiceEntityRepositoryInterface<T>
  *
  * @category Repository
- * @package  Afrikpaysas\Repository
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Repository
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Repository/Repository.php

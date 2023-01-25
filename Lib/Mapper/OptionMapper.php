@@ -5,19 +5,19 @@
  * OptionMapper.
  *
  * @category Mapper
- * @package  Afrikpaysas\Lib\Mapper
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Mapper/OptionMapper.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Mapper;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper;
 
-use Afrikpaysas\Lib\Dto\OptionDTO;
-use Afrikpaysas\Lib\Entity\Option;
-use Afrikpaysas\Lib\Model\OptionCollection;
-use Afrikpaysas\Lib\Model\OptionDTOCollection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionDTO;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Option;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\OptionCollection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\OptionDTOCollection;
 
 /**
  * OptionMapper.
@@ -27,7 +27,7 @@ use Afrikpaysas\Lib\Model\OptionDTOCollection;
  * @codingStandardsIgnoreEnd
  *
  * @category Mapper
- * @package  Afrikpaysas\Lib\Mapper
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Mapper/OptionMapper.php

@@ -5,21 +5,21 @@
  * VerifyController.
  *
  * @category Controller
- * @package  Afrikpaysas\Controller
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/VerifyController.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Controller;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\Annotations\Route;
-use Afrikpaysas\Lib\Controller\VerifyController as BaseVerifyController;
-use Afrikpaysas\Lib\Dto\VerifyRequest;
-use Afrikpaysas\Lib\Dto\VerifyResponse;
-use Afrikpaysas\Lib\Service\VerifyService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\VerifyController as BaseVerifyController;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\VerifyRequest;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\VerifyResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\VerifyService;
 use Nelmio\ApiDocBundle\Annotation\Security;
 use OpenApi\Annotations as OA;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -29,7 +29,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  * VerifyController.
  *
  * @category Controller
- * @package  Afrikpaysas\Controller
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/VerifyController.php

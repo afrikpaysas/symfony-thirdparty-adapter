@@ -5,25 +5,25 @@
  * Transaction.
  *
  * @category Entity
- * @package  Afrikpaysas\Entity
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Entity/Transaction.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Entity;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Entity;
 
-use Afrikpaysas\Repository\TransactionRepository;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Repository\TransactionRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Afrikpaysas\Lib\Entity\Transaction as BaseTransaction;
-use Afrikpaysas\Lib\Model\Status;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction as BaseTransaction;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
 
 /**
  * Transaction.
  *
  * @category Entity
- * @package  Afrikpaysas\Entity
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Entity/Transaction.php

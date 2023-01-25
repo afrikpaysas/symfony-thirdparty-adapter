@@ -5,23 +5,23 @@
  * ErrorResponse.
  *
  * @category Dto
- * @package  Afrikpaysas\Lib\Dto
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Dto/ErrorResponse.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Dto;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto;
 
-use Afrikpaysas\Lib\Model\BasicResponse as ModelBasicResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\BasicResponse as ModelBasicResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * ErrorResponse.
  *
  * @category Dto
- * @package  Afrikpaysas\Lib\Dto
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Dto/ErrorResponse.php

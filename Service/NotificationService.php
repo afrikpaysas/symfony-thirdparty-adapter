@@ -5,21 +5,21 @@
  * NotificationService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/NotificationService.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Service;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
-use Afrikpaysas\Lib\Entity\Transaction as BaseTransaction;
-use Afrikpaysas\Lib\Model\AppConstants;
-use Afrikpaysas\Lib\Service\MessagingService;
-use Afrikpaysas\Lib\Service\NotificationService as BaseNotificationService;
-use Afrikpaysas\Lib\Service\ReferenceService;
-use Afrikpaysas\Lib\Service\VerifyService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction as BaseTransaction;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\MessagingService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\NotificationService as BaseNotificationService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\VerifyService;
 use \DateTimeZone;
 use \DateTime;
 
@@ -27,7 +27,7 @@ use \DateTime;
  * NotificationService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/NotificationService.php

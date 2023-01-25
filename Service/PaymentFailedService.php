@@ -5,26 +5,26 @@
  * PaymentFailedService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/PaymentFailedService.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Service;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
-use Afrikpaysas\Lib\Entity\Transaction as BaseTransaction;
-use Afrikpaysas\Lib\Exception\PaymentAPIException;
-use Afrikpaysas\Lib\Model\Status;
-use Afrikpaysas\Lib\Service\PaymentFailedService as BasePaymentFailedService;
-use Afrikpaysas\Lib\Service\TransactionService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction as BaseTransaction;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentAPIException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentFailedService as BasePaymentFailedService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
 
 /**
  * PaymentFailedService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/PaymentFailedService.php

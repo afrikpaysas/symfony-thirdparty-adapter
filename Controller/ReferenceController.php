@@ -5,26 +5,26 @@
  * ReferenceController.
  *
  * @category Controller
- * @package  Afrikpaysas\Controller
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/ReferenceController.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Controller;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Get;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\Annotations\View;
-use Afrikpaysas\Lib\Controller\ReferenceController as BaseRefController;
-use Afrikpaysas\Lib\Dto\OptionListResponse;
-use Afrikpaysas\Lib\Dto\ReferenceResponse;
-use Afrikpaysas\Lib\Exception\MapperException;
-use Afrikpaysas\Lib\Mapper\OptionMapper;
-use Afrikpaysas\Lib\Mapper\ReferenceMapper;
-use Afrikpaysas\Lib\Service\OptionService;
-use Afrikpaysas\Lib\Service\ReferenceService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\ReferenceController as BaseRefController;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionListResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ReferenceResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\OptionMapper;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\ReferenceMapper;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\OptionService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
 use Nelmio\ApiDocBundle\Annotation\Security;
 use OpenApi\Annotations as OA;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -33,7 +33,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  * ReferenceController.
  *
  * @category Controller
- * @package  Afrikpaysas\Controller
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/ReferenceController.php

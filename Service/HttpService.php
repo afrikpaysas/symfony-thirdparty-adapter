@@ -5,21 +5,21 @@
  * HttpService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/HttpService.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Service;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
-use Afrikpaysas\Lib\Exception\GeneralNetworkException;
-use Afrikpaysas\Lib\Exception\HTTPTokenException;
-use Afrikpaysas\Lib\Exception\NetworkException;
-use Afrikpaysas\Lib\Model\AppConstants;
-use Afrikpaysas\Lib\Service\HttpService as BaseHttpService;
-use Afrikpaysas\Lib\Service\ParameterService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\GeneralNetworkException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\HTTPTokenException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\NetworkException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\HttpService as BaseHttpService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ParameterService;
 use \DateTime;
 use \DateTimeZone;
 use \DateInterval;
@@ -28,7 +28,7 @@ use \DateInterval;
  * HttpService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/HttpService.php

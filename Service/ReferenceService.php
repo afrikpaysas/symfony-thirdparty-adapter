@@ -5,39 +5,39 @@
  * ReferenceService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/ReferenceService.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Service;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
-use Afrikpaysas\Mapper\ReferenceApiResponseMapper;
-use Afrikpaysas\Model\AppConstants as LocalAppConstants;
-use Afrikpaysas\Lib\Dto\Reference as ReferenceDTO;
-use Afrikpaysas\Lib\Dto\ReferenceApiResponse as BaseReferenceApiResponse;
-use Afrikpaysas\Lib\Entity\Reference;
-use Afrikpaysas\Entity\Reference as EntityReference;
-use Afrikpaysas\Lib\Exception\BadApiResponse;
-use Afrikpaysas\Lib\Exception\MapperException;
-use Afrikpaysas\Lib\Exception\PaymentAPIException;
-use Afrikpaysas\Lib\Exception\ReferenceNotFoundException;
-use Afrikpaysas\Lib\Model\AppConstants;
-use Afrikpaysas\Lib\Model\ReferenceApiResponseCollection;
-use Afrikpaysas\Lib\Model\Status;
-use Afrikpaysas\Lib\Repository\ReferenceRepository;
-use Afrikpaysas\Lib\Service\HttpService;
-use Afrikpaysas\Lib\Service\OptionService;
-use Afrikpaysas\Lib\Service\ReferenceService as BaseReferenceService;
-use Afrikpaysas\Lib\Service\UtilService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Mapper\ReferenceApiResponseMapper;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Model\AppConstants as LocalAppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\Reference as ReferenceDTO;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ReferenceApiResponse as BaseReferenceApiResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Reference;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Reference as EntityReference;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\BadApiResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentAPIException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\ReferenceNotFoundException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ReferenceApiResponseCollection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\ReferenceRepository;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\HttpService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\OptionService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService as BaseReferenceService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\UtilService;
 
 /**
  * ReferenceService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/ReferenceService.php

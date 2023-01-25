@@ -5,24 +5,24 @@
  * VerifyController.
  *
  * @category Controller
- * @package  Afrikpaysas\Lib\Controller
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Controller/VerifyController.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Controller;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller;
 
-use Afrikpaysas\Lib\Dto\VerifyRequest;
-use Afrikpaysas\Lib\Dto\VerifyResponse;
-use Afrikpaysas\Lib\Exception\VerifyException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\VerifyRequest;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\VerifyResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\VerifyException;
 
 /**
  * VerifyController.
  *
  * @category Controller
- * @package  Afrikpaysas\Lib\Controller
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Controller/VerifyController.php

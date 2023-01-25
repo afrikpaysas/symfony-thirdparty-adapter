@@ -5,23 +5,23 @@
  * BadApiResponse.
  *
  * @category Exception
- * @package  Afrikpaysas\Lib\Exception
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Exception/BadApiResponse.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Exception;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception;
 
-use Afrikpaysas\Lib\Model\AppConstants;
-use Afrikpaysas\Lib\Model\SystemExceptionMessage;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\SystemExceptionMessage;
 
 /**
  * DuplicateFinancialIdException.
  *
  * @category Exception
- * @package  Afrikpaysas\Lib\Exception
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Exception/DuplicateFinancialIdException.php

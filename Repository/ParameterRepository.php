@@ -5,21 +5,21 @@
  * ParameterRepository.
  *
  * @category Repository
- * @package  Afrikpaysas\Repository
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Repository
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Repository/OptionRepository.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Repository;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Repository;
 
-use Afrikpaysas\Entity\Parameter;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Parameter;
 use Doctrine\Persistence\ManagerRegistry;
-use Afrikpaysas\Lib\Exception\EntityNotFoundException;
-use Afrikpaysas\Lib\Model\AppConstants;
-use Afrikpaysas\Lib\Model\ParameterCollection;
-use Afrikpaysas\Lib\Repository\ParameterRepository as BaseParameterRepository;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\EntityNotFoundException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ParameterCollection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\ParameterRepository as BaseParameterRepository;
 
 /**
  * ParameterRepository.
@@ -28,7 +28,7 @@ use Afrikpaysas\Lib\Repository\ParameterRepository as BaseParameterRepository;
  * @template-implements BaseParameterRepository
  *
  * @category Repository
- * @package  Afrikpaysas\Repository
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Repository
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Repository/OptionRepository.php

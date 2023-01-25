@@ -5,19 +5,19 @@
  * OptionRequestMapper.
  *
  * @category Mapper
- * @package  Afrikpaysas\Lib\Mapper
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Mapper/OptionRequestMapper.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Mapper;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper;
 
-use Afrikpaysas\Lib\Dto\OptionRequest;
-use Afrikpaysas\Lib\Entity\Option;
-use Afrikpaysas\Lib\Model\OptionCollection;
-use Afrikpaysas\Lib\Model\OptionRequestCollection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequest;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Option;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\OptionCollection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\OptionRequestCollection;
 
 /**
  * OptionRequestMapper.
@@ -27,7 +27,7 @@ use Afrikpaysas\Lib\Model\OptionRequestCollection;
  * @codingStandardsIgnoreEnd
  *
  * @category Mapper
- * @package  Afrikpaysas\Lib\Mapper
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Mapper/OptionRequestMapper.php

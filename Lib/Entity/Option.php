@@ -5,23 +5,23 @@
  * Option.
  *
  * @category Entity
- * @package  Afrikpaysas\Lib\Entity
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Entity/Option.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Entity;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity;
 
-use Afrikpaysas\Lib\Model\BaseEntity;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\BaseEntity;
 
 /**
  * PHP Version 8.1
  * AppResponse.
  *
  * @category Entity
- * @package  Afrikpaysas\Lib\Entity
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Entity/Option.php

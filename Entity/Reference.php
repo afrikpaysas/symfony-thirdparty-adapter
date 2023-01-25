@@ -5,25 +5,25 @@
  * Reference.
  *
  * @category Entity
- * @package  Afrikpaysas\Entity
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Entity/Reference.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Entity;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Entity;
 
-use Afrikpaysas\Repository\ReferenceRepository;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Repository\ReferenceRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Afrikpaysas\Lib\Entity\Reference as BaseReference;
-use Afrikpaysas\Lib\Model\Status;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Reference as BaseReference;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
 
 /**
  * Reference.
  *
  * @category Entity
- * @package  Afrikpaysas\Entity
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Entity
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Entity/Reference.php

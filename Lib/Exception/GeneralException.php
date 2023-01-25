@@ -5,22 +5,22 @@
  * GeneralException.
  *
  * @category Exception
- * @package  Afrikpaysas\Lib\Exception
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Exception/GeneralException.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Exception;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception;
 
-use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 
 /**
  * GeneralException.
  *
  * @category Exception
- * @package  Afrikpaysas\Lib\Exception
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Exception/GeneralException.php

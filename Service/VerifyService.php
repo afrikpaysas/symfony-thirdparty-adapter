@@ -5,31 +5,31 @@
  * VerifyService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/VerifyService.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Service;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
-use Afrikpaysas\Lib\Dto\VerifyRequest;
-use Afrikpaysas\Lib\Exception\BadEmailException;
-use Afrikpaysas\Lib\Exception\BadPhoneException;
-use Afrikpaysas\Lib\Exception\BadReferenceException;
-use Afrikpaysas\Lib\Exception\InvalidAmountException;
-use Afrikpaysas\Lib\Exception\InvalidAmountOptionException;
-use Afrikpaysas\Lib\Exception\InvalidOptionException;
-use Afrikpaysas\Lib\Exception\ReferenceApiDisabledException;
-use Afrikpaysas\Lib\Model\AppConstants;
-use Afrikpaysas\Lib\Service\VerifyService as BaseVerifyService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\VerifyRequest;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\BadEmailException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\BadPhoneException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\BadReferenceException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidAmountException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidAmountOptionException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidOptionException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\ReferenceApiDisabledException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\VerifyService as BaseVerifyService;
 
 /**
  * VerifyService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/VerifyService.php

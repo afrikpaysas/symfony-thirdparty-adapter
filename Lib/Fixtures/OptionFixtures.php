@@ -5,21 +5,21 @@
  * OptionFixtures.
  *
  * @category Exception
- * @package  Afrikpaysas\Lib\Fixtures
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Fixtures
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Fixtures/OptionFixtures.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Fixtures;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Fixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use Afrikpaysas\Lib\Dto\OptionRequest;
-use Afrikpaysas\Lib\Dto\OptionRequestCollectionRequest;
-use Afrikpaysas\Lib\Model\AppConstants;
-use Afrikpaysas\Lib\Service\OptionService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequest;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequestCollectionRequest;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\OptionService;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Yaml\Yaml;
 
@@ -27,7 +27,7 @@ use Symfony\Component\Yaml\Yaml;
  * OptionFixtures.
  *
  * @category Fixtures
- * @package  Afrikpaysas\Lib\Fixtures
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Fixtures
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Fixtures/OptionFixtures.php

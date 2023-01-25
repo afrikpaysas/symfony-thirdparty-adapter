@@ -5,20 +5,20 @@
  * OptionRepository.
  *
  * @category Repository
- * @package  Afrikpaysas\Repository
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Repository
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Repository/OptionRepository.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Repository;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Repository;
 
-use Afrikpaysas\Entity\Option;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Option;
 use Doctrine\Persistence\ManagerRegistry;
-use Afrikpaysas\Lib\Model\AppConstants;
-use Afrikpaysas\Lib\Model\OptionCollection;
-use Afrikpaysas\Lib\Repository\OptionRepository as BaseOptionRepository;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\OptionCollection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\OptionRepository as BaseOptionRepository;
 
 /**
  * OptionRepository.
@@ -27,7 +27,7 @@ use Afrikpaysas\Lib\Repository\OptionRepository as BaseOptionRepository;
  * @template-implements BaseOptionRepository
  *
  * @category Repository
- * @package  Afrikpaysas\Repository
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Repository
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Repository/OptionRepository.php
@@ -146,7 +146,7 @@ SELECT
     r.reference,
     r.status,
     DATE_FORMAT(r.createdDate, '%Y-%m-%d %H:%i:%s') as date
-FROM Afrikpaysas\Entity\Option r 
+FROM Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Option r 
 $where ORDER BY r.amount ASC
 EOF;
 

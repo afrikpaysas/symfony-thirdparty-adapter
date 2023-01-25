@@ -5,26 +5,26 @@
  * ReferenceMapper.
  *
  * @category Mapper
- * @package  Afrikpaysas\Mapper
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Mapper/ReferenceMapper.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Mapper;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Mapper;
 
-use Afrikpaysas\Entity\Reference;
-use Afrikpaysas\Lib\Dto\ReferenceDTO;
-use Afrikpaysas\Lib\Mapper\ReferenceMapper as BaseReferenceMapper;
-use Afrikpaysas\Lib\Model\ReferenceCollection;
-use Afrikpaysas\Lib\Model\ReferenceDTOCollection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Reference;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ReferenceDTO;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\ReferenceMapper as BaseReferenceMapper;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ReferenceCollection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ReferenceDTOCollection;
 
 /**
  * ReferenceMapper.
  *
  * @category Mapper
- * @package  Afrikpaysas\Mapper
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Mapper/ReferenceApiResponseMapper.php

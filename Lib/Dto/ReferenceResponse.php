@@ -5,26 +5,26 @@
  * ReferenceResponse.
  *
  * @category Dto
- * @package  Afrikpaysas\Lib\Dto
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Dto/ReferenceResponse.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Dto;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto;
 
-use Afrikpaysas\Lib\Model\AppConstants;
-use Afrikpaysas\Lib\Model\Collection;
-use Afrikpaysas\Lib\Model\OptionDTOCollection;
-use Afrikpaysas\Lib\Model\ReferenceResponse as ModelReferenceResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Collection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\OptionDTOCollection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ReferenceResponse as ModelReferenceResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * ReferenceResponse.
  *
  * @category Dto
- * @package  Afrikpaysas\Lib\Dto
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Dto/ReferenceResponse.php

@@ -5,29 +5,29 @@
  * PaymentProcessService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/PaymentProcessService.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Service;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
-use Afrikpaysas\Dto\ProviderPaymentResponse;
-use Afrikpaysas\Model\AppConstants as LocalAppConstants;
-use Afrikpaysas\Lib\Dto\ProviderPaymentResponse as BaseProviderPaymentResponse;
-use Afrikpaysas\Lib\Entity\Transaction as BaseTransaction;
-use Afrikpaysas\Lib\Exception\PaymentAPIException;
-use Afrikpaysas\Lib\Service\HttpService;
-use Afrikpaysas\Lib\Service\PaymentProcessService as BasePaymentProcessService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Dto\ProviderPaymentResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Model\AppConstants as LocalAppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderPaymentResponse as BaseProviderPaymentResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction as BaseTransaction;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentAPIException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\HttpService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentProcessService as BasePaymentProcessService;
 
 /**
  * PHP Version 8.1
  * PaymentProcessService.
  *
  * @category Service
- * @package  Afrikpaysas\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/PaymentProcessService.php

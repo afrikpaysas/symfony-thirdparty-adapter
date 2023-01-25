@@ -5,14 +5,14 @@
  * BasicConverter.
  *
  * @category Converter
- * @package  Afrikpaysas\Lib\Converter
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Converter
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Converter/BasicConverter.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Converter;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Converter;
 
 //@codingStandardsIgnoreStart
 
@@ -29,7 +29,7 @@ use Symfony\Component\HttpFoundation\Request;
  * BasicConverter.
  *
  * @category Converter
- * @package  Afrikpaysas\Lib\Converter
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Converter
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Converter/BasicConverter.php

@@ -5,22 +5,22 @@
  * ConfigController.
  *
  * @category Controller
- * @package  Afrikpaysas\Controller
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/ConfigController.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Controller;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Route;
-use Afrikpaysas\Lib\Controller\ConfigController as BaseConfigController;
-use Afrikpaysas\Lib\Dto\ArrayResponse;
-use Afrikpaysas\Lib\Exception\ConfigException;
-use Afrikpaysas\Lib\Model\AppConstants;
-use Afrikpaysas\Lib\Model\SystemExceptionMessage;
-use Afrikpaysas\Lib\Service\UtilService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\ConfigController as BaseConfigController;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ArrayResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\ConfigException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\SystemExceptionMessage;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\UtilService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use \ReflectionClass;
 
@@ -28,7 +28,7 @@ use \ReflectionClass;
  * ConfigController.
  *
  * @category Controller
- * @package  Afrikpaysas\Controller
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/ConfigController.php

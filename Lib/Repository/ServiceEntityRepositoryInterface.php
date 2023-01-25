@@ -5,21 +5,21 @@
  * ServiceEntityRepositoryInterface.
  *
  * @category Model
- * @package  Afrikpaysas\Lib\Model
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/ServiceEntityRepositoryInterface.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Repository;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository;
 
 // @codingStandardsIgnoreStart
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface as BaseRepositoryInterface;
 // @codingStandardsIgnoreEnd
 use Doctrine\DBAL\LockMode;
-use Afrikpaysas\Lib\Exception\EntityNotFoundException;
-use Afrikpaysas\Lib\Model\Collection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\EntityNotFoundException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Collection;
 
 /**
  * ServiceEntityRepositoryInterface.
@@ -27,7 +27,7 @@ use Afrikpaysas\Lib\Model\Collection;
  * @template T of object
  *
  * @category Model
- * @package  Afrikpaysas\Lib\Model
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Model/ReferenceRepository.php

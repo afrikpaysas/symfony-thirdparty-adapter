@@ -5,17 +5,17 @@
  * OptionRequestConverter.
  *
  * @category Converter
- * @package  Afrikpaysas\Lib\Converter
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Converter
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Converter/OptionRequestConverter.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Converter;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Converter;
 
-use Afrikpaysas\Lib\Dto\OptionRequest;
-use Afrikpaysas\Lib\Model\AppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequest;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -24,7 +24,7 @@ use Symfony\Component\HttpFoundation\Request;
  * OptionRequestConverter.
  *
  * @category Converter
- * @package  Afrikpaysas\Lib\Converter
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Converter
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Converter/OptionRequestConverter.php

@@ -5,14 +5,14 @@
  * BaseEntityMapper.
  *
  * @category Mapper
- * @package  Afrikpaysas\Lib\Mapper
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Mapper/BaseEntityMapper.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Mapper;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper;
 
 /**
  * BaseEntityMapper.
@@ -25,7 +25,7 @@ namespace Afrikpaysas\Lib\Mapper;
  * @template-extends Mapper<T, K, Z, S>
  *
  * @category Mapper
- * @package  Afrikpaysas\Lib\Mapper
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Mapper/BaseEntityMapper.php

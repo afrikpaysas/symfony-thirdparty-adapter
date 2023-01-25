@@ -5,22 +5,22 @@
  * ProviderPaymentResponse.
  *
  * @category Dto
- * @package  Afrikpaysas\Dto
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Dto
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Dto/ProviderPaymentResponse.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Dto;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Dto;
 
-use Afrikpaysas\Lib\Dto\ProviderPaymentResponse as BaseProviderPaymentResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderPaymentResponse as BaseProviderPaymentResponse;
 
 /**
  * ProviderPaymentResponse.
  *
  * @category Dto
- * @package  Afrikpaysas\Dto
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Dto
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Dto/ProviderPaymentResponse.php

@@ -5,23 +5,23 @@
  * TransactionRepository.
  *
  * @category Repository
- * @package  Afrikpaysas\Repository
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Repository
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Repository/TransactionRepository.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Repository;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Repository;
 
-use Afrikpaysas\Entity\Transaction;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Transaction;
 use Doctrine\Persistence\ManagerRegistry;
-use Afrikpaysas\Lib\Entity\Transaction as BaseTransaction;
-use Afrikpaysas\Lib\Exception\EntityNotFoundException;
-use Afrikpaysas\Lib\Model\AppConstants;
-use Afrikpaysas\Lib\Model\Status;
-use Afrikpaysas\Lib\Model\TransactionCollection;
-use Afrikpaysas\Lib\Repository\TransactionRepository as BaseTransactionRepository;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction as BaseTransaction;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\EntityNotFoundException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\TransactionCollection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\TransactionRepository as BaseTransactionRepository;
 
 /**
  * TransactionRepository.
@@ -30,7 +30,7 @@ use Afrikpaysas\Lib\Repository\TransactionRepository as BaseTransactionRepositor
  * @template-implements BaseTransactionRepository
  *
  * @category Repository
- * @package  Afrikpaysas\Repository
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Repository
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Repository/TransactionRepository.php

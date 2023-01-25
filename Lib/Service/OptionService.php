@@ -5,26 +5,26 @@
  * OptionService.
  *
  * @category Service
- * @package  Afrikpaysas\Lib\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Service/OptionService.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Service;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service;
 
-use Afrikpaysas\Lib\Dto\OptionRequest;
-use Afrikpaysas\Lib\Dto\OptionRequestCollectionRequest;
-use Afrikpaysas\Lib\Entity\Option;
-use Afrikpaysas\Lib\Model\Collection;
-use Afrikpaysas\Lib\Model\OptionCollection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequest;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequestCollectionRequest;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Option;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Collection;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\OptionCollection;
 
 /**
  * OptionService.
  *
  * @category Service
- * @package  Afrikpaysas\Lib\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Service/OptionService.php

@@ -5,22 +5,22 @@
  * BalanceController.
  *
  * @category Controller
- * @package  Afrikpaysas\Controller
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/BalanceController.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Controller;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Get;
 use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\Annotations\Route;
-use Afrikpaysas\Lib\Controller\BalanceController as BaseBalanceController;
-use Afrikpaysas\Lib\Dto\BalanceResponse;
-use Afrikpaysas\Lib\Model\BasicResponse as ModelBasicResponse;
-use Afrikpaysas\Lib\Service\BalanceService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\BalanceController as BaseBalanceController;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\BalanceResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\BasicResponse as ModelBasicResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\BalanceService;
 use Nelmio\ApiDocBundle\Annotation\Security;
 use Nelmio\ApiDocBundle\Model\Model;
 use OpenApi\Annotations as OA;
@@ -30,7 +30,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  * BalanceController.
  *
  * @category Controller
- * @package  Afrikpaysas\Controller
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/BalanceController.php

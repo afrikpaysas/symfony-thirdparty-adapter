@@ -5,29 +5,29 @@
  * VerifyService.
  *
  * @category Service
- * @package  Afrikpaysas\Lib\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Service/VerifyService.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-namespace Afrikpaysas\Lib\Service;
+namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service;
 
-use Afrikpaysas\Lib\Dto\VerifyRequest;
-use Afrikpaysas\Lib\Exception\BadEmailException;
-use Afrikpaysas\Lib\Exception\BadPhoneException;
-use Afrikpaysas\Lib\Exception\BadReferenceException;
-use Afrikpaysas\Lib\Exception\InvalidAmountException;
-use Afrikpaysas\Lib\Exception\InvalidAmountOptionException;
-use Afrikpaysas\Lib\Exception\InvalidOptionException;
-use Afrikpaysas\Lib\Exception\ReferenceApiDisabledException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\VerifyRequest;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\BadEmailException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\BadPhoneException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\BadReferenceException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidAmountException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidAmountOptionException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidOptionException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\ReferenceApiDisabledException;
 
 /**
  * VerifyService.
  *
  * @category Service
- * @package  Afrikpaysas\Lib\Service
+ * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Lib/Service/VerifyService.php
