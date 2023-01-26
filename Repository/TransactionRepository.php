@@ -44,16 +44,18 @@ class TransactionRepository extends Repository implements BaseTransactionReposit
     /**
      * Constructor.
      *
-     * @param ManagerRegistry $registry registry
+     * @param ManagerRegistry $registry        registry
+     * @param string          $entityClass     entityClass
+     * @param string          $collectionClass collectionClass
      *
      * @return void
      */
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(ManagerRegistry $registry, string $entityClass = Transaction::class, string $collectionClass = TransactionCollection::class)
     {
         parent::__construct(
             $registry,
-            Transaction::class,
-            TransactionCollection::class
+            $entityClass,
+            $collectionClass
         );
     }
 

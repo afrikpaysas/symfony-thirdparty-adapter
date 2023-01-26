@@ -41,13 +41,19 @@ class ReferenceRepository extends Repository implements BaseReferenceRepository
     /**
      * Constructor.
      *
-     * @param ManagerRegistry $registry registry
+     * @param ManagerRegistry $registry        registry
+     * @param string          $entityClass     entityClass
+     * @param string          $collectionClass collectionClass
      *
      * @return void
      */
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(ManagerRegistry $registry, string $entityClass = Reference::class, string $collectionClass = ReferenceCollection::class)
     {
-        parent::__construct($registry, Reference::class, ReferenceCollection::class);
+        parent::__construct(
+            $registry,
+            $entityClass,
+            $collectionClass
+        );
     }
 
     /**

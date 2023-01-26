@@ -40,13 +40,19 @@ class ParameterRepository extends Repository implements BaseParameterRepository
     /**
      * Constructor.
      *
-     * @param ManagerRegistry $registry registry
+     * @param ManagerRegistry $registry        registry
+     * @param string          $entityClass     entityClass
+     * @param string          $collectionClass collectionClass
      *
      * @return void
      */
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(ManagerRegistry $registry, string $entityClass = Parameter::class, string $collectionClass = ParameterCollection::class)
     {
-        parent::__construct($registry, Parameter::class, ParameterCollection::class);
+        parent::__construct(
+            $registry,
+            $entityClass,
+            $collectionClass
+        );
     }
 
     /**

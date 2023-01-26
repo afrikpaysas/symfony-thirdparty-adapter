@@ -39,13 +39,19 @@ class OptionRepository extends Repository implements BaseOptionRepository
     /**
      * Constructor.
      *
-     * @param ManagerRegistry $registry registry
+     * @param ManagerRegistry $registry        registry
+     * @param string          $entityClass     entityClass
+     * @param string          $collectionClass collectionClass
      *
      * @return void
      */
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(ManagerRegistry $registry, string $entityClass = Option::class, string $collectionClass = OptionCollection::class)
     {
-        parent::__construct($registry, Option::class, OptionCollection::class);
+        parent::__construct(
+            $registry,
+            $entityClass,
+            $collectionClass
+        );
     }
 
     /**
