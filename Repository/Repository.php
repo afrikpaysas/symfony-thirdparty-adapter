@@ -159,7 +159,7 @@ class Repository extends ServiceEntityRepository implements BaseRepoInterface
 
         $this->_em->flush();
 
-        return $tab;
+        return new $this->collectionClass($tab) ;
     }
 
     /**
