@@ -104,10 +104,12 @@ class Repository extends ServiceEntityRepository implements BaseRepoInterface
      */
     public function saveWith(array $parameters)
     {
-        $entity = new $this->_entityName();
+        $entity = new $this->entityClass();
 
         foreach ($parameters as $key => $value) {
-            $entity->$key = $value;
+            if (property_exists($entity, $key) && null != $value) {
+                $entity->$key = $value;
+            }
         }
 
         return $this->save($entity);
@@ -201,9 +203,9 @@ class Repository extends ServiceEntityRepository implements BaseRepoInterface
      * FindOneWith.
      * Finds a single entity by a set of criteria.
      *
-     * @param array     $criteria criteria
-     * @param bool      $throw    throw
-     * @param array|nul $orderBy  orderBy
+     * @param array      $criteria criteria
+     * @param bool       $throw    throw
+     * @param array|null $orderBy  orderBy
      *
      * @return T
      *
@@ -236,11 +238,11 @@ class Repository extends ServiceEntityRepository implements BaseRepoInterface
      * FindWith.
      * Finds entities by a set of criteria.
      *
-     * @param array     $criteria criteria
-     * @param bool      $throw    throw
-     * @param array|nul $orderBy  orderBy
-     * @param int|null  $limit    limit
-     * @param int|null  $offset   offset
+     * @param array      $criteria criteria
+     * @param bool       $throw    throw
+     * @param array|null $orderBy  orderBy
+     * @param int|null   $limit    limit
+     * @param int|null   $offset   offset
      *
      * @return Collection<T>
      *
@@ -398,7 +400,19 @@ class Repository extends ServiceEntityRepository implements BaseRepoInterface
             return $this->generateEntity($entity);
         }
 
-        return $entity;
+        $object = $entity;
+
+        if($this->entityClass != $entity::class) {
+            $object = new $this->entityClass();
+
+            foreach (get_object_vars($entity) as $key => $value) {
+                if (property_exists($object, $key) && null != $value) {
+                    $object->$key = $value;
+                }
+            }
+        }
+
+        return $object;
     }
 
     /**
