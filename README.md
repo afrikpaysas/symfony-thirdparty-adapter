@@ -62,12 +62,12 @@ framework:
 Then, configure the routes by adding it in the `config/routes.yaml` file of your project:
 
 ```yaml
-# config/routes.yaml
+# config/routes_app.yaml
 
 #......
 
 afrikpaysas_thirdparty_adapter:
-  resource: '@AfrikpaysasSymfonyThirdpartyAdapterBundle/Resources/config/routes.yaml'
+  resource: '@AfrikpaysasSymfonyThirdpartyAdapterBundle/Resources/config/routes_app.yaml'
 
 #......
 ```

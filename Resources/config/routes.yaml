@@ -1,49 +1,27 @@
-afrikpaysas_symfony_thirdparty_adapter_balance:
-  path: /api/balance
-  controller: Afrikpaysas\SymfonyThirdpartyAdapter\Controller\BalanceController::balance
-  methods : GET
+afrikpaysas_symfony_thirdparty_adapter_app_default:
+  path: /
+  controller: Afrikpaysas\SymfonyThirdpartyAdapter\Controller\AppController::default
 
-afrikpaysas_symfony_thirdparty_adapter_check:
-  path: /api/verify
-  controller: Afrikpaysas\SymfonyThirdpartyAdapter\Controller\VerifyController::verify
-  methods : POST
+afrikpaysas_symfony_thirdparty_adapter_app_error:
+  path: /error
+  controller: Afrikpaysas\SymfonyThirdpartyAdapter\Controller\ErrorController::error
 
-afrikpaysas_symfony_thirdparty_adapter_confirm:
-  path: /api/confirm
-  controller: Afrikpaysas\SymfonyThirdpartyAdapter\Controller\ConfirmController::confirm
-  methods : POST
+afrikpaysas_symfony_thirdparty_adapter_config_parameters:
+  path: /config/parameters
+  controller: Afrikpaysas\SymfonyThirdpartyAdapter\Controller\ConfigController::parameters
 
-afrikpaysas_symfony_thirdparty_adapter_cancel:
-  path: /api/cancel/{transactionId}
-  controller: Afrikpaysas\SymfonyThirdpartyAdapter\Controller\CancelController::cancel
-  methods : POST
+afrikpaysas_symfony_thirdparty_adapter_config_exceptions:
+  path: /config/exceptions
+  controller: Afrikpaysas\SymfonyThirdpartyAdapter\Controller\ConfigController::exceptions
 
-afrikpaysas_symfony_thirdparty_adapter_option_create:
-  path: /api/option
-  controller: Afrikpaysas\SymfonyThirdpartyAdapter\Controller\OptionController::create
-  methods : POST
+app.swagger:
+  path: /config/routes
+  methods: GET
+  defaults: { _controller: nelmio_api_doc.controller.swagger }
 
-afrikpaysas_symfony_thirdparty_adapter_option_list:
-  path: /api/option
-  controller: Afrikpaysas\SymfonyThirdpartyAdapter\Controller\OptionController::list
-  methods : GET
-
-afrikpaysas_symfony_thirdparty_adapter_payment:
-  path: /api/payment
-  controller: Afrikpaysas\SymfonyThirdpartyAdapter\Controller\PaymentController::pay
-  methods : POST
-
-afrikpaysas_symfony_thirdparty_adapter_reference_list_options:
-  path: /api/reference/{reference}/option
-  controller: Afrikpaysas\SymfonyThirdpartyAdapter\Controller\ReferenceController::listReference
-  methods : GET
-
-afrikpaysas_symfony_thirdparty_adapter_reference_reference:
-  path: /api/reference/{reference}
-  controller: Afrikpaysas\SymfonyThirdpartyAdapter\Controller\ReferenceController::reference
-  methods : GET
-
-afrikpaysas_symfony_thirdparty_adapter_reference_status:
-  path: /api/status
-  controller: Afrikpaysas\SymfonyThirdpartyAdapter\Controller\StatusController::status
-  methods : POST
+## Requires the Asset component and the Twig bundle
+## $ composer require twig asset
+app.swagger_ui:
+  path: /api/doc
+  methods: GET
+  defaults: { _controller: nelmio_api_doc.controller.swagger_ui }
