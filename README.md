@@ -1,6 +1,10 @@
 # Afrikpay symfony-thirdparty-adapter
 
 This Bundle is used for implement a symfony third party adapter.
+For better understanding use of this bundle, you can download 
+sample project. see
+
+https://github.com/afrikpaysas/symfony-thirdparty-adapter-console
 
 Installation
 ============
@@ -67,7 +71,10 @@ Then, configure the routes by adding it in the `config/routes.yaml` file of your
 #......
 
 afrikpaysas_thirdparty_adapter:
-  resource: '@AfrikpaysasSymfonyThirdpartyAdapterBundle/Resources/config/routes_app.yaml'
+  resource: '@AfrikpaysasSymfonyThirdpartyAdapterBundle/Resources/config/routes.yaml'
+
+#afrikpaysas_thirdparty_adapter_app:
+#  resource: '@AfrikpaysasSymfonyThirdpartyAdapterBundle/Resources/config/routes_app.yaml'
 
 #......
 ```
