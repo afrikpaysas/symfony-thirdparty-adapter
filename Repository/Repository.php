@@ -88,10 +88,11 @@ class Repository extends ServiceEntityRepository implements BaseRepoInterface
      */
     public function save($entity)
     {
-        $this->_em->persist($this->generateEntity($entity));
+        $object = $this->generateEntity($entity);
+        $this->_em->persist($object);
         $this->_em->flush();
 
-        return $entity;
+        return $object;
     }
 
     /**
@@ -149,13 +150,16 @@ class Repository extends ServiceEntityRepository implements BaseRepoInterface
      */
     public function saveList($entities)
     {
-        foreach ($entities->all() as $value) {
-            $this->_em->persist($this->generateEntity($value));
+        $tab = $entities->all();
+
+        foreach ($tab as $key => $value) {
+            $tab[$key] = $this->generateEntity($value);
+            $this->_em->persist($tab[$key]);
         }
 
         $this->_em->flush();
 
-        return $entities;
+        return $tab;
     }
 
     /**
