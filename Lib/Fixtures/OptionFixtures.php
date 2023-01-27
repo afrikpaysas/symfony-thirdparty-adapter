@@ -4,7 +4,7 @@
  * PHP Version 8.1
  * OptionFixtures.
  *
- * @category Exception
+ * @category Fixtures
  * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Fixtures
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
@@ -36,7 +36,7 @@ use Symfony\Component\Yaml\Yaml;
  *
  * @psalm-suppress PropertyNotSetInConstructor
  */
-class OptionFixtures extends Fixture
+trait OptionFixtures
 {
     protected OptionService $optionService;
     protected KernelInterface $kernel;
