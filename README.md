@@ -96,7 +96,7 @@ nelmio_api_doc:
 #......
 ```
 
-### Step 5: Configure the .env files
+### Step 6: Configure the .env files
 
 Then, configure the .env files by adding it in the `.env` file of your project:
 
@@ -198,7 +198,7 @@ SET_BALANCE_AFTER_PAYMENT=true
 OPTIONS_FILE="/config/options.yaml"
 ```
 
-### Step 6: Run the application
+### Step 7: Run the application
 
 Then, run the application:
 
