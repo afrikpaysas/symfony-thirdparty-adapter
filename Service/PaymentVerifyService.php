@@ -15,15 +15,18 @@
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentRequest;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateApplicationIdE;
+// @codingStandardsIgnoreLine
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateApplicationIdException as DuplicateApplicationIdE;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateExternalIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateFinancialIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateProviderIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateRequestIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentException;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredAccountNameExc;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredAccountNumberExc;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredApplicationIdExc;
+// @codingStandardsIgnoreStart
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredAccountNameException as RequiredAccountNameExc;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredAccountNumberException as RequiredAccountNumberExc;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredApplicationIdException as RequiredApplicationIdExc;
+// @codingStandardsIgnoreEnd
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredExternalIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredFinancialIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredProviderIdException;

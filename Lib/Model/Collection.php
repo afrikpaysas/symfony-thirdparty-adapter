@@ -15,7 +15,8 @@
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\CollectionCastException;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidTypeCollectionExc;
+// @codingStandardsIgnoreLine
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidTypeCollectionException as InvalidTypeCollectionExc;
 
 /**
  * Collection.
