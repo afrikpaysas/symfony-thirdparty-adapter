@@ -32,7 +32,7 @@ jobs:
       run: composer global require phpmd/phpmd
     - name: Install PHPCS
       run: composer global require squizlabs/php_codesniffer
-    - name: Install PSALM
+    - name: Run Code Review with phpcs
       run: ~/.composer/vendor/bin/phpcs --ignore=vendor ./
     - name: Run Code Review with phpmd
       run: ~/.composer/vendor/bin/phpmd Controller,DependencyInjection,Dto,Entity,Lib,Mapper,Model,Repository,Service,AfrikpaysasSymfonyThirdpartyAdapterBundle.php text cleancode,codesize,design,unusedcode,naming,controversial
