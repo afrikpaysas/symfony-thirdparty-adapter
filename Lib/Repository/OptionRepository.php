@@ -20,8 +20,6 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\OptionCollection;
 /**
  * OptionRepository.
  *
- * @template T of object
- *
  * @template-extends ServiceEntityRepositoryInterface<Option>
  *
  * @category Model

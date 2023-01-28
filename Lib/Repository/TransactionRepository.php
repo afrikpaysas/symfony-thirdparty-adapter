@@ -22,8 +22,6 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
 /**
  * TransactionRepository.
  *
- * @template T of object
- *
  * @template-extends ServiceEntityRepositoryInterface<Transaction>
  *
  * @category Model

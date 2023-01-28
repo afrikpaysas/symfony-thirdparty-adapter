@@ -20,8 +20,6 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\EntityNotFoundException;
 /**
  * ParameterRepository.
  *
- * @template T of object
- *
  * @template-extends ServiceEntityRepositoryInterface<Parameter>
  *
  * @category Model

@@ -22,8 +22,6 @@ use PHPUnit\Util\Exception;
 /**
  * ReferenceRepository.
  *
- * @template T of object
- *
  * @template-extends ServiceEntityRepositoryInterface<Reference>
  *
  * @category Model
