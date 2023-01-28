@@ -20,7 +20,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RegulateException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\SystemExceptionMessage;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentErrorService as BasePaymentErrorService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentErrorService as PayS;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
 
 /**
@@ -34,7 +34,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-class PaymentErrorService implements BasePaymentErrorService
+class PaymentErrorService implements PayS
 {
     protected TransactionService $transactionService;
 

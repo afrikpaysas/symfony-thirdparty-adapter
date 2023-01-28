@@ -17,7 +17,7 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 use FOS\RestBundle\Controller\Annotations\Get;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\Annotations\View;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\ReferenceController as BaseRefController;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\ReferenceController as RfC;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionListResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ReferenceResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
@@ -43,7 +43,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  * @psalm-suppress PropertyNotSetInConstructor
  */
 #[Route('/api/reference')]
-class ReferenceController extends AbstractController implements BaseRefController
+class ReferenceController extends AbstractController implements RfC
 {
     protected OptionService $optionService;
     protected ReferenceService $referenceService;

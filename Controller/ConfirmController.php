@@ -16,7 +16,7 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\Annotations\Route;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\ConfirmController as BaseConfirmController;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\ConfirmController as ConCtrl;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ConfirmRequest;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
@@ -43,7 +43,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  * @psalm-suppress PropertyNotSetInConstructor
  */
 #[Route('/api/confirm')]
-class ConfirmController extends AbstractController implements BaseConfirmController
+class ConfirmController extends AbstractController implements ConCtrl
 {
     protected ConfirmService $confirmService;
     protected ReferenceService $referenceService;

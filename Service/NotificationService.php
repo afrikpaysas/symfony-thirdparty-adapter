@@ -17,7 +17,7 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction as BaseTransaction;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\MessagingService;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\NotificationService as BaseNotificationService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\NotificationService as NotfS;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\VerifyService;
 use \DateTimeZone;
@@ -34,7 +34,7 @@ use \DateTime;
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-class NotificationService implements BaseNotificationService
+class NotificationService implements NotfS
 {
     protected MessagingService $messagingService;
     protected ReferenceService $referenceService;

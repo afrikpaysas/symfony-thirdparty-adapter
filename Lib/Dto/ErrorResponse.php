@@ -14,7 +14,7 @@
  */
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto;
 
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\BasicResponse as ModelBasicResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\BasicResponse as ModelBasicResp;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
@@ -44,7 +44,7 @@ class ErrorResponse extends JsonResponse
      */
     public function __construct(int $code, string $message)
     {
-        $response = new ModelBasicResponse();
+        $response = new ModelBasicResp();
 
         $response->code = $code;
         $response->message = $message;

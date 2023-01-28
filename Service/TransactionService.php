@@ -19,7 +19,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\EntityAlReadyExistExcepti
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\EntityNotFoundException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\TransactionRepository;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService as BaseTransactionService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService as TrS;
 
 /**
  * TransactionService.
@@ -34,7 +34,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService as BaseT
  *
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
-class TransactionService implements BaseTransactionService
+class TransactionService implements TrS
 {
     protected TransactionRepository $transRepository;
 

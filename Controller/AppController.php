@@ -15,7 +15,7 @@
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Route;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\AppController as BaseAppController;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\AppController as BaseAppCtrl;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\AppResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -31,7 +31,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 #[Route('/')]
-class AppController extends AbstractController implements BaseAppController
+class AppController extends AbstractController implements BaseAppCtrl
 {
     /**
      * Default.

@@ -17,7 +17,7 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Mapper\ReferenceApiResponseMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Model\AppConstants as LocalAppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\Reference as ReferenceDTO;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ReferenceApiResponse as BaseReferenceApiResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ReferenceApiResponse as BRfRep;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Reference;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Reference as EntityReference;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\BadApiResponse;
@@ -30,7 +30,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\ReferenceRepository;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\HttpService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\OptionService;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService as BaseReferenceService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService as RefS;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\UtilService;
 
 /**
@@ -46,7 +46,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\UtilService;
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
-class ReferenceService implements BaseReferenceService
+class ReferenceService implements RefS
 {
     protected ReferenceRepository $referenceRepository;
     protected OptionService $optionService;
@@ -203,7 +203,7 @@ class ReferenceService implements BaseReferenceService
      * @param string     $referenceNumber referenceNumber
      * @param array|null $data            data
      *
-     * @return BaseReferenceApiResponse
+     * @return BRfRep
      *
      * @throws BadApiResponse|PaymentAPIException|ReferenceNotFoundException
      *
@@ -213,7 +213,7 @@ class ReferenceService implements BaseReferenceService
     public function generateReferenceResponse(
         string $referenceNumber,
         ?array $data
-    ): BaseReferenceApiResponse {
+    ): BRfRep {
         $data = json_decode($data['result'] ?? '');
 
         if (is_object($data)) {

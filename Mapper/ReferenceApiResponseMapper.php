@@ -16,7 +16,7 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Mapper;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Reference;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ReferenceApiResponse;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\ReferenceApiResponseMapper as BaseRefApiRespMapper;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\ReferenceApiResponseMapper as AM;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ReferenceApiResponseCollection;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ReferenceCollection;
 
@@ -37,7 +37,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ReferenceCollection;
  * @template-extends Mapper<ReferenceApiResponse, Reference, ReferenceApiResponseCollection, ReferenceCollection>
  * @codingStandardsIgnoreEnd
  */
-class ReferenceApiResponseMapper extends Mapper implements BaseRefApiRespMapper
+class ReferenceApiResponseMapper extends Mapper implements AM
 {
     /**
      * Constructor.

@@ -16,7 +16,7 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\Annotations\Route;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\StatusController as BaseStatusController;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\StatusController as StCtrl;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\StatusRequest;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
@@ -44,7 +44,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  * @psalm-suppress PropertyNotSetInConstructor
  */
 #[Route('/api/status')]
-class StatusController extends AbstractController implements BaseStatusController
+class StatusController extends AbstractController implements StCtrl
 {
     protected PaymentService $paymentService;
     protected StatusService $statusService;

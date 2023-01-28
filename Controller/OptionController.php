@@ -18,7 +18,7 @@ use FOS\RestBundle\Controller\Annotations\Get;
 use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\Controller\Annotations\View;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\OptionController as BaseOptionController;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\OptionController as OptCtrl;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionListResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequest;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionResponse;
@@ -44,7 +44,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  * @psalm-suppress PropertyNotSetInConstructor
  */
 #[Route('/api/option')]
-class OptionController extends AbstractController implements BaseOptionController
+class OptionController extends AbstractController implements OptCtrl
 {
     protected OptionService $optionService;
     protected OptionMapper $optionMapper;

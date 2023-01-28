@@ -14,7 +14,7 @@
  */
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Mapper;
 
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\BaseEntityMapper as BaseBaseEntityMapper;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\BaseEntityMapper as BaseEntityM;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 
 /**
@@ -34,9 +34,9 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
  * @template S of object
  *
  * @template-extends    Mapper<T, K, Z, S>
- * @template-implements BaseBaseEntityMapper<T, K, Z, S>
+ * @template-implements BaseEntityM<T, K, Z, S>
  */
-class BaseEntityMapper extends Mapper implements BaseBaseEntityMapper
+class BaseEntityMapper extends Mapper implements BaseEntityM
 {
     /**
      * Constructor.

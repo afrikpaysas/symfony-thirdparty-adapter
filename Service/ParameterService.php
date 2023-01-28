@@ -19,7 +19,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Parameter as EntityParameter;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\ParameterEnvNotFoundException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\ParameterNotFoundException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\ParameterRepository;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ParameterService as BaseParameterService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ParameterService as BaseParamS;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 /**
@@ -33,7 +33,7 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-class ParameterService implements BaseParameterService
+class ParameterService implements BaseParamS
 {
     protected ParameterRepository $parameterRepository;
     protected ParameterBagInterface $parameterBag;

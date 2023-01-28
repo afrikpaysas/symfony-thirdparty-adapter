@@ -21,13 +21,13 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\EntityNotFoundException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\TransactionCollection;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\TransactionRepository as BaseTransactionRepository;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\TransactionRepository as TxR;
 
 /**
  * TransactionRepository.
  *
  * @template-extends    Repository<Transaction>
- * @template-implements BaseTransactionRepository
+ * @template-implements TxR
  *
  * @category Repository
  * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Repository
@@ -39,7 +39,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\TransactionRepository as
  *
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
-class TransactionRepository extends Repository implements BaseTransactionRepository
+class TransactionRepository extends Repository implements TxR
 {
     /**
      * Constructor.
@@ -50,8 +50,11 @@ class TransactionRepository extends Repository implements BaseTransactionReposit
      *
      * @return void
      */
-    public function __construct(ManagerRegistry $registry, string $entityClass = Transaction::class, string $collectionClass = TransactionCollection::class)
-    {
+    public function __construct(
+        ManagerRegistry $registry,
+        string $entityClass = Transaction::class,
+        string $collectionClass = TransactionCollection::class
+    ) {
         parent::__construct(
             $registry,
             $entityClass,

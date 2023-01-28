@@ -23,7 +23,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidAmountOptionExcept
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidOptionException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\ReferenceApiDisabledException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\VerifyService as BaseVerifyService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\VerifyService as VerifyServ;
 
 /**
  * VerifyService.
@@ -36,7 +36,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\VerifyService as BaseVerify
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-class VerifyService implements BaseVerifyService
+class VerifyService implements VerifyServ
 {
     protected OptionService $optionService;
 

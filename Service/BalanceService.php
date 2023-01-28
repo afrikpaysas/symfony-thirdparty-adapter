@@ -16,7 +16,7 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\BalanceApplicationException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\BalanceService as BaseBalanceService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\BalanceService as BaseBalServ;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ParameterService;
 
 /**
@@ -30,7 +30,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ParameterService;
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-class BalanceService implements BaseBalanceService
+class BalanceService implements BaseBalServ
 {
     protected ParameterService $parameterService;
 

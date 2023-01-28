@@ -14,7 +14,7 @@
  */
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Dto;
 
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ReferenceApiResponse as BaseReferenceApiResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ReferenceApiResponse as RefAR;
 
 /**
  * ReferenceApiResponse.
@@ -27,6 +27,6 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ReferenceApiResponse as BaseRef
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-class ReferenceApiResponse extends BaseReferenceApiResponse
+class ReferenceApiResponse extends RefAR
 {
 }

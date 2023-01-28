@@ -17,7 +17,7 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Collection;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\OptionDTOCollection;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ReferenceResponse as ModelReferenceResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ReferenceResponse as ModelRefRp;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
@@ -49,7 +49,7 @@ class ReferenceResponse extends JsonResponse
         ReferenceDTO $referenceDTO,
         OptionDTOCollection|Collection|null $options
     ) {
-        $response = new ModelReferenceResponse();
+        $response = new ModelRefRp();
 
         $response->code = AppConstants::SUCCESS_CODE;
         $response->message = AppConstants::SUCCESS_MESSAGE;

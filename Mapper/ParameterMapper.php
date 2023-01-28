@@ -16,7 +16,7 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Mapper;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Parameter;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ParameterDTO;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\ParameterMapper as BaseParameterMapper;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\ParameterMapper as ParamMap;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ParameterCollection;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ParameterDTOCollection;
 
@@ -35,7 +35,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ParameterDTOCollection;
  * @template-extends BaseEntityMapper<ParameterDTO, Parameter, ParameterDTOCollection, ParameterCollection>
  * @codingStandardsIgnoreEnd
  */
-class ParameterMapper extends BaseEntityMapper implements BaseParameterMapper
+class ParameterMapper extends BaseEntityMapper implements ParamMap
 {
     /**
      * Constructor.

@@ -16,11 +16,11 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Dto\ProviderPaymentResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Model\AppConstants as LocalAppConstants;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderPaymentResponse as BaseProviderPaymentResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderPaymentResponse as PrPayRp;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction as BaseTransaction;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentAPIException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\HttpService;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentProcessService as BasePaymentProcessService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentProcessService as PyProS;
 
 /**
  * PHP Version 8.1
@@ -34,7 +34,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentProcessService as Ba
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-class PaymentProcessService implements BasePaymentProcessService
+class PaymentProcessService implements PyProS
 {
     protected HttpService $httpService;
 
@@ -123,13 +123,13 @@ class PaymentProcessService implements BasePaymentProcessService
     /**
      * Decision.
      *
-     * @param BaseProviderPaymentResponse $response response
+     * @param PrPayRp $response response
      *
      * @return void
      *
      * @throws PaymentAPIException
      */
-    public function decision(BaseProviderPaymentResponse $response): void
+    public function decision(PrPayRp $response): void
     {
         $condition = LocalAppConstants::API_SUCCESS_CODE !=
             $response->providerStatus ||

@@ -25,7 +25,9 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\ListEntityNotFoundExcepti
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Collection;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\SystemExceptionMessage;
+//@codingStandardsIgnoreStart
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\ServiceEntityRepositoryInterface as BaseRepoInterface;
+//@codingStandardsIgnoreEnd
 use \DateTime;
 use \DateTimeZone;
 
@@ -159,7 +161,7 @@ class Repository extends ServiceEntityRepository implements BaseRepoInterface
 
         $this->_em->flush();
 
-        return new $this->collectionClass($tab) ;
+        return new $this->collectionClass($tab);
     }
 
     /**
@@ -406,7 +408,7 @@ class Repository extends ServiceEntityRepository implements BaseRepoInterface
 
         $object = $entity;
 
-        if($this->entityClass != $entity::class) {
+        if ($this->entityClass != $entity::class) {
             $object = new $this->entityClass();
 
             foreach (get_object_vars($entity) as $key => $value) {

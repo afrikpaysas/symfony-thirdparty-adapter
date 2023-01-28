@@ -23,7 +23,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentAPIException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\ReferencePaidException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentService as BasePaymentService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentService as BasePaymSv;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
 use \DateTimeZone;
@@ -42,7 +42,7 @@ use \DateTime;
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
-class PaymentService implements BasePaymentService
+class PaymentService implements BasePaymSv
 {
     protected TransactionService $transactionService;
     protected OptionService $optionService;

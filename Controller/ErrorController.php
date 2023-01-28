@@ -16,7 +16,7 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 
 use Doctrine\DBAL\Exception\ConnectionException;
 use FOS\RestBundle\Controller\Annotations\Route;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\ErrorController as BaseErrorController;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\ErrorController as ErCtrl;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ErrorResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\GeneralException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
@@ -37,7 +37,7 @@ use Symfony\Component\HttpKernel\Log\DebugLoggerInterface;
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 #[Route('/error')]
-class ErrorController extends AbstractController implements BaseErrorController
+class ErrorController extends AbstractController implements ErCtrl
 {
     /**
      * Error.

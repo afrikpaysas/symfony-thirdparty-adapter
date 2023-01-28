@@ -16,9 +16,8 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\Annotations\Route;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\CancelController as BaseCancelController;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\CancelController as CCCtrl;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentResponse;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\CancelException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\ReferenceMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\TransactionMapper;
@@ -42,7 +41,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  * @psalm-suppress PropertyNotSetInConstructor
  */
 #[Route('/api/cancel')]
-class CancelController extends AbstractController implements BaseCancelController
+class CancelController extends AbstractController implements CCCtrl
 {
     protected CancelService $cancelService;
     protected ReferenceService $referenceService;

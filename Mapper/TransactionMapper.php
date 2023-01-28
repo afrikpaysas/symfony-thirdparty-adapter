@@ -16,7 +16,7 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Mapper;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Transaction;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\TransactionDTO;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\TransactionMapper as BaseTransactionMapper;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\TransactionMapper as TrxM;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\TransactionCollection;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\TransactionDTOCollection;
 
@@ -35,7 +35,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\TransactionDTOCollection;
  * @template-extends    BaseEntityMapper<TransactionDTO, Transaction, TransactionDTOCollection, Transaction>
  * @codingStandardsIgnoreEnd
  */
-class TransactionMapper extends BaseEntityMapper implements BaseTransactionMapper
+class TransactionMapper extends BaseEntityMapper implements TrxM
 {
     /**
      * Constructor.

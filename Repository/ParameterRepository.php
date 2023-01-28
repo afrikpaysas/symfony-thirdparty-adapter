@@ -19,13 +19,13 @@ use Doctrine\Persistence\ManagerRegistry;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\EntityNotFoundException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ParameterCollection;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\ParameterRepository as BaseParameterRepository;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\ParameterRepository as ParRp;
 
 /**
  * ParameterRepository.
  *
  * @template-extends    Repository<Parameter>
- * @template-implements BaseParameterRepository
+ * @template-implements ParRp
  *
  * @category Repository
  * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Repository
@@ -35,7 +35,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\ParameterRepository as B
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-class ParameterRepository extends Repository implements BaseParameterRepository
+class ParameterRepository extends Repository implements ParRp
 {
     /**
      * Constructor.
@@ -46,8 +46,11 @@ class ParameterRepository extends Repository implements BaseParameterRepository
      *
      * @return void
      */
-    public function __construct(ManagerRegistry $registry, string $entityClass = Parameter::class, string $collectionClass = ParameterCollection::class)
-    {
+    public function __construct(
+        ManagerRegistry $registry,
+        string $entityClass = Parameter::class,
+        string $collectionClass = ParameterCollection::class
+    ) {
         parent::__construct(
             $registry,
             $entityClass,

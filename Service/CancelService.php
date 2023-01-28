@@ -16,7 +16,7 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\IllegalStatusCancelException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\CancelService as BaseCancelService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\CancelService as BaseService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
 
@@ -31,7 +31,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-class CancelService implements BaseCancelService
+class CancelService implements BaseService
 {
     protected TransactionService $transactionService;
     protected ReferenceService $referenceService;

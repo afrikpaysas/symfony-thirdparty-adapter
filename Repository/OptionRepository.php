@@ -18,13 +18,13 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Option;
 use Doctrine\Persistence\ManagerRegistry;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\OptionCollection;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\OptionRepository as BaseOptionRepository;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\OptionRepository as OptRp;
 
 /**
  * OptionRepository.
  *
  * @template-extends    Repository<Option>
- * @template-implements BaseOptionRepository
+ * @template-implements OptRp
  *
  * @category Repository
  * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Repository
@@ -34,7 +34,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\OptionRepository as Base
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-class OptionRepository extends Repository implements BaseOptionRepository
+class OptionRepository extends Repository implements OptRp
 {
     /**
      * Constructor.
@@ -45,8 +45,11 @@ class OptionRepository extends Repository implements BaseOptionRepository
      *
      * @return void
      */
-    public function __construct(ManagerRegistry $registry, string $entityClass = Option::class, string $collectionClass = OptionCollection::class)
-    {
+    public function __construct(
+        ManagerRegistry $registry,
+        string $entityClass = Option::class,
+        string $collectionClass = OptionCollection::class
+    ) {
         parent::__construct(
             $registry,
             $entityClass,

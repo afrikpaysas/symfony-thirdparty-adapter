@@ -17,10 +17,9 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 use FOS\RestBundle\Controller\Annotations\Get;
 use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\Annotations\Route;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\BalanceController as BaseBalanceController;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\BalanceController as BalCtrl;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\BalanceResponse;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\BasicResponse as ModelBasicResponse;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\BalanceService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\BalanceSv;
 use Nelmio\ApiDocBundle\Annotation\Security;
 use Nelmio\ApiDocBundle\Model\Model;
 use OpenApi\Annotations as OA;
@@ -40,20 +39,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  * @psalm-suppress PropertyNotSetInConstructor
  */
 #[Route('/api/balance')]
-class BalanceController extends AbstractController implements BaseBalanceController
+class BalanceController extends AbstractController implements BalCtrl
 {
-    protected BalanceService $balanceService;
+    protected BalanceSv $balanceService;
 
     /**
      * Constructor.
      *
-     * @param BalanceService $balanceService balanceService
+     * @param BalanceSv $balanceService BalanceSv
      *
      * @return void
      */
-    public function __construct(BalanceService $balanceService)
+    public function __construct(BalanceSv $balanceService)
     {
-        $this->balanceService = $balanceService;
+        $this->BalanceSv = $balanceService;
     }
 
     /**
@@ -129,6 +128,6 @@ class BalanceController extends AbstractController implements BaseBalanceControl
     #[Get]
     public function balance(): BalanceResponse
     {
-        return new BalanceResponse($this->balanceService->balance());
+        return new BalanceResponse($this->BalanceSv->balance());
     }
 }

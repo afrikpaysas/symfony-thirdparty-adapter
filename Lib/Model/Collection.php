@@ -15,7 +15,7 @@
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\CollectionCastException;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidTypeCollectionException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidTypeCollectionExc;
 
 /**
  * Collection.
@@ -69,7 +69,7 @@ class Collection extends \ArrayObject
     public function add($value): void
     {
         if (!($value instanceof $this->class)) {
-            throw new InvalidTypeCollectionException(
+            throw new InvalidTypeCollectionExc(
                 get_class($value),
                 $this->class
             );
@@ -88,7 +88,7 @@ class Collection extends \ArrayObject
     public function set(string $key, $value): void
     {
         if (!($value instanceof $this->class)) {
-            throw new InvalidTypeCollectionException(
+            throw new InvalidTypeCollectionExc(
                 get_class($value),
                 $this->class
             );

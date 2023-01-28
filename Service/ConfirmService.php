@@ -16,11 +16,11 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ConfirmRequest;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\IllegalProviderConfirmException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\IllegalProviderException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\IllegalStatusConfirmException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredProviderIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ConfirmService as BaseConfirmService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ConfirmService as BaseService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentVerifyService;
@@ -36,7 +36,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentVerifyService;
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-class ConfirmService implements BaseConfirmService
+class ConfirmService implements BaseService
 {
     protected TransactionService $transactionService;
     protected ReferenceService $referenceService;
@@ -81,7 +81,7 @@ class ConfirmService implements BaseConfirmService
         );
 
         if ($transaction->providerId) {
-            throw new IllegalProviderConfirmException(
+            throw new IllegalProviderException(
                 $request->transactionId,
                 $transaction->providerId,
             );

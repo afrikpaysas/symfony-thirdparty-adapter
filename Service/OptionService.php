@@ -14,14 +14,12 @@
  */
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
-use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Option as EntityOption;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Mapper\OptionRequestMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequest;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequestCollectionRequest;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Option;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\BadReferenceException;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\EntityNotFoundException;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidReferenceSlugOptionException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidReferenceSlgOptxc;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\OptionAlreadyExistException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\OptionApiDisabledException;
@@ -32,7 +30,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Collection;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\OptionCollection;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\OptionRepository;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\OptionService as BaseOptionService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\OptionService as BaseOptServ;
 
 /**
  * OptionService.
@@ -47,7 +45,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\OptionService as BaseOption
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
-class OptionService implements BaseOptionService
+class OptionService implements BaseOptServ
 {
     protected OptionRepository $optionRepository;
     protected UtilService $utilService;
@@ -289,7 +287,7 @@ class OptionService implements BaseOptionService
 
         if (!$option) {
             if (AppConstants::PARAMETER_TRUE_VALUE != $_ENV['OPTION_API_ENABLED']) {
-                throw new InvalidReferenceSlugOptionException($reference, $slug);
+                throw new InvalidReferenceSlgOptxc($reference, $slug);
             }
 
             $this->listApi($reference);

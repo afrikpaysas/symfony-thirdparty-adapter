@@ -15,20 +15,20 @@
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentRequest;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateApplicationIdException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateApplicationIdE;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateExternalIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateFinancialIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateProviderIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateRequestIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentException;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredAccountNameException;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredAccountNumberException;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredApplicationIdException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredAccountNameExc;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredAccountNumberExc;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredApplicationIdExc;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredExternalIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredFinancialIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredProviderIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredRequestIdException;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentVerifyService as BasePaymentVerifyService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentVerifyService as PyVerfS;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\VerifyService;
 
@@ -45,7 +45,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\VerifyService;
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
-class PaymentVerifyService implements BasePaymentVerifyService
+class PaymentVerifyService implements PyVerfS
 {
     protected TransactionService $transactionService;
     protected VerifyService $verifyService;
@@ -83,7 +83,7 @@ class PaymentVerifyService implements BasePaymentVerifyService
         $this->verifyService->verify($paymentRequest);
 
         if (!$paymentRequest->applicationId) {
-            throw new RequiredApplicationIdException();
+            throw new RequiredApplicationIdExc();
         }
 
         $condition = $this->transactionService->findOneByApplicationId(
@@ -92,7 +92,7 @@ class PaymentVerifyService implements BasePaymentVerifyService
         );
 
         if ($condition) {
-            throw new DuplicateApplicationIdException(
+            throw new DuplicateApplicationIdE(
                 $paymentRequest->applicationId
             );
         }
@@ -137,11 +137,11 @@ class PaymentVerifyService implements BasePaymentVerifyService
         }
 
         if (!$paymentRequest->accountNumber) {
-            throw new RequiredAccountNumberException();
+            throw new RequiredAccountNumberExc();
         }
 
         if (!$paymentRequest->accountName) {
-            throw new RequiredAccountNameException();
+            throw new RequiredAccountNameExc();
         }
     }
 

@@ -15,7 +15,7 @@
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Route;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\ConfigController as BaseConfigController;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\ConfigController as CfgCtrl;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ArrayResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\ConfigException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
@@ -38,7 +38,7 @@ use \ReflectionClass;
  * @psalm-suppress PropertyNotSetInConstructor
  */
 #[Route('/config')]
-class ConfigController extends AbstractController implements BaseConfigController
+class ConfigController extends AbstractController implements CfgCtrl
 {
     protected UtilService $utilService;
 

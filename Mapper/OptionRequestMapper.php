@@ -16,7 +16,7 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Mapper;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Option;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequest;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\OptionRequestMapper as BaseOptionRequestMapper;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\OptionRequestMapper as OpReqM;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\OptionCollection;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\OptionRequestCollection;
 
@@ -37,7 +37,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\OptionRequestCollection;
  *
  * @psalm-suppress PropertyNotSetInConstructor
  */
-class OptionRequestMapper extends Mapper implements BaseOptionRequestMapper
+class OptionRequestMapper extends Mapper implements OpReqM
 {
     /**
      * Constructor.

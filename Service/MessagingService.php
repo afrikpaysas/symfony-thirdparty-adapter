@@ -21,7 +21,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\GeneralNetworkException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\NetworkException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\SMSApiDisabled;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\MessagingService as BaseMessagingService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\MessagingService as BasMesServ;
 
 /**
  * MessagingService.
@@ -34,7 +34,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\MessagingService as BaseMes
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-class MessagingService implements BaseMessagingService
+class MessagingService implements BasMesServ
 {
     protected HttpService $httpService;
 

@@ -15,7 +15,7 @@
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\BasicResponse as ModelBasicResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\BasicResponse as ModelBasicResp;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
@@ -44,7 +44,7 @@ class BasicResponse extends JsonResponse
      */
     public function __construct(mixed $result)
     {
-        $response = new ModelBasicResponse();
+        $response = new ModelBasicResp();
 
         $response->code = AppConstants::SUCCESS_CODE;
         $response->message = AppConstants::SUCCESS_MESSAGE;

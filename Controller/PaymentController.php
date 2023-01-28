@@ -16,7 +16,7 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\Annotations\Route;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\PaymentController as BasePaymentController;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\PaymentController as PyCtrl;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentRequest;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
@@ -43,7 +43,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  * @psalm-suppress PropertyNotSetInConstructor
  */
 #[Route('/api/payment')]
-class PaymentController extends AbstractController implements BasePaymentController
+class PaymentController extends AbstractController implements PyCtrl
 {
     protected PaymentService $paymentService;
     protected ReferenceService $referenceService;

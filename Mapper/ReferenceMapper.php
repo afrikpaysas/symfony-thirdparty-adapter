@@ -16,7 +16,7 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Mapper;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Reference;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ReferenceDTO;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\ReferenceMapper as BaseReferenceMapper;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\ReferenceMapper as BaseRefM;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ReferenceCollection;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ReferenceDTOCollection;
 
@@ -35,7 +35,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ReferenceDTOCollection;
  * @template-extends BaseEntityMapper<ReferenceDTO, Reference, ReferenceDTOCollection, ReferenceCollection>
  * @codingStandardsIgnoreEnd
  */
-class ReferenceMapper extends BaseEntityMapper implements BaseReferenceMapper
+class ReferenceMapper extends BaseEntityMapper implements BaseRefM
 {
     /**
      * Constructor.

@@ -17,7 +17,7 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction as BaseTransaction;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentAPIException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentFailedService as BasePaymentFailedService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentFailedService as PayFS;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
 
 /**
@@ -31,7 +31,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-class PaymentFailedService implements BasePaymentFailedService
+class PaymentFailedService implements PayFS
 {
     protected TransactionService $transactionService;
 

@@ -14,7 +14,7 @@
  */
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Dto;
 
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderPaymentResponse as BaseProviderPaymentResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderPaymentResponse as PrvPR;
 
 /**
  * ProviderPaymentResponse.
@@ -27,6 +27,6 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderPaymentResponse as Base
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-class ProviderPaymentResponse extends BaseProviderPaymentResponse
+class ProviderPaymentResponse extends PrvPR
 {
 }

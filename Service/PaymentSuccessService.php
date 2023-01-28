@@ -14,13 +14,13 @@
  */
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderPaymentResponse as BaseProviderPaymentResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderPaymentResponse as BasePrR;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentApplicationException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ApplicationExceptionMessage;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentSuccessService as BasePaymentSuccessService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentSuccessService as SucS;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
 
@@ -35,7 +35,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-class PaymentSuccessService implements BasePaymentSuccessService
+class PaymentSuccessService implements SucS
 {
     protected TransactionService $transactionService;
     protected ReferenceService $referenceService;
@@ -59,8 +59,8 @@ class PaymentSuccessService implements BasePaymentSuccessService
     /**
      * Success.
      *
-     * @param Transaction                 $transaction transaction
-     * @param BaseProviderPaymentResponse $response    response
+     * @param Transaction $transaction transaction
+     * @param BasePrR     $response    response
      *
      * @return Transaction
      *
@@ -72,7 +72,7 @@ class PaymentSuccessService implements BasePaymentSuccessService
      */
     public function success(
         Transaction $transaction,
-        BaseProviderPaymentResponse $response
+        BasePrR $response
     ): Transaction {
         $condition = Status::PROGRESS != $transaction->status &&
             Status::PENDING != $transaction->status;
@@ -130,8 +130,8 @@ class PaymentSuccessService implements BasePaymentSuccessService
     /**
      * VerifyAfterPayment.
      *
-     * @param Transaction                 $transaction transaction
-     * @param BaseProviderPaymentResponse $response    response
+     * @param Transaction $transaction transaction
+     * @param BasePrR     $response    response
      *
      * @return void
      *
@@ -139,7 +139,7 @@ class PaymentSuccessService implements BasePaymentSuccessService
      */
     public function verifyAfterPayment(
         Transaction $transaction,
-        BaseProviderPaymentResponse $response
+        BasePrR $response
     ): void {
         return;
     }

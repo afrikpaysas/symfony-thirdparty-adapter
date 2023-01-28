@@ -16,7 +16,7 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\Annotations\Route;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\VerifyController as BaseVerifyController;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\VerifyController as VfCtrl;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\VerifyRequest;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\VerifyResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\VerifyService;
@@ -39,7 +39,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  * @psalm-suppress PropertyNotSetInConstructor
  */
 #[Route('/api/verify')]
-class VerifyController extends AbstractController implements BaseVerifyController
+class VerifyController extends AbstractController implements VfCtrl
 {
     protected VerifyService $verifyService;
 

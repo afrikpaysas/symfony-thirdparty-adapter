@@ -20,13 +20,13 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\EntityNotFoundException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ReferenceCollection;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\ReferenceRepository as BaseReferenceRepository;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\ReferenceRepository as RefRp;
 
 /**
  * ReferenceRepository.
  *
  * @template-extends    Repository<Reference>
- * @template-implements BaseReferenceRepository
+ * @template-implements RefRp
  *
  * @category Repository
  * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Repository
@@ -36,7 +36,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\ReferenceRepository as B
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-class ReferenceRepository extends Repository implements BaseReferenceRepository
+class ReferenceRepository extends Repository implements RefRp
 {
     /**
      * Constructor.
@@ -47,8 +47,11 @@ class ReferenceRepository extends Repository implements BaseReferenceRepository
      *
      * @return void
      */
-    public function __construct(ManagerRegistry $registry, string $entityClass = Reference::class, string $collectionClass = ReferenceCollection::class)
-    {
+    public function __construct(
+        ManagerRegistry $registry,
+        string $entityClass = Reference::class,
+        string $collectionClass = ReferenceCollection::class
+    ) {
         parent::__construct(
             $registry,
             $entityClass,

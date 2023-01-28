@@ -21,7 +21,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidAmountException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\ReferenceMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\TransactionMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\StatusService as BaseStatusService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\StatusService as BaseStatusSv;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
 
 /**
@@ -35,7 +35,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-class StatusService implements BaseStatusService
+class StatusService implements BaseStatusSv
 {
     protected TransactionService $transactionService;
     protected ReferenceService $referenceService;
