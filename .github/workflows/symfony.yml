@@ -29,13 +29,13 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-php-
     - name: Install PHPMD
-      run: composer require --global phpmd/phpmd
+      run: composer global require phpmd/phpmd
     - name: Install PHPSTAN
-      run: composer require --global phpstan/phpstan
+      run: composer global require phpstan/phpstan
     - name: Install PHPCS
-      run: composer require --global squizlabs/php_codesniffer
+      run: composer global require squizlabs/php_codesniffer
     - name: Install PSALM
-      run: composer require --global vimeo/psalm
+      run: composer global require vimeo/psalm
     - name: Run Code Review with phpcs
       run: ~/vendor/bin/phpcs
     - name: Run Code Review with phpmd
