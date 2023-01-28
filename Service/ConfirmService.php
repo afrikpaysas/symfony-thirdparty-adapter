@@ -16,7 +16,8 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ConfirmRequest;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\IllegalProviderException;
+// @codingStandardsIgnoreLine
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\IllegalProviderConfirmException as IllegalProviderException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\IllegalStatusConfirmException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredProviderIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
