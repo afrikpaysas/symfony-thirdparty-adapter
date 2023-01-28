@@ -52,7 +52,7 @@ class BalanceController extends AbstractController implements BalCtrl
      */
     public function __construct(BalanceSv $balanceService)
     {
-        $this->BalanceSv = $balanceService;
+        $this->balanceService = $balanceService;
     }
 
     /**
@@ -128,6 +128,6 @@ class BalanceController extends AbstractController implements BalCtrl
     #[Get]
     public function balance(): BalanceResponse
     {
-        return new BalanceResponse($this->BalanceSv->balance());
+        return new BalanceResponse($this->balanceService->balance());
     }
 }
