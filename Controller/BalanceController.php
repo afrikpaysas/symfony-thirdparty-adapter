@@ -19,7 +19,8 @@ use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\Annotations\Route;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\BalanceController as BalCtrl;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\BalanceResponse;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\BalanceSv;
+// @codingStandardsIgnoreLine
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\BalanceService as BalanceSv;
 use Nelmio\ApiDocBundle\Annotation\Security;
 use Nelmio\ApiDocBundle\Model\Model;
 use OpenApi\Annotations as OA;
@@ -46,7 +47,7 @@ class BalanceController extends AbstractController implements BalCtrl
     /**
      * Constructor.
      *
-     * @param BalanceSv $balanceService BalanceSv
+     * @param BalanceSv $balanceService balanceService
      *
      * @return void
      */
