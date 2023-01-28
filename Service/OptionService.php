@@ -19,7 +19,8 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequest;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequestCollectionRequest;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Option;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\BadReferenceException;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidReferenceSlgOptxc;
+// @codingStandardsIgnoreLine
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidReferenceSlugOptionException as InvalidReferenceSlgOptxc;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\OptionAlreadyExistException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\OptionApiDisabledException;
