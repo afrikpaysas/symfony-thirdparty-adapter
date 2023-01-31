@@ -223,7 +223,7 @@ class ReferenceService implements RefS
         string $referenceNumber,
         ?array $data
     ): BRfRep {
-        return new LogicNotImplementedException(__FUNCTION__);
+        throw new LogicNotImplementedException(__FUNCTION__);
     }
 
     /**
