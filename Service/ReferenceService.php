@@ -14,24 +14,22 @@
  */
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\LogicNotImplementedException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MappingException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Mapper\ReferenceApiResponseMapper;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Model\AppConstants as LocalAppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\Reference as ReferenceDTO;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ReferenceApiResponse as BRfRep;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Reference;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Reference as EntityReference;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\BadApiResponse;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentAPIException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\ReferenceNotFoundException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ReferenceApiResponseCollection;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\ReferenceRepository;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\HttpService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\OptionService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService as RefS;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\UtilService;
 
 /**
  * ReferenceService.
@@ -154,25 +152,36 @@ class ReferenceService implements RefS
      *
      * @return Reference
      *
-     * @throws \Exception
+     * @throws \Exception|MappingException
      *
      * @SuppressWarnings(PHPMD.Superglobals)
      */
     public function findByApi(string $referenceNumber): Reference
     {
-        $dto = new ReferenceDTO();
-        $dto->reference = $referenceNumber;
-        $data = $this->httpService->sendGET($_ENV['API_REFERENCE'], $dto->toArray());
+        $bodyRequest = $this->bodyRequest($referenceNumber);
+        $headersRequest = $this->headersRequest($referenceNumber);
+        $tokenRequest = null;
+        if ($_ENV['API_TOKEN']) {
+            $tokenRequest = $this->headersRequest($referenceNumber);
+        }
+
+        $data = null;
+
+        if ($_ENV['API_REFERENCE']) {
+            $data = $this->httpService->sendGetWithTokenSet(
+                $_ENV['API_REFERENCE'],
+                $bodyRequest,
+                $headersRequest,
+                $tokenRequest
+            );
+        }
+
         $response = $this->generateReferenceResponse(
             $referenceNumber,
             $data
         );
 
         $reference = $this->referenceApiMapper->asEntity($response);
-
-        if (!$reference) {
-            throw new MapperException();
-        }
 
         return $reference;
     }
@@ -205,7 +214,7 @@ class ReferenceService implements RefS
      *
      * @return BRfRep
      *
-     * @throws BadApiResponse|PaymentAPIException|ReferenceNotFoundException
+     * @throws BadApiResponse|PaymentAPIException|ReferenceNotFoundException|LogicNotImplementedException
      *
      * @psalm-suppress MixedAssignment
      * @psalm-suppress MixedArgument
@@ -214,20 +223,7 @@ class ReferenceService implements RefS
         string $referenceNumber,
         ?array $data
     ): BRfRep {
-        $data = json_decode($data['result'] ?? '');
-
-        if (is_object($data)) {
-            throw new ReferenceNotFoundException($referenceNumber);
-        }
-
-        $responseData = new ReferenceApiResponseCollection($data);
-        $response = $responseData->first();
-
-        foreach (LocalAppConstants::CONVERSION_RESULT_REFERENCE as $key => $value) {
-            $response->$key = $response->$value;
-        }
-
-        return $response;
+        return new LogicNotImplementedException(__FUNCTION__);
     }
 
     /**
@@ -243,5 +239,45 @@ class ReferenceService implements RefS
     public function updateStatus(string $referenceNumber, Status $status): Reference
     {
         return $this->referenceRepository->updateStatus($referenceNumber, $status);
+    }
+
+    /**
+     * TokenRequest.
+     *
+     * @param string $reference reference
+     *
+     * @return string|null
+     *
+     * @throws \Exception|NetworkException|GeneralNetworkException
+     */
+    public function tokenRequest(string $reference): string|null
+    {
+        return $this->httpService->getToken([]);
+    }
+
+    /**
+     * HeadersRequest.
+     *
+     * @param string $reference reference
+     *
+     * @return array|null
+     */
+    public function headersRequest(string $reference): ?array
+    {
+        return [];
+    }
+
+    /**
+     * BodyRequest.
+     *
+     * @@param string $reference reference
+     *
+     * @return array|null
+     */
+    public function bodyRequest(string $reference): ?array
+    {
+        return [
+            AppConstants::REFERENCE => $reference
+        ];
     }
 }

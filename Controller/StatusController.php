@@ -19,7 +19,6 @@ use FOS\RestBundle\Controller\Annotations\Route;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\StatusController as StCtrl;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\StatusRequest;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\ReferenceMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\TransactionMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentService;
@@ -268,10 +267,6 @@ class StatusController extends AbstractController implements StCtrl
         }
 
         $transactionDTO = $this->transactionMapper->asDTO($transaction);
-
-        if (!$transactionDTO) {
-            throw new MapperException();
-        }
 
         return new PaymentResponse($transactionDTO, $referenceDTO);
     }

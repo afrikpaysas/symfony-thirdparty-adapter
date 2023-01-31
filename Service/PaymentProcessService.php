@@ -15,9 +15,11 @@
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Dto\ProviderPaymentResponse;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Model\AppConstants as LocalAppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\GeneralNetworkException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\LogicNotImplementedException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderPaymentResponse as PrPayRp;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction as BaseTransaction;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\NetworkException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentAPIException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\HttpService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentProcessService as PyProS;
@@ -53,7 +55,7 @@ class PaymentProcessService implements PyProS
     /**
      * Payment.
      *
-     * @param BaseTransaction $transaction transaction
+     * @param Transaction $transaction transaction
      *
      * @return array
      *
@@ -65,20 +67,23 @@ class PaymentProcessService implements PyProS
      * @psalm-suppress NullableReturnStatement
      * @psalm-suppress MixedArgument
      */
-    public function payment(BaseTransaction $transaction): array
+    public function payment(Transaction $transaction): array
     {
+        $bodyRequest = $this->bodyRequest($transaction);
+        $headersRequest = $this->headersRequest($transaction);
+        $tokenRequest = null;
+        if ($_ENV['API_TOKEN']) {
+            $tokenRequest = $this->headersRequest($transaction);
+        }
+
         $response = null;
 
-        if ($_ENV['API_PAYMENT'] && $_ENV['API_TOKEN']) {
-            $response = $this->httpService->sendPOSTWithToken(
+        if ($_ENV['API_PAYMENT']) {
+            $response = $this->httpService->sendPOSTWithTokenSet(
                 $_ENV['API_PAYMENT'],
-                $transaction->toArray(),
-                []
-            );
-        } elseif ($_ENV['API_PAYMENT']) {
-            $response = $this->httpService->sendPOST(
-                $_ENV['API_PAYMENT'],
-                $transaction->toArray()
+                $bodyRequest,
+                $headersRequest,
+                $tokenRequest
             );
         }
 
@@ -92,6 +97,8 @@ class PaymentProcessService implements PyProS
      *
      * @return ProviderPaymentResponse
      *
+     * @throws LogicNotImplementedException
+     *
      * @psalm-suppress PossiblyNullArrayAccess
      * @psalm-suppress MixedArrayAccess
      * @psalm-suppress MixedAssignment
@@ -99,25 +106,7 @@ class PaymentProcessService implements PyProS
     public function generateProviderPaymentResponse(
         ?array $paymentResult
     ): ProviderPaymentResponse {
-        $response = new ProviderPaymentResponse();
-
-        $response->providerStatus = $paymentResult[LocalAppConstants::API_CODE];
-        $response->providerMessage = $paymentResult[
-            LocalAppConstants::API_DATA_MESSAGE
-        ];
-        if ($paymentResult[LocalAppConstants::API_DATA]) {
-            $response->providerId = $paymentResult[
-                LocalAppConstants::API_DATA
-            ][LocalAppConstants::API_DATA_TRANSACTION_ID];
-            $response->txnDataStatus = $paymentResult[
-                LocalAppConstants::API_DATA
-            ][LocalAppConstants::API_DATA_STATUS];
-            $response->txnDataMessage = $paymentResult[
-                LocalAppConstants::API_DATA
-            ][LocalAppConstants::API_DATA_MESSAGE];
-        }
-
-        return $response;
+        throw new LogicNotImplementedException(__FUNCTION__);
     }
 
     /**
@@ -127,19 +116,48 @@ class PaymentProcessService implements PyProS
      *
      * @return void
      *
-     * @throws PaymentAPIException
+     * @throws PaymentAPIException|LogicNotImplementedException
      */
     public function decision(PrPayRp $response): void
     {
-        $condition = LocalAppConstants::API_SUCCESS_CODE !=
-            $response->providerStatus ||
-            !$response->providerId;
+        throw new LogicNotImplementedException(__FUNCTION__);
+    }
 
-        if ($condition) {
-            throw new PaymentAPIException(
-                (int)$response->providerStatus,
-                $response->providerMessage ?? ''
-            );
-        }
+    /**
+     * TokenRequest.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return string|null
+     *
+     * @throws \Exception|NetworkException|GeneralNetworkException
+     */
+    public function tokenRequest(Transaction $transaction): string|null
+    {
+        return $this->httpService->getToken([]);
+    }
+
+    /**
+     * HeadersRequest.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return array|null
+     */
+    public function headersRequest(Transaction $transaction): ?array
+    {
+        return [];
+    }
+
+    /**
+     * BodyRequest.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return array|null
+     */
+    public function bodyRequest(Transaction $transaction): ?array
+    {
+        return $transaction->toArray();
     }
 }

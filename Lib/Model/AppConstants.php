@@ -144,4 +144,12 @@ class AppConstants
     public const DEFAULT_KEY_DTO_CONVERTER = ['lastUpdatedDate' => 'date'];
 
     public const SEPARATOR_MESSAGE = ': ';
+
+    public const ENTITY = 'entity';
+
+    public const DTO = 'dto';
+
+    public const ENTITY_COLLECTION = 'entityCollection';
+
+    public const DTO_COLLECTION = 'dtoCollection';
 }

@@ -14,6 +14,7 @@
  */
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MappingException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Mapper\OptionRequestMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequest;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequestCollectionRequest;
@@ -21,7 +22,6 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Option;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\BadReferenceException;
 // @codingStandardsIgnoreLine
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidReferenceSlugOptionException as InvalidReferenceSlgOptxc;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\OptionAlreadyExistException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\OptionApiDisabledException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\OptionListEmptyException;
@@ -207,6 +207,8 @@ class OptionService implements BaseOptServ
      *
      * @return Option
      *
+     * @throws \Exception|MappingException
+     *
      * @SuppressWarnings(PHPMD.Superglobals)
      */
     public function generateOption(OptionRequest $request): Option
@@ -235,10 +237,6 @@ class OptionService implements BaseOptServ
         }
 
         $option = $this->optionRequestMapper->asEntity($request);
-
-        if (!$option) {
-            throw new MapperException();
-        }
 
         return $option;
     }

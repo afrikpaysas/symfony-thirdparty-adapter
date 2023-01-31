@@ -18,7 +18,6 @@ use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\Annotations\Route;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\CancelController as CCCtrl;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentResponse;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\ReferenceMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\TransactionMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\CancelService;
@@ -211,10 +210,6 @@ class CancelController extends AbstractController implements CCCtrl
         }
 
         $transactionDTO = $this->transactionMapper->asDTO($transaction);
-
-        if (!$transactionDTO) {
-            throw new MapperException();
-        }
 
         return new PaymentResponse($transactionDTO, $referenceDTO);
     }

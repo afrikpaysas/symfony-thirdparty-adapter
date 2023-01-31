@@ -17,6 +17,7 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequest;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequestCollectionRequest;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Option;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MappingException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Collection;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\OptionCollection;
 
@@ -92,7 +93,7 @@ interface OptionService
      *
      * @return Option
      *
-     * @throws \Exception
+     * @throws \Exception|MappingException
      */
     public function generateOption(OptionRequest $request): Option;
 

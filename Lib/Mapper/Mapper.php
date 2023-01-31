@@ -14,6 +14,10 @@
  */
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper;
 
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperConfigException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperEmptyException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperTypeException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Collection;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
 
@@ -41,6 +45,8 @@ interface Mapper
      * @param T|null $dto dto
      *
      * @return K|null
+     *
+     * MapperException|MapperEmptyException|MapperConfigException
      */
     public function asEntity($dto);
 
@@ -50,6 +56,8 @@ interface Mapper
      * @param K|null $entity entity
      *
      * @return T|null
+     *
+     * MapperException|MapperEmptyException|MapperConfigException
      */
     public function asDTO($entity);
 
@@ -59,6 +67,8 @@ interface Mapper
      * @param Z|Collection<T>|null $dtos dtos
      *
      * @return S|Collection<K>|null
+     *
+     * MapperException|MapperEmptyException|MapperConfigException|MapperTypeException
      */
     public function asEntityList($dtos);
 
@@ -68,6 +78,8 @@ interface Mapper
      * @param S|Collection<K>|null $entities entities
      *
      * @return Z|Collection<T>|null
+     *
+     * MapperException|MapperEmptyException|MapperConfigException|MapperTypeException
      */
     public function asDTOList($entities);
 

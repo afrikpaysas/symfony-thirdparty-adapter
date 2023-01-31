@@ -96,7 +96,7 @@ final class SystemExceptionMessage
 
     public const MAPPER_FAILURE = [
         AppConstants::CODE => '507',
-        AppConstants::MESSAGE => 'Mapper Exception %s'
+        AppConstants::MESSAGE => 'Mapping error : class %s to class %s'
     ];
 
     public const INVALID_TYPE_COLLECTION_FAILURE = [
@@ -107,6 +107,26 @@ final class SystemExceptionMessage
     public const COLLECTION_CAST_FAILURE = [
         AppConstants::CODE => '509',
         AppConstants::MESSAGE => 'Error occured when cast element of collection %s',
+    ];
+
+    public const LOGIC_NOT_IMPLEMETED = [
+        AppConstants::CODE => '510',
+        AppConstants::MESSAGE => 'Logic for function %s have not been implemented'
+    ];
+
+    public const MAPPER_EMPTY_FAILURE = [
+        AppConstants::CODE => '511',
+        AppConstants::MESSAGE => 'Mapping error : The object of class %s is null or empty'
+    ];
+
+    public const MAPPER_CONFIG_FAILURE = [
+        AppConstants::CODE => '512',
+        AppConstants::MESSAGE => 'Mapping configuration error : class %s not set'
+    ];
+
+    public const MAPPER_TYPE_FAILURE = [
+        AppConstants::CODE => '513',
+        AppConstants::MESSAGE => 'Mapping type error : invalid type of %s'
     ];
 
     public const VERIFY_API_ERROR = [

@@ -19,7 +19,6 @@ use FOS\RestBundle\Controller\Annotations\Route;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\PaymentController as PyCtrl;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentRequest;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentResponse;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\ReferenceMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\TransactionMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentService;
@@ -280,10 +279,6 @@ class PaymentController extends AbstractController implements PyCtrl
         }
 
         $transactionDTO = $this->transactionMapper->asDTO($transaction);
-
-        if (!$transactionDTO) {
-            throw new MapperException();
-        }
 
         return new PaymentResponse($transactionDTO, $referenceDTO);
     }

@@ -202,6 +202,57 @@ class HttpService implements BaseHttpService
     }
 
     /**
+     * sendPOSTWithTokenSet.
+     *
+     * @param string      $url     url
+     * @param array       $data    data
+     * @param array|null  $headers headers
+     * @param string|null $token   token
+     *
+     * @return array
+     *
+     * @throws NetworkException|GeneralNetworkException
+     */
+    public function sendPOSTWithTokenSet(
+        string $url,
+        array $data,
+        ?array $headers = null,
+        ?string $token = null
+    ): array {
+        $parameters = [
+            CURLOPT_CUSTOMREQUEST => AppConstants::POST,
+            CURLOPT_POSTFIELDS => json_encode($data),
+        ];
+
+        return $this->sendRequestWithHeaders($url, $parameters, $headers, $token);
+    }
+
+    /**
+     * sendGetWithTokenSet.
+     *
+     * @param string      $url     url
+     * @param array       $data    data
+     * @param array|null  $headers headers
+     * @param string|null $token   token
+     *
+     * @return array
+     *
+     * @throws NetworkException|GeneralNetworkException
+     */
+    public function sendGetWithTokenSet(
+        string $url,
+        array $data,
+        array $headers = null,
+        ?string $token = null
+    ): array {
+        $parameters = [
+            CURLOPT_URL => $url.'?'.http_build_query($data),
+        ];
+
+        return $this->sendRequestWithHeaders($url, $parameters, $headers, $token);
+    }
+
+    /**
      * SendPOST.
      *
      * @param string     $url     url
@@ -246,6 +297,49 @@ class HttpService implements BaseHttpService
         if ($headers) {
             $parameters[CURLOPT_HTTPHEADER] = $headers;
         }
+
+        return $this->sendRequest($url, $parameters);
+    }
+
+    /**
+     * sendRequestWithHeaders.
+     *
+     * @param string      $url     url
+     * @param array       $params  params
+     * @param array|null  $headers headers
+     * @param string|null $token   token
+     *
+     * @return array
+     *
+     * @throws NetworkException|GeneralNetworkException
+     *
+     * @SuppressWarnings(PHPMD.Superglobals)
+     *
+     * @psalm-suppress PossiblyUndefinedArrayOffset
+     * @psalm-suppress MixedReturnStatement
+     * @psalm-suppress MixedAssignment
+     * @psalm-suppress MixedInferredReturnType
+     */
+    protected function sendRequestWithHeaders(
+        string $url,
+        array $params,
+        ?array $headers = null,
+        ?string $token = null
+    ): array {
+        $headersRequest = [];
+        if($headers) {
+            $headersRequest = $headers;
+        }
+
+        $headersRequest[] = AppConstants::HEADER_CONTENT_TYPE_JSON;
+
+        if ($_ENV['API_TOKEN']) {
+            $headerToken = sprintf(AppConstants::HEADER_AUTH_BEARER, $token);
+            $headersRequest[] = $headerToken;
+        }
+
+        $parameters = $params;
+        $parameters[CURLOPT_HTTPHEADER] = $headersRequest;
 
         return $this->sendRequest($url, $parameters);
     }

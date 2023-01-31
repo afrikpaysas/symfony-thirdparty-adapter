@@ -17,6 +17,7 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderPaymentResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\GeneralNetworkException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\LogicNotImplementedException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\NetworkException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentAPIException;
 
@@ -50,6 +51,8 @@ interface PaymentProcessService
      * @param array|null $paymentResult paymentResult
      *
      * @return ProviderPaymentResponse
+     *
+     * @throws LogicNotImplementedException
      */
     public function generateProviderPaymentResponse(
         ?array $paymentResult
@@ -62,7 +65,36 @@ interface PaymentProcessService
      *
      * @return void
      *
-     * @throws PaymentAPIException
+     * @throws PaymentAPIException|LogicNotImplementedException
      */
     public function decision(ProviderPaymentResponse $response): void;
+
+    /**
+     * TokenRequest.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return string|null
+     *
+     * @throws \Exception|NetworkException|GeneralNetworkException
+     */
+    public function tokenRequest(Transaction $transaction): string|null;
+
+    /**
+     * HeadersRequest.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return array|null
+     */
+    public function headersRequest(Transaction $transaction): ?array;
+
+    /**
+     * BodyRequest.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return array|null
+     */
+    public function bodyRequest(Transaction $transaction): ?array;
 }

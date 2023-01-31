@@ -22,7 +22,6 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\OptionController as OptC
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionListResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequest;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionResponse;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\OptionMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\OptionService;
 use Nelmio\ApiDocBundle\Annotation\Security;
@@ -175,10 +174,6 @@ class OptionController extends AbstractController implements OptCtrl
 
         $optionDTO = $this->optionMapper->asDTO($option);
 
-        if (!$optionDTO) {
-            throw new MapperException();
-        }
-
         return new OptionResponse($optionDTO);
     }
 
@@ -256,10 +251,6 @@ class OptionController extends AbstractController implements OptCtrl
         $list = $this->optionMapper->asDTOList(
             $this->optionService->list(null, true)
         );
-
-        if (!$list) {
-            throw new MapperException();
-        }
 
         return new OptionListResponse($list);
     }

@@ -14,7 +14,10 @@
  */
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Mapper;
 
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperConfigException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperEmptyException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperTypeException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\Mapper as BaseMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Collection;
@@ -92,15 +95,17 @@ class Mapper implements BaseMapper
      * @param T|null $dto dto
      *
      * @return K|null
+     *
+     * @throws MapperException|MapperEmptyException|MapperConfigException
      */
     public function asEntity($dto)
     {
         if (null == $dto) {
-            return null;
+            throw new MapperEmptyException($this->dtoClass);
         }
 
         if (!$this->entityClass) {
-            return null;
+            throw new MapperConfigException(AppConstants::ENTITY);
         }
 
         $entity = new $this->entityClass();
@@ -110,6 +115,10 @@ class Mapper implements BaseMapper
             if (property_exists($entity, $key) && null != $value) {
                 $entity->$key = $this->convertToAttribute($value, $properties[$key]);
             }
+        }
+
+        if(!$entity) {
+            throw new MapperException($this->dtoClass, $this->entityClass);
         }
 
         return $entity;
@@ -123,15 +132,17 @@ class Mapper implements BaseMapper
      * @return T|null
      *
      * @psalm-suppress InvalidStringClass
+     *
+     * @throws MapperException|MapperEmptyException|MapperConfigException
      */
     public function asDTO($entity)
     {
         if (null == $entity) {
-            return null;
+            throw new MapperEmptyException($this->entityClass);
         }
 
         if (!$this->dtoClass) {
-            return null;
+            throw new MapperConfigException(AppConstants::DTO);
         }
 
         $dto = new $this->dtoClass();
@@ -148,6 +159,10 @@ class Mapper implements BaseMapper
             }
         }
 
+        if(!$dto) {
+            throw new MapperException($this->entityClass, $this->dtoClass);
+        }
+
         return $dto;
     }
 
@@ -158,26 +173,32 @@ class Mapper implements BaseMapper
      *
      * @return S|Collection<K>|null
      *
+     * @throws MapperException|MapperEmptyException|MapperConfigException|MapperTypeException
+     *
      * @psalm-suppress InvalidStringClass
      */
     public function asEntityList($dtos)
     {
         if (null == $dtos) {
-            return null;
+            throw new MapperEmptyException($this->dtosClass);
         }
 
         if (!($dtos instanceof Collection)) {
-            throw new MapperException(AppConstants::DATA_NOT_COLLECTION);
+            throw new MapperTypeException(AppConstants::DTO_COLLECTION);
         }
 
         if (!$this->entitiesClass) {
-            return null;
+            throw new MapperConfigException(AppConstants::ENTITY_COLLECTION);
         }
 
         $entities = new $this->entitiesClass();
 
         foreach ($dtos->all() as $value) {
             $entities->add($this->asEntity($value));
+        }
+
+        if(!$entities) {
+            throw new MapperException($this->dtosClass, $this->entitiesClass);
         }
 
         return $entities;
@@ -190,26 +211,32 @@ class Mapper implements BaseMapper
      *
      * @return Z|Collection<T>|null
      *
+     * @throws MapperException|MapperEmptyException|MapperConfigException|MapperTypeException
+     *
      * @psalm-suppress InvalidStringClass
      */
     public function asDTOList($entities)
     {
         if (null == $entities) {
-            return null;
+            throw new MapperEmptyException($this->entitiesClass);
         }
 
         if (!($entities instanceof Collection)) {
-            throw new MapperException(AppConstants::DATA_NOT_COLLECTION);
+            throw new MapperTypeException(AppConstants::ENTITY_COLLECTION);
         }
 
         if (!$this->dtosClass) {
-            return null;
+            throw new MapperConfigException(AppConstants::DTO_COLLECTION);
         }
 
         $dtos = new $this->dtosClass();
 
         foreach ($entities->all() as $value) {
             $dtos->add($this->asDTO($value));
+        }
+
+        if(!$dtos) {
+            throw new MapperException($this->entitiesClass, $this->dtosClass);
         }
 
         return $dtos;

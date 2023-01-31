@@ -20,7 +20,6 @@ use FOS\RestBundle\Controller\Annotations\View;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\ReferenceController as RfC;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionListResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ReferenceResponse;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\OptionMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\ReferenceMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\OptionService;
@@ -159,10 +158,6 @@ class ReferenceController extends AbstractController implements RfC
             $this->optionService->list($reference, true)
         );
 
-        if (!$options) {
-            throw new MapperException();
-        }
-
         return new OptionListResponse($options);
     }
 
@@ -256,10 +251,6 @@ class ReferenceController extends AbstractController implements RfC
             $this->optionMapper->asDTOList($referenceObject->options) :
             null
         ;
-
-        if (!$referenceDTO) {
-            throw new MapperException();
-        }
 
         return new ReferenceResponse($referenceDTO, $optionsDTO);
     }

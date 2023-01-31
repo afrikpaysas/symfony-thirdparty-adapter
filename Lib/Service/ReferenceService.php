@@ -17,8 +17,11 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ReferenceApiResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Reference;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\BadApiResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\GeneralNetworkException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\LogicNotImplementedException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MappingException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\NetworkException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentAPIException;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\ReferenceNotFoundException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
 
@@ -67,6 +70,8 @@ interface ReferenceService
      *
      * @param string $referenceNumber referenceNumber
      *
+     * @throws MappingException
+     *
      * @return Reference
      */
     public function findByApi(string $referenceNumber): Reference;
@@ -79,7 +84,7 @@ interface ReferenceService
      *
      * @return ReferenceApiResponse
      *
-     * @throws BadApiResponse|PaymentAPIException|ReferenceNotFoundException
+     * @throws BadApiResponse|PaymentAPIException|ReferenceNotFoundException|LogicNotImplementedException
      */
     public function generateReferenceResponse(
         string $referenceNumber,
@@ -108,4 +113,33 @@ interface ReferenceService
      * @throws \Exception
      */
     public function updateStatus(string $referenceNumber, Status $status): Reference;
+
+    /**
+     * TokenRequest.
+     *
+     * @param string $reference reference
+     *
+     * @return string|null
+     *
+     * @throws \Exception|NetworkException|GeneralNetworkException
+     */
+    public function tokenRequest(string $reference): string|null;
+
+    /**
+     * HeadersRequest.
+     *
+     * @param string $reference reference
+     *
+     * @return array|null
+     */
+    public function headersRequest(string $reference): ?array;
+
+    /**
+     * BodyRequest.
+     *
+     * @param string $reference reference
+     *
+     * @return array|null
+     */
+    public function bodyRequest(string $reference): ?array;
 }

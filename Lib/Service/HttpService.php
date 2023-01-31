@@ -88,26 +88,66 @@ interface HttpService
     ): array;
 
     /**
-     * SendPOST.
+     * sendPOSTWithTokenSet.
      *
-     * @param string $url  url
-     * @param array  $data data
+     * @param string      $url     url
+     * @param array       $data    data
+     * @param array|null  $headers headers
+     * @param string|null $token   token
      *
      * @return array
      *
      * @throws NetworkException|GeneralNetworkException
      */
-    public function sendPOST(string $url, array $data): array;
+    public function sendPOSTWithTokenSet(
+        string $url,
+        array $data,
+        ?array $headers = null,
+        ?string $token = null
+    ): array;
+
+    /**
+     * sendGetWithTokenSet.
+     *
+     * @param string      $url     url
+     * @param array       $data    data
+     * @param array|null  $headers headers
+     * @param string|null $token   token
+     *
+     * @return array
+     *
+     * @throws NetworkException|GeneralNetworkException
+     */
+    public function sendGetWithTokenSet(
+        string $url,
+        array $data,
+        array $headers = null,
+        ?string $token = null
+    ): array;
+
+    /**
+     * SendPOST.
+     *
+     * @param string      $url     url
+     * @param array       $data    data
+     * @param array|null  $headers headers
+     *
+     * @return array
+     *
+     * @throws NetworkException|GeneralNetworkException
+     */
+    public function sendPOST(string $url, array $data, ?array $headers = null): array;
 
     /**
      * SendGET.
      *
-     * @param string $url  url
-     * @param array  $data data
+     * @param string      $url     url
+     * @param array       $data    data
+     * @param array|null  $headers headers
      *
      * @return array
      *
      * @throws NetworkException|GeneralNetworkException
      */
-    public function sendGET(string $url, array $data): array;
+    public function sendGET(string $url, array $data, ?array $headers = null): array;
 }
