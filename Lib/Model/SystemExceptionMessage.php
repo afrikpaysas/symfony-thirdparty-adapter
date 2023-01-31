@@ -114,10 +114,12 @@ final class SystemExceptionMessage
         AppConstants::MESSAGE => 'Logic for function %s have not been implemented'
     ];
 
+    // @codingStandardsIgnoreStart
     public const MAPPER_EMPTY_FAILURE = [
         AppConstants::CODE => '511',
         AppConstants::MESSAGE => 'Mapping error : The object of class %s is null or empty'
     ];
+    // @codingStandardsIgnoreEnd
 
     public const MAPPER_CONFIG_FAILURE = [
         AppConstants::CODE => '512',
