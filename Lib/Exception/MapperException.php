@@ -33,7 +33,8 @@ class MapperException extends MappingException
     /**
      * Constructor.
      *
-     * @param string|null $message message
+     * @param string $class   class
+     * @param string $toClass toClass
      *
      * @return void
      */

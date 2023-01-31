@@ -33,7 +33,7 @@ class MapperEmptyException extends MappingException
     /**
      * Constructor.
      *
-     * @param string|null $message message
+     * @param string $class class
      *
      * @return void
      */

@@ -270,7 +270,7 @@ class ReferenceService implements RefS
     /**
      * BodyRequest.
      *
-     * @@param string $reference reference
+     * @param string $reference reference
      *
      * @return array|null
      */

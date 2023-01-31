@@ -88,7 +88,7 @@ interface HttpService
     ): array;
 
     /**
-     * sendPOSTWithTokenSet.
+     * SendPOSTWithTokenSet.
      *
      * @param string      $url     url
      * @param array       $data    data
@@ -107,7 +107,7 @@ interface HttpService
     ): array;
 
     /**
-     * sendGetWithTokenSet.
+     * SendGetWithTokenSet.
      *
      * @param string      $url     url
      * @param array       $data    data
@@ -128,26 +128,34 @@ interface HttpService
     /**
      * SendPOST.
      *
-     * @param string      $url     url
-     * @param array       $data    data
-     * @param array|null  $headers headers
+     * @param string     $url     url
+     * @param array      $data    data
+     * @param array|null $headers headers
      *
      * @return array
      *
      * @throws NetworkException|GeneralNetworkException
      */
-    public function sendPOST(string $url, array $data, ?array $headers = null): array;
+    public function sendPOST(
+        string $url,
+        array $data,
+        ?array $headers = null
+    ): array;
 
     /**
      * SendGET.
      *
-     * @param string      $url     url
-     * @param array       $data    data
-     * @param array|null  $headers headers
+     * @param string     $url     url
+     * @param array      $data    data
+     * @param array|null $headers headers
      *
      * @return array
      *
      * @throws NetworkException|GeneralNetworkException
      */
-    public function sendGET(string $url, array $data, ?array $headers = null): array;
+    public function sendGET(
+        string $url,
+        array $data,
+        ?array $headers = null
+    ): array;
 }

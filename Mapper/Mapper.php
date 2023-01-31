@@ -117,7 +117,7 @@ class Mapper implements BaseMapper
             }
         }
 
-        if(!$entity) {
+        if (!$entity) {
             throw new MapperException($this->dtoClass, $this->entityClass);
         }
 
@@ -159,7 +159,7 @@ class Mapper implements BaseMapper
             }
         }
 
-        if(!$dto) {
+        if (!$dto) {
             throw new MapperException($this->entityClass, $this->dtoClass);
         }
 
@@ -197,7 +197,7 @@ class Mapper implements BaseMapper
             $entities->add($this->asEntity($value));
         }
 
-        if(!$entities) {
+        if (!$entities) {
             throw new MapperException($this->dtosClass, $this->entitiesClass);
         }
 
@@ -235,7 +235,7 @@ class Mapper implements BaseMapper
             $dtos->add($this->asDTO($value));
         }
 
-        if(!$dtos) {
+        if (!$dtos) {
             throw new MapperException($this->entitiesClass, $this->dtosClass);
         }
 

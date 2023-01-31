@@ -202,7 +202,7 @@ class HttpService implements BaseHttpService
     }
 
     /**
-     * sendPOSTWithTokenSet.
+     * SendPOSTWithTokenSet.
      *
      * @param string      $url     url
      * @param array       $data    data
@@ -228,7 +228,7 @@ class HttpService implements BaseHttpService
     }
 
     /**
-     * sendGetWithTokenSet.
+     * SendGetWithTokenSet.
      *
      * @param string      $url     url
      * @param array       $data    data
@@ -302,7 +302,7 @@ class HttpService implements BaseHttpService
     }
 
     /**
-     * sendRequestWithHeaders.
+     * SendRequestWithHeaders.
      *
      * @param string      $url     url
      * @param array       $params  params
@@ -327,7 +327,7 @@ class HttpService implements BaseHttpService
         ?string $token = null
     ): array {
         $headersRequest = [];
-        if($headers) {
+        if ($headers) {
             $headersRequest = $headers;
         }
 
