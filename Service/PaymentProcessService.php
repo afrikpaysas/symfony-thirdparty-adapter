@@ -73,7 +73,7 @@ class PaymentProcessService implements PyProS
         $headersRequest = $this->headersRequest($transaction);
         $tokenRequest = null;
         if ($_ENV['API_TOKEN']) {
-            $tokenRequest = $this->headersRequest($transaction);
+            $tokenRequest = $this->tokenRequest($transaction);
         }
 
         $response = null;

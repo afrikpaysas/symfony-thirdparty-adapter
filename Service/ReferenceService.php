@@ -162,7 +162,7 @@ class ReferenceService implements RefS
         $headersRequest = $this->headersRequest($referenceNumber);
         $tokenRequest = null;
         if ($_ENV['API_TOKEN']) {
-            $tokenRequest = $this->headersRequest($referenceNumber);
+            $tokenRequest = $this->tokenRequest($referenceNumber);
         }
 
         $data = null;
