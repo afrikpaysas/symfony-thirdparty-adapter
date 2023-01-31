@@ -39,7 +39,6 @@ class MapperTypeException extends MappingException
      */
     public function __construct(string $class)
     {
-        $messageTxt = $message ?? '';
         $text = sprintf(
             SystemExceptionMessage::MAPPER_TYPE_FAILURE[
                 AppConstants::MESSAGE

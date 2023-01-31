@@ -39,7 +39,6 @@ class MapperEmptyException extends MappingException
      */
     public function __construct(string $class)
     {
-        $messageTxt = $message ?? '';
         $text = sprintf(
             SystemExceptionMessage::MAPPER_EMPTY_FAILURE[
                 AppConstants::MESSAGE

@@ -55,6 +55,8 @@ use \ReflectionClass;
  * @psalm-suppress MixedMethodCall
  * @psalm-suppress MixedReturnStatement
  * @psalm-suppress MixedInferredReturnType
+ *
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class Mapper implements BaseMapper
 {
