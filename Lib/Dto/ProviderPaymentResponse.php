@@ -30,13 +30,6 @@ use JMS\Serializer\Annotation as Serializer;
 class ProviderPaymentResponse
 {
     /**
-     * TransactionId
-     *
-     * @Serializer\Type("string")
-     */
-    public ?string $transactionId = null;
-
-    /**
      * ProviderId
      *
      * @Serializer\Type("string")
