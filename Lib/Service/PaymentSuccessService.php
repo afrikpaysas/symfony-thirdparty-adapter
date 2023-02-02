@@ -12,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderPaymentResponse;
@@ -35,15 +36,15 @@ interface PaymentSuccessService
     /**
      * Success.
      *
-     * @param Transaction             $transaction transaction
-     * @param ProviderPaymentResponse $response    response
+     * @param Transaction             $transactionOp transactionOp
+     * @param ProviderPaymentResponse $response      response
      *
      * @return Transaction
      *
      * @throws PaymentApplicationException
      */
     public function success(
-        Transaction $transaction,
+        Transaction $transactionOp,
         ProviderPaymentResponse $response
     ): Transaction;
 

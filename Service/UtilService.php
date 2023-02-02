@@ -12,11 +12,12 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\UtilService as BaseUtilService;
-use \DateTimeZone;
-use \DateTime;
+use DateTimeZone;
+use DateTime;
 
 /**
  * PHP Version 8.1
@@ -66,20 +67,20 @@ class UtilService implements BaseUtilService
         $result = "$phone";
 
         $condition = 7 == strlen($phone) &&
-            (str_starts_with($phone, '2') ||str_starts_with($phone, '3'));
+            (str_starts_with($phone, '2') || str_starts_with($phone, '3'));
 
         if ($condition) {
-            $result = '23762'.$phone;
+            $result = '23762' . $phone;
         } elseif (9 == strlen($phone) && str_starts_with($phone, '6')) {
-            $result = '237'.$phone;
+            $result = '237' . $phone;
         } elseif (8 == strlen($phone)) {
-            $result = '2376'.$phone;
+            $result = '2376' . $phone;
         } elseif (7 == strlen($phone) && str_starts_with($phone, '7')) {
-            $result = '23767'.$phone;
+            $result = '23767' . $phone;
         } elseif (7 == strlen($phone) && str_starts_with($phone, '9')) {
-            $result = '23769'.$phone;
+            $result = '23769' . $phone;
         } elseif (7 == strlen($phone) && str_starts_with($phone, '6')) {
-            $result = '23766'.$phone;
+            $result = '23766' . $phone;
         }
 
         return $result;

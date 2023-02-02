@@ -50,7 +50,7 @@ class AfrikpaysasSymfonyThirdpartyAdapterExtension extends Extension
     {
         $loader = new YamlFileLoader(
             $containerBuilder,
-            new FileLocator(__DIR__.'/../Resources/config')
+            new FileLocator(__DIR__ . '/../Resources/config')
         );
         $loader->load('services.yaml');
     }

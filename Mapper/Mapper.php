@@ -12,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Mapper;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MapperConfigException;
@@ -22,9 +23,9 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\Mapper as BaseMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Collection;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
-use \DateTime;
-use \DateTimeZone;
-use \ReflectionClass;
+use DateTime;
+use DateTimeZone;
+use ReflectionClass;
 
 /**
  * Mapper.

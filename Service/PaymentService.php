@@ -12,13 +12,16 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Dto\ProviderPaymentResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Transaction as EntityTransaction;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentRequest;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\BadApiResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\BadProviderResponseException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentAPIException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\ReferencePaidException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
@@ -26,8 +29,14 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentService as BasePaymSv;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
-use \DateTimeZone;
-use \DateTime;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\DecisionService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\OptionService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentErrorService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentFailedService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentVerifyService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentProcessService;
+use DateTimeZone;
+use DateTime;
 
 /**
  * PaymentService.
@@ -46,48 +55,43 @@ class PaymentService implements BasePaymSv
 {
     protected TransactionService $transactionService;
     protected OptionService $optionService;
-    protected NotificationService $notificationService;
     protected ReferenceService $referenceService;
-    protected PaymentSuccessService $paySucService;
     protected PaymentErrorService $paymentErrorService;
     protected PaymentFailedService $paymentFailedService;
     protected PaymentVerifyService $paymentVerifyService;
+    protected DecisionService $decisionService;
     protected PaymentProcessService $payProcService;
 
     /**
      * Constructor.
      *
-     * @param TransactionService    $transactionService   transactionService
-     * @param OptionService         $optionService        optionService
-     * @param NotificationService   $notificationService  notificationService
-     * @param ReferenceService      $referenceService     referenceService
-     * @param PaymentSuccessService $paySucService        paySucService
-     * @param PaymentErrorService   $paymentErrorService  paymentErrorService
-     * @param PaymentFailedService  $paymentFailedService paymentFailedService
-     * @param PaymentVerifyService  $paymentVerifyService paymentVerifyService
-     * @param PaymentProcessService $payProcService       payProcService
+     * @param TransactionService   $transactionService   transactionService
+     * @param OptionService        $optionService        optionService
+     * @param ReferenceService     $referenceService     referenceService
+     * @param PaymentErrorService  $paymentErrorService  paymentErrorService
+     * @param PaymentFailedService $paymentFailedService paymentFailedService
+     * @param PaymentVerifyService $paymentVerifyService paymentVerifyService
+     * @param DecisionService      $decisionService      decisionService
      *
      * @return void
      */
     public function __construct(
         TransactionService $transactionService,
         OptionService $optionService,
-        NotificationService $notificationService,
         ReferenceService $referenceService,
-        PaymentSuccessService $paySucService,
         PaymentErrorService $paymentErrorService,
         PaymentFailedService $paymentFailedService,
         PaymentVerifyService $paymentVerifyService,
+        DecisionService $decisionService,
         PaymentProcessService $payProcService
     ) {
         $this->transactionService = $transactionService;
         $this->optionService = $optionService;
-        $this->notificationService = $notificationService;
         $this->referenceService = $referenceService;
-        $this->paySucService = $paySucService;
         $this->paymentErrorService = $paymentErrorService;
         $this->paymentFailedService = $paymentFailedService;
         $this->paymentVerifyService = $paymentVerifyService;
+        $this->decisionService = $decisionService;
         $this->payProcService = $payProcService;
     }
 
@@ -101,6 +105,7 @@ class PaymentService implements BasePaymSv
      * @throws \Exception
      *
      * @SuppressWarnings(PHPMD.Superglobals)
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      *
      * @psalm-suppress MixedAssignment
      */
@@ -148,9 +153,24 @@ class PaymentService implements BasePaymSv
         try {
             $apiResponse = $this->payProcService->payment($transaction);
             $providerResponse = $this->generateProviderPaymentResponse($apiResponse);
-            $this->payProcService->decision($providerResponse);
-            $this->paySucService->success($transaction, $providerResponse);
-            $this->notificationService->notification($transaction);
+
+            if ($providerResponse->providerId) {
+                $transaction = $this->transactionService->updateProviderId(
+                    $transaction->id,
+                    $providerResponse->providerId
+                );
+            }
+
+            $condition = AppConstants::PARAMETER_TRUE_VALUE == $_ENV['ASYNC_MODE'] &&
+                !$providerResponse->providerId;
+
+            if ($condition) {
+                throw new BadProviderResponseException();
+            }
+
+            if (AppConstants::PARAMETER_FALSE_VALUE == $_ENV['ASYNC_MODE']) {
+                $transaction = $this->decisionService->process($providerResponse, $transaction);
+            }
         } catch (PaymentAPIException $exception) {
             throw $this->paymentFailedService->failed($exception, $transaction);
         } catch (\Throwable $exception) {

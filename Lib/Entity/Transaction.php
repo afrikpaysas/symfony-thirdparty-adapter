@@ -12,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\BaseEntity;

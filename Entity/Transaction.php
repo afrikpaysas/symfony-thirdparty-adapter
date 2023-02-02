@@ -12,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Entity;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Repository\TransactionRepository;

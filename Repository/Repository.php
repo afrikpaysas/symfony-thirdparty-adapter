@@ -12,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Repository;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
@@ -28,8 +29,8 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\SystemExceptionMessage;
 //@codingStandardsIgnoreStart
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Repository\ServiceEntityRepositoryInterface as BaseRepoInterface;
 //@codingStandardsIgnoreEnd
-use \DateTime;
-use \DateTimeZone;
+use DateTime;
+use DateTimeZone;
 
 /**
  * Repository.
@@ -397,8 +398,8 @@ class Repository extends ServiceEntityRepository implements BaseRepoInterface
      */
     public function generateEntity($entity)
     {
-        $idParam = lcfirst($this->entityName.'Id');
-        $methodFindById = 'findOneWith'.$this->entityName.'Id';
+        $idParam = lcfirst($this->entityName . 'Id');
+        $methodFindById = 'findOneWith' . $this->entityName . 'Id';
 
         $entity->$idParam = $this->generateId($_ENV['APP_DB_ID_LENGTH']);
 
@@ -508,7 +509,7 @@ class Repository extends ServiceEntityRepository implements BaseRepoInterface
         array $arguments
     ) {
         if (!$arguments) {
-            throw InvalidMagicMethodCall::onMissingParameter($method.$by);
+            throw InvalidMagicMethodCall::onMissingParameter($method . $by);
         }
 
         if (null === self::$inflector) {
@@ -523,7 +524,7 @@ class Repository extends ServiceEntityRepository implements BaseRepoInterface
             throw InvalidMagicMethodCall::becauseFieldNotFoundIn(
                 $this->_entityName,
                 $fieldName,
-                $method.$by
+                $method . $by
             );
         }
 

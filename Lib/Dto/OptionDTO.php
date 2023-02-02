@@ -12,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\BaseEntityDTO;
@@ -35,5 +36,5 @@ class OptionDTO extends BaseEntityDTO
     public string $name;
     public string $slug;
     public float $amount;
-    public ?string $reference;
+    public ?string $reference = null;
 }

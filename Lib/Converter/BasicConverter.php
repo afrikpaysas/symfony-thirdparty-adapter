@@ -12,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Converter;
 
 //@codingStandardsIgnoreStart
@@ -70,7 +71,7 @@ abstract class BasicConverter implements ParamConverterInterface
     }
 
     /**
-     * Supports.
+     * ProcessData.
      *
      * @param Request        $request       request
      * @param string         $requestClass  requestClass
@@ -87,6 +88,23 @@ abstract class BasicConverter implements ParamConverterInterface
         string $requestClass,
         ParamConverter $configuration
     ): void {
+        $object = $this->getObject($request, $requestClass);
+        $request->attributes->set($configuration->getName(), $object);
+    }
+
+    /**
+     * GetObject.
+     *
+     * @param Request        $request       request
+     *
+     * @return mixed
+     *
+     * @throws \Exception
+     *
+     * @psalm-suppress MixedAssignment
+     */
+    public function getObject(Request $request): mixed
+    {
         $data = (string) ($request->getContent());
 
         $serializer = SerializerBuilder::create()
@@ -97,12 +115,10 @@ abstract class BasicConverter implements ParamConverterInterface
             )
             ->build();
 
-        $object = $serializer->deserialize(
+        return $serializer->deserialize(
             $data,
-            $requestClass,
+            $this->converterClass,
             $this->converterFormat
         );
-
-        $request->attributes->set($configuration->getName(), $object);
     }
 }

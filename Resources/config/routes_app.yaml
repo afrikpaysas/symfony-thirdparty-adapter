@@ -47,3 +47,8 @@ afrikpaysas_symfony_thirdparty_adapter_reference_status:
   path: /api/status
   controller: Afrikpaysas\SymfonyThirdpartyAdapter\Controller\StatusController::status
   methods : POST
+
+afrikpaysas_symfony_thirdparty_adapter_decision:
+  path: /api/decision
+  controller: Afrikpaysas\SymfonyThirdpartyAdapter\Controller\DecisionController::decision
+  methods : POST

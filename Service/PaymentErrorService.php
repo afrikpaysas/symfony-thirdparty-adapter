@@ -12,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction as BaseTransaction;
@@ -86,11 +87,11 @@ class PaymentErrorService implements PayS
             ];
             $messageTxt = '';
             if (AppConstants::ENV_DEV == $_ENV['APP_ENV']) {
-                $messageTxt = ', file :'.
-                    $exception->getFile().
-                    ', line: '.
-                    $exception->getLine().
-                    ', message:'.
+                $messageTxt = ', file :' .
+                    $exception->getFile() .
+                    ', line: ' .
+                    $exception->getLine() .
+                    ', message:' .
                     $exception->getMessage();
             }
             $message = sprintf(
@@ -99,12 +100,12 @@ class PaymentErrorService implements PayS
             );
         }
 
-        $messageError = ','.
-            AppConstants::CODE.
-            ': '.
-            $code.', '.
-            AppConstants::MESSAGE.
-            ': '.$message;
+        $messageError = ',' .
+            AppConstants::CODE .
+            ': ' .
+            $code . ', ' .
+            AppConstants::MESSAGE .
+            ': ' . $message;
 
         return new RegulateException($messageError);
     }

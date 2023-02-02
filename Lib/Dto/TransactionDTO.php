@@ -12,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\BaseEntityDTO;
@@ -39,16 +40,16 @@ class TransactionDTO extends BaseEntityDTO
     public string $accountNumber;
     public string $accountName;
     public float $amount;
-    public ?string $phone;
-    public ?string $email;
-    public ?string $option;
+    public ?string $phone = null;
+    public ?string $email = null;
+    public ?string $option = null;
     public string $externalId;
     public string $requestId;
     public string $applicationId;
     public string $financialId;
-    public ?string $providerId;
-    public ?string $providerStatus;
-    public ?string $providerDate;
-    public ?string $providerMessage;
-    public ?float $providerBalance;
+    public ?string $providerId = null;
+    public ?string $providerStatus = null;
+    public ?string $providerDate = null;
+    public ?string $providerMessage = null;
+    public ?float $providerBalance = null;
 }

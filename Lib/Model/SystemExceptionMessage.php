@@ -12,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model;
 
 /**
@@ -259,6 +260,16 @@ final class SystemExceptionMessage
     public const PAYMENT_REQUIRED_PROVIDER_ID = [
         AppConstants::CODE => '405%s013',
         AppConstants::MESSAGE => 'Provider Id is required',
+    ];
+
+    public const PAYMENT_RESPONSE_CONVERT_FAILURE = [
+        AppConstants::CODE => '405%s014',
+        AppConstants::MESSAGE => 'Payment response convert exception',
+    ];
+
+    public const BAD_PROVIDER_RESPONSE = [
+        AppConstants::CODE => '405%s015',
+        AppConstants::MESSAGE => 'Bad Provider Response format',
     ];
 
     // @codingStandardsIgnoreStart

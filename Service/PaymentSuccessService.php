@@ -12,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderPaymentResponse as BasePrR;
@@ -59,8 +60,8 @@ class PaymentSuccessService implements SucS
     /**
      * Success.
      *
-     * @param Transaction $transaction transaction
-     * @param BasePrR     $response    response
+     * @param Transaction $transactionOp transactionOp
+     * @param BasePrR     $response      response
      *
      * @return Transaction
      *
@@ -71,9 +72,10 @@ class PaymentSuccessService implements SucS
      * @psalm-suppress MixedAssignment
      */
     public function success(
-        Transaction $transaction,
+        Transaction $transactionOp,
         BasePrR $response
     ): Transaction {
+        $transaction = $transactionOp;
         $condition = Status::PROGRESS != $transaction->status &&
             Status::PENDING != $transaction->status;
 

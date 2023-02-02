@@ -12,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\VerifyRequest;

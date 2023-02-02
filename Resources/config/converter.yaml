@@ -23,3 +23,8 @@ services:
     class: 'Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Converter\ConfirmRequestConverter'
     tags:
       - { name: request.param_converter, converter: ConfirmRequestConverter }
+
+  ProviderResponseConverter:
+    class: 'Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Converter\ProviderResponseConverter'
+    tags:
+      - { name: request.param_converter, converter: ProviderResponseConverter }

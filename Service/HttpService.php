@@ -12,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\GeneralNetworkException;
@@ -20,9 +21,9 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\NetworkException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\HttpService as BaseHttpService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ParameterService;
-use \DateTime;
-use \DateTimeZone;
-use \DateInterval;
+use DateTime;
+use DateTimeZone;
+use DateInterval;
 
 /**
  * HttpService.
@@ -139,7 +140,7 @@ class HttpService implements BaseHttpService
     public function sendGETWithBasicAuth(string $url, array $data): array
     {
         $token = base64_encode(
-            $_ENV['API_USERNAME_TOKEN'].':'.$_ENV['API_PASSWORD_TOKEN']
+            $_ENV['API_USERNAME_TOKEN'] . ':' . $_ENV['API_PASSWORD_TOKEN']
         );
 
         $headers = [
@@ -246,7 +247,7 @@ class HttpService implements BaseHttpService
         ?string $token = null
     ): array {
         $parameters = [
-            CURLOPT_URL => $url.'?'.http_build_query($data),
+            CURLOPT_URL => $url . '?' . http_build_query($data),
         ];
 
         return $this->sendRequestWithHeaders($url, $parameters, $headers, $token);
@@ -291,7 +292,7 @@ class HttpService implements BaseHttpService
     public function sendGET(string $url, array $data, ?array $headers = null): array
     {
         $parameters = [
-            CURLOPT_URL => $url.'?'.http_build_query($data),
+            CURLOPT_URL => $url . '?' . http_build_query($data),
         ];
 
         if ($headers) {
@@ -408,10 +409,10 @@ class HttpService implements BaseHttpService
             }
 
             if (AppConstants::ENV_DEV == $_ENV['APP_ENV']) {
-                $mes = ', file :'.
-                    $exception->getFile().
-                    ', line: '.$exception->getLine().
-                    ', message:'.$exception->getMessage();
+                $mes = ', file :' .
+                    $exception->getFile() .
+                    ', line: ' . $exception->getLine() .
+                    ', message:' . $exception->getMessage();
                 throw new GeneralNetworkException($url, $mes);
             }
 

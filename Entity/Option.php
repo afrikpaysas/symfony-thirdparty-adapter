@@ -12,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Entity;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Repository\OptionRepository;
@@ -45,10 +46,10 @@ class Option extends BaseOption
     public int $optionId;
 
     #[ORM\Column(unique: true, nullable: false)]
-    public String $name;
+    public string $name;
 
     #[ORM\Column(unique: true, nullable: false)]
-    public String $slug;
+    public string $slug;
 
     #[ORM\Column(nullable: false)]
     public float $amount;

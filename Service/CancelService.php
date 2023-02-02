@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PHP Version 8.1
  * CancelService.
@@ -11,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;

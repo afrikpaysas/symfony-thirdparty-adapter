@@ -12,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentRequest;
@@ -130,7 +131,7 @@ class PaymentVerifyService implements PyVerfS
             throw new RequiredFinancialIdException();
         }
 
-        $condition =$this->transactionService->findOneByFinancialId(
+        $condition = $this->transactionService->findOneByFinancialId(
             $paymentRequest->financialId,
             false
         );

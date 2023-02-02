@@ -12,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto;
 
 /**
@@ -37,6 +38,6 @@ class PaymentResponseDTO
     public string $requestId;
     public string $applicationId;
     public string $financialId;
-    public ?string $providerId;
+    public ?string $providerId = null;
     public int $transactionId;
 }

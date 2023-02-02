@@ -12,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\BaseEntityDTO;
@@ -37,5 +38,5 @@ class ReferenceDTO extends BaseEntityDTO
     public ?float $amount = null;
     public string $generationDate;
     public string $expirationDate;
-    public ?string $name;
+    public ?string $name = null;
 }

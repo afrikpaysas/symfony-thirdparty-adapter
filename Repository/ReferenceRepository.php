@@ -12,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Repository;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Reference;
@@ -112,7 +113,7 @@ class ReferenceRepository extends Repository implements RefRp
     public function findOneByReferenceNumber(
         string $referenceNumber,
         bool $throw = true
-    ) : ?Reference {
+    ): ?Reference {
         return parent::findOneWith(
             [AppConstants::REFERENCE_NUMBER => $referenceNumber],
             $throw

@@ -12,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Route;
@@ -22,7 +23,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\SystemExceptionMessage;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\UtilService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use \ReflectionClass;
+use ReflectionClass;
 
 /**
  * ConfigController.

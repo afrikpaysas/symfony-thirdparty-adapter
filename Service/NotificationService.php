@@ -12,6 +12,7 @@
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
+
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction as BaseTransaction;
@@ -20,8 +21,8 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\MessagingService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\NotificationService as NotfS;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\VerifyService;
-use \DateTimeZone;
-use \DateTime;
+use DateTimeZone;
+use DateTime;
 
 /**
  * NotificationService.
