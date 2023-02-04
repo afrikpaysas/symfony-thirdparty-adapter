@@ -153,4 +153,16 @@ class AppConstants
     public const ENTITY_COLLECTION = 'entityCollection';
 
     public const DTO_COLLECTION = 'dtoCollection';
+
+    public const BODY = 'body';
+
+    public const HEADERS = 'headers';
+
+    public const SIGNATURE = 'signature';
+
+    public const SHA256 = 'sha256';
+
+    public const CALLBACK_URL = 'callbackUrl';
+
+    public const ASYNC_TIMEOUT = 1;
 }

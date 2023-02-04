@@ -254,6 +254,57 @@ class HttpService implements BaseHttpService
     }
 
     /**
+     * SendAsyncPost.
+     *
+     * @param string      $url     url
+     * @param array       $data    data
+     * @param array|null  $headers headers
+     * @param string|null $token   token
+     *
+     * @return array
+     *
+     * @throws NetworkException|GeneralNetworkException
+     */
+    public function sendAsyncPost(
+        string $url,
+        array $data,
+        ?array $headers = null,
+        ?string $token = null
+    ): void {
+        $parameters = [
+            CURLOPT_CUSTOMREQUEST => AppConstants::POST,
+            CURLOPT_POSTFIELDS => json_encode($data),
+        ];
+
+        $this->sendAsyncRequest($url, $parameters, $headers, $token, AppConstants::ASYNC_TIMEOUT);
+    }
+
+    /**
+     * SendAsyncGet.
+     *
+     * @param string      $url     url
+     * @param array       $data    data
+     * @param array|null  $headers headers
+     * @param string|null $token   token
+     *
+     * @return array
+     *
+     * @throws NetworkException|GeneralNetworkException
+     */
+    public function sendAsyncGet(
+        string $url,
+        array $data,
+        array $headers = null,
+        ?string $token = null
+    ): void {
+        $parameters = [
+            CURLOPT_URL => $url . '?' . http_build_query($data),
+        ];
+
+        $this->sendAsyncRequest($url, $parameters, $headers, $token, AppConstants::ASYNC_TIMEOUT);
+    }
+
+    /**
      * SendPOST.
      *
      * @param string     $url     url
@@ -303,12 +354,39 @@ class HttpService implements BaseHttpService
     }
 
     /**
+     * SendAsyncRequest.
+     *
+     * @param string      $url     url
+     * @param array       $params  params
+     * @param array|null  $headers headers
+     * @param string|null $token   token
+     * @param int|null    $timeout timeout
+     *
+     * @return void
+     *
+     * @throws NetworkException|GeneralNetworkException
+     */
+    protected function sendAsyncRequest(
+        string $url,
+        array $params,
+        ?array $headers = null,
+        ?string $token = null,
+        ?int $timeout = null
+    ): void {
+        try{
+            $this->sendRequestWithHeaders($url, $params, $headers, $token, $timeout);
+        } catch (\Throwable $throwable) {
+        }
+    }
+
+    /**
      * SendRequestWithHeaders.
      *
      * @param string      $url     url
      * @param array       $params  params
      * @param array|null  $headers headers
      * @param string|null $token   token
+     * @param int|null    $timeout timeout
      *
      * @return array
      *
@@ -325,7 +403,8 @@ class HttpService implements BaseHttpService
         string $url,
         array $params,
         ?array $headers = null,
-        ?string $token = null
+        ?string $token = null,
+        ?int $timeout = null
     ): array {
         $headersRequest = [];
         if ($headers) {
@@ -342,14 +421,15 @@ class HttpService implements BaseHttpService
         $parameters = $params;
         $parameters[CURLOPT_HTTPHEADER] = $headersRequest;
 
-        return $this->sendRequest($url, $parameters);
+        return $this->sendRequest($url, $parameters, $timeout);
     }
 
     /**
      * SendRequest.
      *
-     * @param string $url    url
-     * @param array  $params params
+     * @param string   $url     url
+     * @param array    $params  params
+     * @param int|null $timeout timeout
      *
      * @return array
      *
@@ -362,9 +442,13 @@ class HttpService implements BaseHttpService
      * @psalm-suppress MixedAssignment
      * @psalm-suppress MixedInferredReturnType
      */
-    protected function sendRequest(string $url, array $params): array
+    protected function sendRequest(string $url, array $params, ?int $timeout = null): array
     {
         $result = null;
+
+        if (!$timeout) {
+            $timeout = $_ENV['CURL_TIMEOUT'];
+        }
 
         try {
             $curl = curl_init();
@@ -374,7 +458,7 @@ class HttpService implements BaseHttpService
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => $_ENV['CURL_MAXREDIRS'],
-                CURLOPT_TIMEOUT => $_ENV['CURL_TIMEOUT'],
+                CURLOPT_TIMEOUT => $timeout,
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTPHEADER => [AppConstants::APP_JSON_HEADER],
             ];

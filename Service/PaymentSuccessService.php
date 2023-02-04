@@ -122,7 +122,7 @@ class PaymentSuccessService implements SucS
         if ($_ENV['REFERENCE_API_ENABLED']) {
             $this->referenceService->updateStatus(
                 $transaction->reference,
-                Status::SUCCESS
+                $transaction->status
             );
         }
 

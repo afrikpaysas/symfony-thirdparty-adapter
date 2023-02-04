@@ -272,6 +272,11 @@ final class SystemExceptionMessage
         AppConstants::MESSAGE => 'Bad Provider Response format',
     ];
 
+    public const INVALID_CALLBACK_URL = [
+        AppConstants::CODE => '405%s016',
+        AppConstants::MESSAGE => 'Invalid Callback Url %s',
+    ];
+
     // @codingStandardsIgnoreStart
     public const ILLEGAL_STATUS_CONFIRM_EXCEPTION = [
         AppConstants::CODE => '408%s001',

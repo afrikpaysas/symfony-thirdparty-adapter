@@ -22,6 +22,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateExternalIdExcept
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateFinancialIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateProviderIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateRequestIdException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidCallbackUrlException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentException;
 // @codingStandardsIgnoreStart
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredAccountNameException as RequiredAccountNameExc;
@@ -32,6 +33,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredExternalIdExcepti
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredFinancialIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredProviderIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredRequestIdException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentVerifyService as PyVerfS;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\VerifyService;
@@ -146,6 +148,15 @@ class PaymentVerifyService implements PyVerfS
 
         if (!$paymentRequest->accountName) {
             throw new RequiredAccountNameExc();
+        }
+
+        $condition = $paymentRequest->callbackUrl && !preg_match(
+            $_ENV['CALLBACK_URL_REGEX'],
+            $paymentRequest->callbackUrl
+        );
+
+        if ($condition) {
+            throw new InvalidCallbackUrlException($paymentRequest->callbackUrl);
         }
     }
 

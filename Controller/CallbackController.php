@@ -2,175 +2,99 @@
 
 /**
  * PHP Version 8.1
- * PaymentController.
+ * CallbackController.
  *
  * @category Controller
  * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/PaymentController.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/CallbackController.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
 
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 
-use FOS\RestBundle\Controller\Annotations\Post;
-use FOS\RestBundle\Controller\Annotations\Route;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\PaymentController as PyCtrl;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentRequest;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Converter\ProviderResponseConverter;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\ReferenceMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\TransactionMapper;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentService;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
-use Nelmio\ApiDocBundle\Annotation\Security;
-use OpenApi\Annotations as OA;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ConverterFactory;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\CallbackService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\CallbackController as BaseCallbackController;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Model\AppConstants;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Service\ReferenceService;
+use FOS\RestBundle\Controller\Annotations\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Nelmio\ApiDocBundle\Annotation\Security;
+use OpenApi\Annotations as OA;
+use FOS\RestBundle\Controller\Annotations\Post;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
- * PaymentController.
+ * CallbackController.
  *
  * @category Controller
  * @package  Afrikpaysas\SymfonyThirdpartyAdapter\Controller
  * @author   Willy DAMTCHOU <willy.damtchou@gmail.com>
  * @license  https://opensource.org/licenses/MIT MIT License
- * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/PaymentController.php
+ * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Controller/CallbackController.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @psalm-suppress PropertyNotSetInConstructor
  */
-#[Route('/api/payment')]
-class PaymentController extends AbstractController implements PyCtrl
+#[Route('/api/callback')]
+class CallbackController extends AbstractController implements BaseCallbackController
 {
-    protected PaymentService $paymentService;
-    protected ReferenceService $referenceService;
+    protected CallbackService $callbackService;
     protected TransactionMapper $transactionMapper;
     protected ReferenceMapper $referenceMapper;
+    protected ReferenceService $referenceService;
 
     /**
      * Constructor.
      *
-     * @param PaymentService    $paymentService    paymentService
-     * @param ReferenceService  $referenceService  referenceService
+     * @param CallbackService   $callbackService   callbackService
      * @param TransactionMapper $transactionMapper transactionMapper
      * @param ReferenceMapper   $referenceMapper   referenceMapper
+     * @param ReferenceService  $referenceService  referenceService
      *
      * @return void
      */
     public function __construct(
-        PaymentService $paymentService,
-        ReferenceService $referenceService,
+        CallbackService $callbackService,
         TransactionMapper $transactionMapper,
-        ReferenceMapper $referenceMapper
+        ReferenceMapper $referenceMapper,
+        ReferenceService $referenceService
     ) {
-        $this->paymentService = $paymentService;
-        $this->referenceService = $referenceService;
+        $this->callbackService = $callbackService;
         $this->transactionMapper = $transactionMapper;
         $this->referenceMapper = $referenceMapper;
+        $this->referenceService = $referenceService;
     }
 
     /**
-     * Payment API.
+     * Callback API.
      *
-     * This call takes to make a payment.
+     * This call takes to make a decision converning a response of a third party
      *
-     * @param PaymentRequest $request request
+     * @param Request $response response
      *
      * @return PaymentResponse
      *
      * @codingStandardsIgnoreStart
      *
-     * @ParamConverter("request", converter="PaymentRequestConverter")
-     *
      * @OA\Post(
-     *   path="/api/payment",
-     *   tags={"Payment"},
-     *   summary="Payment API",
-     *   description="API is used for making a payment",
-     *   operationId="payment",
+     *   path="/api/callback",
+     *   tags={"Callback"},
+     *   summary="Callback API",
+     *   description="API is used to make a decision converning a response of a third party",
+     *   operationId="callback",
      *   @OA\RequestBody(
-     *       required=true,
-     *       @OA\MediaType(
-     *           mediaType="application/json",
-     *           @OA\Schema(
-     *               type="object",
-     *               @OA\Property(
-     *                   property="reference",
-     *                   description="Reference of operation",
-     *                   type="string",
-     *                   example="1673087627"
-     *               ),
-     *               @OA\Property(
-     *                   property="accountName",
-     *                   description="Account holder name",
-     *                   type="string",
-     *                   example="Willy"
-     *               ),
-     *               @OA\Property(
-     *                   property="accountNumber",
-     *                   description="CBS Account number",
-     *                   type="string",
-     *                   example="2234354546"
-     *               ),
-     *               @OA\Property(
-     *                   property="amount",
-     *                   description="Amount of operation",
-     *                   type="float",
-     *                   example="1000"
-     *               ),
-     *              @OA\Property(
-     *                   property="phone",
-     *                   description="phone for receiving notifications",
-     *                   type="string",
-     *                   example="237696991037"
-     *               ),
-     *              @OA\Property(
-     *                   property="email",
-     *                   description="email for receiving notifications",
-     *                   type="string",
-     *                   example=null
-     *               ),
-     *              @OA\Property(
-     *                   property="option",
-     *                   description="Option of payment in case there are specific amounts",
-     *                   type="string",
-     *                   example=null
-     *               ),
-     *              @OA\Property(
-     *                   property="externalId",
-     *                   description="Id of external application",
-     *                   type="string",
-     *                   example="34252455425"
-     *               ),
-     *              @OA\Property(
-     *                   property="requestId",
-     *                   description="Id of gateway",
-     *                   type="string",
-     *                   example="34252455425"
-     *               ),
-     *               @OA\Property(
-     *                   property="applicationId",
-     *                   description="Id of internal application",
-     *                   type="string",
-     *                   example="34252455425"
-     *               ),
-     *               @OA\Property(
-     *                   property="financialId",
-     *                   description="Id of transaction in Core Banking system",
-     *                   type="string",
-     *                   example="34252455425"
-     *               ),
-     *               @OA\Property(
-     *                   property="callbackUrl",
-     *                   description="the callback Url use to send the notification of payment after payment",
-     *                   type="string",
-     *                   example="https://callback.dev"
-     *               ),
-     *           )
-     *       )
+     *       required=false
      *   ),
      *  @OA\Response(
      *         response="200",
@@ -232,9 +156,10 @@ class PaymentController extends AbstractController implements PyCtrl
      *                     example={
      *                         "code": 200,
      *                         "message": "success",
+     *                         "referenceData": {},
      *                         "result": {},
      *                         "externalId": "AFP1223r23",
-     *                         "requestId": "435543534534534",
+     *                         "requestId": "455454545454",
      *                         "applicationId": "OSS-1311313131",
      *                         "financialId": "1413434244",
      *                         "providerId": "3254545452",
@@ -268,9 +193,9 @@ class PaymentController extends AbstractController implements PyCtrl
      * @SuppressWarnings(PHPMD.Superglobals)
      */
     #[Post]
-    public function pay(PaymentRequest $request): PaymentResponse
+    public function callback(Request $response): PaymentResponse
     {
-        $transaction = $this->paymentService->pay($request);
+        $transaction = $this->callbackService->execute($response);
 
         $referenceDTO = null;
 

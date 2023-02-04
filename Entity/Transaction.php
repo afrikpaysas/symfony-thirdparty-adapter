@@ -108,6 +108,9 @@ class Transaction extends BaseTransaction
     #[ORM\Column(name: 'providerBalance', nullable: true)]
     public ?float $providerBalance;
 
+    #[ORM\Column(name: 'callbackUrl', nullable: true)]
+    public ?string $callbackUrl;
+
     /**
      * Constructor.
      *

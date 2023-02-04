@@ -15,6 +15,7 @@
 
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction as BaseTransaction;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\MessagingService;

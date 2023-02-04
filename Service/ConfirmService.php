@@ -101,10 +101,19 @@ class ConfirmService implements BaseService
             );
         }
 
-        return $this->transactionService->updateProviderIdStatus(
+        $transaction =  $this->transactionService->updateProviderIdStatus(
             $transaction->id,
             $request->providerId,
             Status::SUCCESS
         );
+
+        if ($_ENV['REFERENCE_API_ENABLED']) {
+            $this->referenceService->updateStatus(
+                $transaction->reference,
+                $transaction->status
+            );
+        }
+
+        return $transaction;
     }
 }

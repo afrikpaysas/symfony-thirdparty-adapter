@@ -29,7 +29,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  */
-interface PaymentService
+interface PaymentService extends ApiProcessService
 {
     /**
      * Pay.
@@ -38,7 +38,7 @@ interface PaymentService
      *
      * @return Transaction
      *
-     * @throws \Throwable
+     * @throws PaymentAPIException|\Throwable
      */
     public function pay(PaymentRequest $request): Transaction;
 }

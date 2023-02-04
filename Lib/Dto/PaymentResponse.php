@@ -33,6 +33,8 @@ use Symfony\Component\HttpFoundation\JsonResponse;
  */
 class PaymentResponse extends JsonResponse
 {
+    public ?PaymentResponseDTO $paymentResponseDTO = null;
+
     /**
      * Constructor.
      *
@@ -47,21 +49,21 @@ class PaymentResponse extends JsonResponse
         TransactionDTO $transactionDTO,
         ?ReferenceDTO $referenceDTO
     ) {
-        $response = new PaymentResponseDTO();
+        $this->paymentResponseDTO = new PaymentResponseDTO();
 
-        $response->code = AppConstants::SUCCESS_CODE;
-        $response->message = AppConstants::SUCCESS_MESSAGE;
+        $this->paymentResponseDTO->code = AppConstants::SUCCESS_CODE;
+        $this->paymentResponseDTO->message = AppConstants::SUCCESS_MESSAGE;
 
-        $response->result = $transactionDTO;
-        $response->referenceData = $referenceDTO;
+        $this->paymentResponseDTO->result = $transactionDTO;
+        $this->paymentResponseDTO->referenceData = $referenceDTO;
 
-        $response->transactionId = $transactionDTO->transactionId;
-        $response->providerId = $transactionDTO->providerId;
-        $response->requestId = $transactionDTO->requestId;
-        $response->financialId = $transactionDTO->financialId;
-        $response->externalId = $transactionDTO->externalId;
-        $response->applicationId = $transactionDTO->applicationId;
+        $this->paymentResponseDTO->transactionId = $transactionDTO->transactionId;
+        $this->paymentResponseDTO->providerId = $transactionDTO->providerId;
+        $this->paymentResponseDTO->requestId = $transactionDTO->requestId;
+        $this->paymentResponseDTO->financialId = $transactionDTO->financialId;
+        $this->paymentResponseDTO->externalId = $transactionDTO->externalId;
+        $this->paymentResponseDTO->applicationId = $transactionDTO->applicationId;
 
-        parent::__construct($response);
+        parent::__construct($this->paymentResponseDTO);
     }
 }

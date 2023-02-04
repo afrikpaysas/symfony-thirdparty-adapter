@@ -71,4 +71,11 @@ class PaymentRequest extends VerifyRequest
      * @Serializer\Type("string")
      */
     public ?string $accountName = null;
+
+    /**
+     * CallBackUrl
+     *
+     * @Serializer\Type("string")
+     */
+    public ?string $callbackUrl = null;
 }

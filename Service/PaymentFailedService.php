@@ -15,7 +15,7 @@
 
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction as BaseTransaction;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentAPIException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentFailedService as PayFS;
@@ -51,25 +51,23 @@ class PaymentFailedService implements PayFS
     /**
      * Failed.
      *
-     * @param PaymentAPIException $exception   exception
-     * @param BaseTransaction     $transaction transaction
+     * @param Transaction $transaction transaction
      *
-     * @return PaymentAPIException
+     * @return Transaction
      */
-    public function failed(
-        PaymentAPIException $exception,
-        BaseTransaction $transaction
-    ): PaymentAPIException {
-        $condition = Status::PROGRESS == $transaction->status ||
-            Status::PENDING == $transaction->status;
+    public function failed(Transaction $transaction): Transaction {
+        $transactionOp = $transaction;
+
+        $condition = Status::PROGRESS == $transactionOp->status ||
+            Status::PENDING == $transactionOp->status;
 
         if ($condition) {
-            $this->transactionService->updateStatus(
-                $transaction->id,
+            $transactionOp = $this->transactionService->updateStatus(
+                $transactionOp->id,
                 Status::FAILED
             );
         }
 
-        return $exception;
+        return $transactionOp;
     }
 }

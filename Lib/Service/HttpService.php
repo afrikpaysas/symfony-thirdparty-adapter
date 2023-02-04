@@ -159,4 +159,42 @@ interface HttpService
         array $data,
         ?array $headers = null
     ): array;
+
+    /**
+     * SendAsyncPost.
+     *
+     * @param string      $url     url
+     * @param array       $data    data
+     * @param array|null  $headers headers
+     * @param string|null $token   token
+     *
+     * @return array
+     *
+     * @throws NetworkException|GeneralNetworkException
+     */
+    public function sendAsyncPost(
+        string $url,
+        array $data,
+        ?array $headers = null,
+        ?string $token = null
+    ): void;
+
+    /**
+     * SendAsyncGet.
+     *
+     * @param string      $url     url
+     * @param array       $data    data
+     * @param array|null  $headers headers
+     * @param string|null $token   token
+     *
+     * @return array
+     *
+     * @throws NetworkException|GeneralNetworkException
+     */
+    public function sendAsyncGet(
+        string $url,
+        array $data,
+        array $headers = null,
+        ?string $token = null
+    ): void;
 }

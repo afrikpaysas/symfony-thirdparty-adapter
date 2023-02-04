@@ -52,4 +52,5 @@ class TransactionDTO extends BaseEntityDTO
     public ?string $providerDate = null;
     public ?string $providerMessage = null;
     public ?float $providerBalance = null;
+    public ?string $callbackUrl = null;
 }

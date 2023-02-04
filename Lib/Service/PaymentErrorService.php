@@ -34,13 +34,13 @@ interface PaymentErrorService
     /**
      * Error.
      *
-     * @param \Throwable  $exception   exception
-     * @param Transaction $transaction transaction
+     * @param \Throwable       $exception   exception
+     * @param Transaction|null $transaction transaction
      *
      * @return RegulateException
      */
     public function error(
         \Throwable $exception,
-        Transaction $transaction
+        ?Transaction $transaction = null
     ): RegulateException;
 }

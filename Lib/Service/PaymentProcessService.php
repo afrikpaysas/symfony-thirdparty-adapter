@@ -15,12 +15,12 @@
 
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service;
 
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderPaymentResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\GeneralNetworkException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\LogicNotImplementedException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\NetworkException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentAPIException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ProviderResponse;
 
 /**
  * PaymentProcessService.
@@ -47,28 +47,23 @@ interface PaymentProcessService
     public function payment(Transaction $transaction): array;
 
     /**
-     * GenerateProviderPaymentResponse.
+     * Process.
      *
-     * @param array|null $paymentResult paymentResult
+     * @param ApiProcessService $apiProcessService apiProcessService
+     * @param array|null        $apiResponse       apiResponse
+     * @param Transaction|null  $transaction       transaction
+     * @param bool              $endProcess        endProcess
      *
-     * @return ProviderPaymentResponse
+     * @return Transaction
      *
-     * @throws LogicNotImplementedException
+     * @throws PaymentAPIException
      */
-    public function generateProviderPaymentResponse(
-        ?array $paymentResult
-    ): ProviderPaymentResponse;
-
-    /**
-     * Decision.
-     *
-     * @param ProviderPaymentResponse $response response
-     *
-     * @return void
-     *
-     * @throws PaymentAPIException|LogicNotImplementedException
-     */
-    public function decision(ProviderPaymentResponse $response): void;
+    public function process(
+        ApiProcessService $apiProcessService,
+        ?array $apiResponse,
+        ?Transaction $transaction = null,
+        bool $endProcess = true
+    ): Transaction;
 
     /**
      * TokenRequest.

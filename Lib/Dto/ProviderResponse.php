@@ -15,7 +15,7 @@
 
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto;
 
-use JMS\Serializer\Annotation as Serializer;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderPaymentResponse;
 
 /**
  * ProviderResponse.

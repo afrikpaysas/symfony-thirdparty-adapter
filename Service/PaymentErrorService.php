@@ -54,8 +54,8 @@ class PaymentErrorService implements PayS
     /**
      * Error.
      *
-     * @param \Throwable      $exception   exception
-     * @param BaseTransaction $transaction transaction
+     * @param \Throwable           $exception   exception
+     * @param BaseTransaction|null $transaction transaction
      *
      * @return RegulateException
      *
@@ -65,9 +65,10 @@ class PaymentErrorService implements PayS
      */
     public function error(
         \Throwable $exception,
-        BaseTransaction $transaction
+        ?BaseTransaction $transaction = null
     ): RegulateException {
-        $condition = Status::FAILED != $transaction->status &&
+        $condition = $transaction &&
+            Status::FAILED != $transaction->status &&
             Status::SUCCESS != $transaction->status;
 
         if ($condition) {

@@ -53,5 +53,6 @@ class Transaction extends BaseEntity
     public ?string $providerDate;
     public ?string $providerMessage;
     public ?float $providerBalance;
+    public ?string $callbackUrl;
     public ?Reference $referenceData;
 }
