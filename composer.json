@@ -28,6 +28,7 @@
         "jms/serializer-bundle": "^4.2",
         "nelmio/api-doc-bundle": "^4.10",
         "sensio/framework-extra-bundle": "^6.2",
+        "symfony/amqp-messenger": "5.4.*",
         "symfony/asset": "5.4.*",
         "symfony/console": "5.4.*",
         "symfony/dotenv": "5.4.*",
