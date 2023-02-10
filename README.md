@@ -211,8 +211,7 @@ CALLBACK_URL_REGEX="/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[
 ###> symfony/messenger ###
 # Choose one of the transports below
 #MESSENGER_TRANSPORT_DSN=doctrine://default
-#MESSENGER_TRANSPORT_DSN=amqp://guest:guest@localhost:5672/%2f/eneo
-MESSENGER_TRANSPORT_DSN=amqp://willy:willy@34.86.5.170:8113/willy/eneo
+MESSENGER_TRANSPORT_DSN=amqp://guest:guest@localhost:5672/%2f/messages
 # MESSENGER_TRANSPORT_DSN=redis://localhost:6379/messages
 ###< symfony/messenger ###
 ```
