@@ -41,8 +41,8 @@ class LoggingService implements BaseLoggingService
     /**
      * Constructor.
      *
-     * @param LoggerInterface     $logger       logger
-     * @param MessageBusInterface $bus          bus
+     * @param LoggerInterface     $logger logger
+     * @param MessageBusInterface $bus    bus
      *
      * @return void
      */

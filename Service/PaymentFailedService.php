@@ -47,8 +47,8 @@ class PaymentFailedService implements PayFS
     /**
      * Constructor.
      *
-     * @param TransactionService   $transactionService     transactionService
-     * @param MessageBusInterface  $bus                    bus
+     * @param TransactionService    $transactionService    transactionService
+     * @param MessageBusInterface   $bus                   bus
      * @param FullTransactionMapper $fullTransactionMapper fullTransactionMapper
      *
      * @return void

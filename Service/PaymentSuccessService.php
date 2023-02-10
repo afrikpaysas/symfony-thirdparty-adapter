@@ -56,7 +56,7 @@ class PaymentSuccessService implements SucS
     /**
      * Constructor.
      *
-     * @param TransactionService   $transactionService     transactionService
+     * @param TransactionService    $transactionService    transactionService
      * @param ReferenceService      $referenceService      referenceService
      * @param MessageBusInterface   $bus                   bus
      * @param FullTransactionMapper $fullTransactionMapper fullTransactionMapper

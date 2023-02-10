@@ -39,7 +39,7 @@ class UpdateReferenceStatusMessage
      * @param string $reference reference
      * @param Status $status    status
      *
-     * return void
+     *                          return void
      */
     public function __construct(string $reference, Status $status)
     {

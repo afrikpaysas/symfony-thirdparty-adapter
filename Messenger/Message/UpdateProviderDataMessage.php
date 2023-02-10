@@ -33,9 +33,8 @@ class UpdateProviderDataMessage extends FullTransactionDTO
     /**
      * Constructor.
      *
-     * @param FullTransactionDTO $transaction   transaction
-     *
-     * return void
+     * @param FullTransactionDTO $transaction transaction
+     *                                        return void
      */
     public function __construct(FullTransactionDTO $transaction)
     {

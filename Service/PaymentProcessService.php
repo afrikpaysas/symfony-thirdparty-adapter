@@ -244,10 +244,10 @@ class PaymentProcessService implements PyProS
     /**
      * ProcessAfterPayment.
      *
-     * @param ProviderPaymentResponse $providerResponse  providerResponse
-     * @param Transaction             $transaction       transaction
-     * @param bool                    $status            status
-     * @param bool                    $endProcess        endProcess
+     * @param ProviderPaymentResponse $providerResponse providerResponse
+     * @param Transaction             $transaction      transaction
+     * @param bool                    $status           status
+     * @param bool                    $endProcess       endProcess
      *
      * @return Transaction
      *

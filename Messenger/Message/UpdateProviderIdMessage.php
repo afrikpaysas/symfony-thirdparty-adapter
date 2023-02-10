@@ -35,7 +35,7 @@ class UpdateProviderIdMessage extends FullTransactionDTO
      *
      * @param FullTransactionDTO $transaction transaction
      *
-     * return void
+     *                                        return void
      */
     public function __construct(FullTransactionDTO $transaction)
     {

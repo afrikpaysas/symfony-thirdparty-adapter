@@ -35,7 +35,7 @@ class SendAdminSMSMessage extends TransactionDTO
      *
      * @param TransactionDTO $transaction transaction
      *
-     * return void
+     *                                    return void
      */
     public function __construct(TransactionDTO $transaction)
     {

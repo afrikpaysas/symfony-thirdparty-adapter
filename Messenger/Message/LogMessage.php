@@ -39,7 +39,7 @@ class LogMessage
      * @param string $message message
      * @param string $level   level
      *
-     * return void
+     *                        return void
      */
     public function __construct(string $title, string $message, string $level)
     {

@@ -95,7 +95,7 @@ abstract class BasicConverter implements ParamConverterInterface
     /**
      * GetObject.
      *
-     * @param Request        $request       request
+     * @param Request $request request
      *
      * @return mixed
      *
