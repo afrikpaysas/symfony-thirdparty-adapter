@@ -333,4 +333,54 @@ class ReferenceService implements RefS
 
         return $result;
     }
+
+    /**
+     * ExistFinalReferenceWithOption.
+     *
+     * @param string      $referenceNumber referenceNumber
+     * @param string|null $option          option
+     *
+     * @return bool
+     */
+    public function existFinalReferenceWithOption(
+        string $referenceNumber,
+        ?string $option = null
+    ): bool {
+        $result = false;
+
+        if ($this->existFinalReference($referenceNumber)) {
+            $result = true;
+        }
+
+        $condition = $result && AppConstants::PARAMETER_TRUE_VALUE == $_ENV['OPTION_PAY_ENABLED'];
+
+        if ($condition) {
+            $result = $this->optionService->existFinalOption($referenceNumber, $option ?? '');
+        }
+
+        return $result;
+    }
+
+    /**
+     * ExistFinalReference.
+     *
+     * @param string $referenceNumber referenceNumber
+     *
+     * @return bool
+     */
+    public function existFinalReference(string $referenceNumber): bool
+    {
+        $reference = $this->referenceRepository->findOneByReferenceNumber(
+            $referenceNumber,
+            false
+        );
+
+        $result = false;
+
+        if ($reference && Status::PENDING != $reference->status) {
+            $result = true;
+        }
+
+        return $result;
+    }
 }

@@ -129,4 +129,14 @@ interface OptionService
      * @return bool
      */
     public function existOption(string $reference, string $slug): bool;
+
+    /**
+     * ExistFinalOption.
+     *
+     * @param string $reference reference
+     * @param string $slug      slug
+     *
+     * @return bool
+     */
+    public function existFinalOption(string $reference, string $slug): bool;
 }

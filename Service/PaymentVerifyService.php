@@ -97,7 +97,7 @@ class PaymentVerifyService implements PyVerfS
         $this->verifyService->verify($paymentRequest);
 
         $condition = AppConstants::PARAMETER_TRUE_VALUE == $_ENV['PAY_UNIQUE_REFERENCE'] &&
-            $this->referenceService->existReferenceWithOption(
+            $this->referenceService->existFinalReferenceWithOption(
                 $paymentRequest->reference ?? '',
                 $paymentRequest->option,
             );

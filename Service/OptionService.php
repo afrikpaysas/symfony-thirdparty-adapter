@@ -16,6 +16,7 @@
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\MappingException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Mapper\OptionRequestMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequest;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\OptionRequestCollectionRequest;
@@ -335,6 +336,31 @@ class OptionService implements BaseOptServ
         $result = false;
 
         if ($option) {
+            $result = true;
+        }
+
+        return $result;
+    }
+
+    /**
+     * ExistFinalOption.
+     *
+     * @param string $reference reference
+     * @param string $slug      slug
+     *
+     * @return bool
+     */
+    public function existFinalOption(string $reference, string $slug): bool
+    {
+        $option = $this->optionRepository->findOneByReferenceAndSlug(
+            $reference,
+            $slug,
+            false
+        );
+
+        $result = false;
+
+        if ($option && Status::PENDING != $option->status) {
             $result = true;
         }
 

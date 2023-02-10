@@ -165,4 +165,26 @@ interface ReferenceService
      * @return bool
      */
     public function existReference(string $referenceNumber): bool;
+
+    /**
+     * ExistFinalReferenceWithOption.
+     *
+     * @param string      $referenceNumber referenceNumber
+     * @param string|null $option          option
+     *
+     * @return bool
+     */
+    public function existFinalReferenceWithOption(
+        string $referenceNumber,
+        ?string $option = null
+    ): bool;
+
+    /**
+     * ExistFinalReference.
+     *
+     * @param string $referenceNumber referenceNumber
+     *
+     * @return bool
+     */
+    public function existFinalReference(string $referenceNumber): bool;
 }
