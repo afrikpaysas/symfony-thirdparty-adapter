@@ -119,7 +119,8 @@ Then, configure the .env files by adding it in the `.env` file of your project:
 
 ###> symfony/framework-bundle ###
 APP_ENV=dev
-APP_SECRET=2fdfa1d70743bb8f3f626bba3bd444eb
+APP_DEBUG=1
+APP_SECRET=""
 SHOW_CONFIG=true
 ###< symfony/framework-bundle ###
 
@@ -133,7 +134,7 @@ HTTP_BASIC_AUTH_PASSWORD=password
 # IMPORTANT: You MUST configure your server version, either here or in config/packages/doctrine.yaml
 #
 # DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
-DATABASE_URL="mysql://user:password@127.0.0.1:3306/airtime?serverVersion=5&charset=utf8mb4"
+DATABASE_URL="mysql://user:pssword@127.0.0.1:3306/db?serverVersion=5&charset=utf8mb4"
 #DATABASE_URL="postgresql://app:!ChangeMe!@127.0.0.1:5432/app?serverVersion=14&charset=utf8"
 ###< doctrine/doctrine-bundle ###
 
@@ -145,22 +146,32 @@ TIME_ZONE=UTC
 TIME_ZONE_PROVIDER=UTC
 DEFAULT_DATE_TIME=now
 
-REFERENCE_REGEX="*"
-PHONE_REGEX="*"
-AMOUNT_MIN=100
-AMOUNT_MAX=1000000
+MANUAL_MODE=false
+ASYNC_MODE=false
+SET_BALANCE_AFTER_PAYMENT=false
+
+REFERENCE_REGEX="/^[0-9]{6,20}$/"
 
 AMOUNT_ENABLED=false
-OPTION_ENABLED=true
+AMOUNT_MIN=0
+AMOUNT_MAX=0
+
+PHONE_ENABLED=false
+PHONE_REGEX="/^[0-9]{6,20}$/"
+
+EMAIL_ENABLED=false
+
+OPTION_ENABLED=false
 OPTION_API_ENABLED=false
 SEARCH_OPTION_WITH_REFERENCE=false
-EMAIL_ENABLED=false
-PHONE_ENABLED=false
+API_OPTION=""
+OPTIONS_FILE="/config/options.yaml"
+
 REFERENCE_API_ENABLED=true
+PAY_UNIQUE_REFERENCE=false
+API_REFERENCE=""
 
 API_PAYMENT=""
-API_OPTION=""
-API_REFERENCE=""
 API_TOKEN=""
 API_USERNAME_TOKEN=""
 API_PASSWORD_TOKEN=""
@@ -172,17 +183,17 @@ CURL_MAXREDIRS=10
 ADMIN_PHONES=""
 ADMIN_EMAILS=""
 NOTIF_ADMIN_PHONES=false
-NOTIF_ADMIN_EMAILS=true
+NOTIF_ADMIN_EMAILS=false
 NOTIF_SMS_MESSAGE=""
 NOTIF_SMS_ADMIN_MESSAGE=""
 
 SMS_ENABLED=false
-SMS_SENDER="Afrikpay"
-SMS_COUNTRY="CM"
+SMS_SENDER=""
+SMS_COUNTRY=""
 SMS_SEPARATOR=";"
 API_SMS=""
 
-EMAIL_API_ENABLED=true
+EMAIL_API_ENABLED=false
 EMAIL_ADMIN_OBJECT=""
 EMAIL_CLIENT_OBJECT=""
 EMAIL_SENDER=""
@@ -191,17 +202,144 @@ API_EMAIL=""
 EMAIL_TEMPLATING_INLINE="<hr>"
 EMAIL_TEMPLATING_OBJECT="List"
 
-MANUAL_MODE=true
+API_CALLBACK_TOKEN=""
+API_CALLBACK_SIGNATURE_VARS=""
+API_CALLBACK_SIGNATURE_SEPARATOR="+"
+API_CALLBACK_SIGNATURE_SECRET=""
+CALLBACK_URL_REGEX="/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i"
 
-SET_BALANCE_AFTER_PAYMENT=true
-
-OPTIONS_FILE="/config/options.yaml"
+###> symfony/messenger ###
+# Choose one of the transports below
+#MESSENGER_TRANSPORT_DSN=doctrine://default
+#MESSENGER_TRANSPORT_DSN=amqp://guest:guest@localhost:5672/%2f/eneo
+MESSENGER_TRANSPORT_DSN=amqp://willy:willy@34.86.5.170:8113/willy/eneo
+# MESSENGER_TRANSPORT_DSN=redis://localhost:6379/messages
+###< symfony/messenger ###
 ```
 
-### Step 7: Run the application
+### Step 7: Configure messenger
+
+Then, configure messenger by adding it in the `config/packages/messenger.yaml` file of your project:
+
+```yaml
+# config/packages/messenger.yaml
+
+framework:
+  messenger:
+    # reset services after consuming messages
+    reset_on_message: true
+
+    # Uncomment this (and the failed transport below) to send failed messages to this transport for later handling.
+    # failure_transport: failed
+
+    transports:
+      #serializer: Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Serializer\ExternalJsonMessageSerializer
+      # https://symfony.com/doc/current/messenger.html#transport-configuration
+      set_balance:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        retry_strategy:
+          max_retries: ~
+          delay: ~
+          multiplier: ~
+          max_delay: ~
+      upload_provider_data:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        retry_strategy:
+          max_retries: ~
+          delay: ~
+          multiplier: ~
+          max_delay: ~
+      upload_provider_id:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        retry_strategy:
+          max_retries: ~
+          delay: ~
+          multiplier: ~
+          max_delay: ~
+      update_reference_status:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        retry_strategy:
+          max_retries: ~
+          delay: ~
+          multiplier: ~
+          max_delay: ~
+      send_admin_email:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        retry_strategy:
+          max_retries: ~
+          delay: ~
+          multiplier: ~
+          max_delay: ~
+      send_admin_sms:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        retry_strategy:
+          max_retries: ~
+          delay: ~
+          multiplier: ~
+          max_delay: ~
+      send_client_email:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        retry_strategy:
+          max_retries: ~
+          delay: ~
+          multiplier: ~
+          max_delay: ~
+      send_client_sms:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        retry_strategy:
+          max_retries: ~
+          delay: ~
+          multiplier: ~
+          max_delay: ~
+      callback_message:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        retry_strategy:
+          max_retries: ~
+          delay: ~
+          multiplier: ~
+          max_delay: ~
+      update_status_message:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        retry_strategy:
+          max_retries: ~
+          delay: ~
+          multiplier: ~
+          max_delay: ~
+      log_message:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        retry_strategy:
+          max_retries: ~
+          delay: ~
+          multiplier: ~
+          max_delay: ~
+    routing:
+      # Route your messages to the transports
+      'Afrikpaysas\SymfonyThirdpartyAdapter\Messenger\Message\SetBalanceMessage': set_balance
+      'Afrikpaysas\SymfonyThirdpartyAdapter\Messenger\Message\UpdateProviderDataMessage': upload_provider_data
+      'Afrikpaysas\SymfonyThirdpartyAdapter\Messenger\Message\UpdateProviderIdMessage': upload_provider_id
+      'Afrikpaysas\SymfonyThirdpartyAdapter\Messenger\Message\UpdateReferenceStatusMessage': update_reference_status
+      'Afrikpaysas\SymfonyThirdpartyAdapter\Messenger\Message\SendAdminEmailMessage': send_admin_email
+      'Afrikpaysas\SymfonyThirdpartyAdapter\Messenger\Message\SendAdminSMSMessage': send_admin_sms
+      'Afrikpaysas\SymfonyThirdpartyAdapter\Messenger\Message\SendClientEmailMessage': send_client_sms
+      'Afrikpaysas\SymfonyThirdpartyAdapter\Messenger\Message\SendClientSMSMessage': send_client_email
+      'Afrikpaysas\SymfonyThirdpartyAdapter\Messenger\Message\CallbackMessage': callback_message
+      'Afrikpaysas\SymfonyThirdpartyAdapter\Messenger\Message\UpdateStatusMessage': update_status_message
+      'Afrikpaysas\SymfonyThirdpartyAdapter\Messenger\Message\LogMessage': log_message
+#......
+```
+
+### Step 8: Run the application
 
 Then, run the application:
 
 ```shell
-composer install && php bin/console cache:clear && php bin/console doctrine:schema:update -f && symfony server:start
+composer install && php bin/console cache:clear && symfony console doctrine:schema:update -f && symfony server:start
+```
+
+### Step 9: Run messenger consumer
+
+Then, run messenger:
+
+```shell
+symfony console messenger:consume set_balance upload_provider_data upload_provider_id update_reference_status send_admin_email send_admin_sms send_client_sms send_client_email callback_message update_status_message log_message -vv
 ```
