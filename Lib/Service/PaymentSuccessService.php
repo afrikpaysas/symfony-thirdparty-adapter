@@ -17,6 +17,7 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderPaymentResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\LogicNotImplementedException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentApplicationException;
 
 /**
@@ -54,6 +55,8 @@ interface PaymentSuccessService
      * @param Transaction             $transaction transaction
      * @param ProviderPaymentResponse $response    response
      *
+     * @throws PaymentApplicationException
+     *
      * @return void
      */
     public function verifyAfterPayment(
@@ -62,11 +65,38 @@ interface PaymentSuccessService
     ): void;
 
     /**
+     * Decision.
+     *
+     * @param Transaction             $transaction transaction
+     * @param ProviderPaymentResponse $response    response
+     *
+     * @throws PaymentApplicationException
+     *
+     * @return void
+     */
+    public function decision(Transaction $transaction, ProviderPaymentResponse $response): void;
+
+    /**
      * SetBalance.
+     *
+     * @param Transaction $transactionOp transactionOp
+     *
+     * @return void
+     *
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+     */
+    public function setBalance(Transaction $transaction): Transaction;
+
+    /**
+     * SetBalanceAfterPayment.
      *
      * @param Transaction $transaction transaction
      *
      * @return void
+     *
+     * @throws LogicNotImplementedException
+     *
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
-    public function setBalance(Transaction $transaction): void;
+    public function setBalanceAfterPayment(Transaction $transaction): float;
 }

@@ -15,9 +15,11 @@
 
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use FOS\RestBundle\Controller\Annotations\Route;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\AppController as BaseAppCtrl;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\AppResponse;
+use Psr\Log\LogLevel;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**

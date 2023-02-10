@@ -15,6 +15,7 @@
 
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
+use Afrikpaysas\SymfonyThirdpartyAdapter\Entity\Option;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentRequest;
 // @codingStandardsIgnoreLine
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\DuplicateApplicationIdException as DuplicateApplicationIdE;
@@ -33,10 +34,12 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredExternalIdExcepti
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredFinancialIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredProviderIdException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredRequestIdException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\UniqueReferenceOptionException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentVerifyService as PyVerfS;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\VerifyService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
 
 /**
  * PaymentVerifyService.
@@ -50,26 +53,31 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\VerifyService;
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ * @SuppressWarnings(PHPMD.Superglobals)
  */
 class PaymentVerifyService implements PyVerfS
 {
     protected TransactionService $transactionService;
     protected VerifyService $verifyService;
+    protected ReferenceService $referenceService;
 
     /**
      * Constructor.
      *
      * @param TransactionService $transactionService transactionService
      * @param VerifyService      $verifyService      verifyService
+     * @param ReferenceService   $referenceService   referenceService
      *
      * @return void
      */
     public function __construct(
         TransactionService $transactionService,
-        VerifyService $verifyService
+        VerifyService $verifyService,
+        ReferenceService $referenceService
     ) {
         $this->transactionService = $transactionService;
         $this->verifyService = $verifyService;
+        $this->referenceService = $referenceService;
     }
 
     /**
@@ -87,6 +95,19 @@ class PaymentVerifyService implements PyVerfS
     public function verify(PaymentRequest $paymentRequest): void
     {
         $this->verifyService->verify($paymentRequest);
+
+        $condition = AppConstants::PARAMETER_TRUE_VALUE == $_ENV['PAY_UNIQUE_REFERENCE'] &&
+            $this->referenceService->existReferenceWithOption(
+                $paymentRequest->reference ?? '',
+                $paymentRequest->option,
+            );
+
+        if ($condition) {
+            throw new UniqueReferenceOptionException(
+                $paymentRequest->reference,
+                $paymentRequest->option
+            );
+        }
 
         if (!$paymentRequest->applicationId) {
             throw new RequiredApplicationIdExc();

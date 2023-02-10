@@ -21,6 +21,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\BadReferenceException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\InvalidAmountException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\ReferenceMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\TransactionMapper;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\StatusService as BaseStatusSv;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
@@ -102,7 +103,7 @@ class StatusService implements BaseStatusSv
 
         $transaction = $this->transactionService->findOneBy($searchItems);
 
-        if ($_ENV['REFERENCE_API_ENABLED']) {
+        if (AppConstants::PARAMETER_TRUE_VALUE == $_ENV['REFERENCE_API_ENABLED']) {
             $transaction->referenceData = $this->referenceService
                 ->findByReferenceNumber(
                     $transaction->reference

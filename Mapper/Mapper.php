@@ -283,6 +283,7 @@ class Mapper implements BaseMapper
      * @return string|int|float|DateTime|Status|null
      *
      * @SuppressWarnings(PHPMD.Superglobals)
+     * @SuppressWarnings(PHPMD.StaticAccess)
      *
      * @psalm-suppress UndefinedPropertyFetch
      */
@@ -298,8 +299,7 @@ class Mapper implements BaseMapper
                 new DateTimeZone($_ENV['TIME_ZONE'])
             );
         } elseif (Status::class == $class && is_string($value)) {
-            //@phpstan-ignore-next-line
-            $attribute = Status::$value;
+            $attribute = Status::from($value);
         } elseif ($value) {
             $attribute = $value;
         }

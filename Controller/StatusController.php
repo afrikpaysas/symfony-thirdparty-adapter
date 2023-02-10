@@ -15,6 +15,7 @@
 
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Controller;
 
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use FOS\RestBundle\Controller\Annotations\Post;
 use FOS\RestBundle\Controller\Annotations\Route;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\StatusController as StCtrl;
@@ -256,7 +257,7 @@ class StatusController extends AbstractController implements StCtrl
 
         $referenceDTO = null;
 
-        if ($_ENV['REFERENCE_API_ENABLED']) {
+        if (AppConstants::PARAMETER_TRUE_VALUE == $_ENV['REFERENCE_API_ENABLED']) {
             $transaction->referenceData = $this
                 ->referenceService
                 ->findByReferenceNumber(

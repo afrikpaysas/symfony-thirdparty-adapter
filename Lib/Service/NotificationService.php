@@ -44,18 +44,18 @@ interface NotificationService
      *
      * @param Transaction $transaction transaction
      *
-     * @return string
+     * @return array|null
      */
-    public function generateClientSMS(Transaction $transaction): string;
+    public function generateClientSMS(Transaction $transaction): ?array;
 
     /**
      * GenerateAdminSMS.
      *
      * @param Transaction $transaction transaction
      *
-     * @return string
+     * @return array|null
      */
-    public function generateAdminSMS(Transaction $transaction): string;
+    public function generateAdminSMS(Transaction $transaction): ?array;
 
     /**
      * GenerateClientEmail.
@@ -74,4 +74,40 @@ interface NotificationService
      * @return string
      */
     public function generateAdminEmail(Transaction $transaction): string;
+
+    /**
+     * SendClientSMS.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return void
+     */
+    public function sendClientSMS(Transaction $transaction): void;
+
+    /**
+     * SendAdminSMS.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return void
+     */
+    public function sendAdminSMS(Transaction $transaction): void;
+
+    /**
+     * SendClientEmail.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return void
+     */
+    public function sendClientEmail(Transaction $transaction): void;
+
+    /**
+     * sendAdminEmail.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return void
+     */
+    public function sendAdminEmail(Transaction $transaction): void;
 }

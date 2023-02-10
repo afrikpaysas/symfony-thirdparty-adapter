@@ -20,11 +20,10 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\PaymentResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\ReferenceMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\TransactionMapper;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ConverterFactory;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\CallbackService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Controller\CallbackController as BaseCallbackController;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Model\AppConstants;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Service\ReferenceService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
 use FOS\RestBundle\Controller\Annotations\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -199,12 +198,7 @@ class CallbackController extends AbstractController implements BaseCallbackContr
 
         $referenceDTO = null;
 
-        if ($_ENV['REFERENCE_API_ENABLED']) {
-            $transaction->referenceData = $this
-                ->referenceService
-                ->findByReferenceNumber(
-                    $transaction->reference
-                );
+        if (AppConstants::PARAMETER_TRUE_VALUE == $_ENV['REFERENCE_API_ENABLED']) {
             $referenceDTO = $this->referenceMapper->asDTO(
                 $transaction->referenceData
             );

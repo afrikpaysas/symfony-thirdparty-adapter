@@ -44,15 +44,17 @@ use Symfony\Component\HttpFoundation\Request;
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/DecisionService.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
+ *
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
 class CallbackService implements BaseCallbackService
 {
-    protected NotificationService   $notificationService;
+    protected NotificationService $notificationService;
     protected PaymentSuccessService $paySucService;
     protected PaymentProcessService $payProcService;
-    protected TransactionService    $transactionService;
-    protected PaymentFailedService  $paymentFailedService;
-    protected PaymentErrorService   $paymentErrorService;
+    protected TransactionService $transactionService;
+    protected PaymentFailedService $paymentFailedService;
+    protected PaymentErrorService $paymentErrorService;
 
     /**
      * Constructor.
@@ -71,8 +73,8 @@ class CallbackService implements BaseCallbackService
         PaymentSuccessService $paySucService,
         PaymentProcessService $payProcService,
         TransactionService $transactionService,
-        PaymentFailedService  $paymentFailedService,
-        PaymentErrorService   $paymentErrorService
+        PaymentFailedService $paymentFailedService,
+        PaymentErrorService $paymentErrorService
     ) {
         $this->notificationService = $notificationService;
         $this->paySucService = $paySucService;
@@ -91,7 +93,8 @@ class CallbackService implements BaseCallbackService
      *
      * @throws PaymentAPIException
      */
-    public function execute(Request $request): Transaction {
+    public function execute(Request $request): Transaction
+    {
         $response = [];
         $response[AppConstants::BODY] = json_decode($request->getContent(), true);
         $response[AppConstants::HEADERS] = $request->headers->all();
@@ -109,7 +112,8 @@ class CallbackService implements BaseCallbackService
      *
      * @throws LogicNotImplementedException
      */
-    public function generateProviderResponse(?array $apiResponse): ProviderResponse {
+    public function generateProviderResponse(?array $apiResponse): ProviderResponse
+    {
         throw new LogicNotImplementedException(__FUNCTION__);
     }
 
@@ -122,7 +126,8 @@ class CallbackService implements BaseCallbackService
      *
      * @throws PaymentAPIException|LogicNotImplementedException
      */
-    public function decision(ProviderPaymentResponse $providerResponse): void {
+    public function decision(ProviderPaymentResponse $providerResponse): void
+    {
         throw new LogicNotImplementedException(__FUNCTION__);
     }
 }

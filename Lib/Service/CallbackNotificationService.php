@@ -42,6 +42,15 @@ interface CallbackNotificationService
     public function callbackNotification(Transaction $transaction): void;
 
     /**
+     * CallbackNotification.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return void
+     */
+    public function callback(Transaction $transaction): void;
+
+    /**
      * GenerateSignature.
      *
      * @param Transaction $transaction transaction

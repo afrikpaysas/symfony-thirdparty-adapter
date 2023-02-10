@@ -277,6 +277,11 @@ final class SystemExceptionMessage
         AppConstants::MESSAGE => 'Invalid Callback Url %s',
     ];
 
+    public const UNIQUE_REFERENCE_OPTION_EXCEPTION = [
+        AppConstants::CODE => '405%s017',
+        AppConstants::MESSAGE => 'There are another payment with reference %s and option %s in instance',
+    ];
+
     // @codingStandardsIgnoreStart
     public const ILLEGAL_STATUS_CONFIRM_EXCEPTION = [
         AppConstants::CODE => '408%s001',

@@ -165,4 +165,8 @@ class AppConstants
     public const CALLBACK_URL = 'callbackUrl';
 
     public const ASYNC_TIMEOUT = 1;
+
+    public const MESSAGE_START = 'start';
+
+    public const MESSAGE_END = 'end';
 }

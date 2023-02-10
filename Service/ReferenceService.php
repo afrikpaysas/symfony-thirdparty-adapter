@@ -44,6 +44,8 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService as RefS;
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ * @SuppressWarnings(PHPMD.TooManyPublicMethods)
+ * @SuppressWarnings(PHPMD.Superglobals)
  */
 class ReferenceService implements RefS
 {
@@ -280,5 +282,55 @@ class ReferenceService implements RefS
         return [
             AppConstants::REFERENCE => $reference
         ];
+    }
+
+    /**
+     * ExistReferenceWithOption.
+     *
+     * @param string      $referenceNumber referenceNumber
+     * @param string|null $option          option
+     *
+     * @return bool
+     */
+    public function existReferenceWithOption(
+        string $referenceNumber,
+        ?string $option = null
+    ): bool {
+        $result = false;
+
+        if ($this->existReference($referenceNumber)) {
+            $result = true;
+        }
+
+        $condition = $result && AppConstants::PARAMETER_TRUE_VALUE == $_ENV['OPTION_ENABLED'];
+
+        if ($condition) {
+            $result = $this->optionService->existOption($referenceNumber, $option ?? '');
+        }
+
+        return $result;
+    }
+
+    /**
+     * ExistReference.
+     *
+     * @param string $referenceNumber referenceNumber
+     *
+     * @return bool
+     */
+    public function existReference(string $referenceNumber): bool
+    {
+        $reference = $this->referenceRepository->findOneByReferenceNumber(
+            $referenceNumber,
+            false
+        );
+
+        $result = false;
+
+        if ($reference) {
+            $result = true;
+        }
+
+        return $result;
     }
 }

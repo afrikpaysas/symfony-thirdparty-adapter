@@ -17,9 +17,13 @@ namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentAPIException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\TransactionMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentFailedService as PayFS;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Messenger\Message\UpdateStatusMessage;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\FullTransactionMapper;
+use Symfony\Component\Messenger\MessageBusInterface;
 
 /**
  * PaymentFailedService.
@@ -31,21 +35,32 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\TransactionService;
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/PaymentFailedService.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
+ *
+ * @SuppressWarnings(PHPMD.LongVariable)
  */
 class PaymentFailedService implements PayFS
 {
     protected TransactionService $transactionService;
+    protected MessageBusInterface $bus;
+    protected FullTransactionMapper $fullTransactionMapper;
 
     /**
      * Constructor.
      *
-     * @param TransactionService $transactionService transactionService
+     * @param TransactionService   $transactionService     transactionService
+     * @param MessageBusInterface  $bus                    bus
+     * @param FullTransactionMapper $fullTransactionMapper fullTransactionMapper
      *
      * @return void
      */
-    public function __construct(TransactionService $transactionService)
-    {
+    public function __construct(
+        TransactionService $transactionService,
+        MessageBusInterface $bus,
+        FullTransactionMapper $fullTransactionMapper
+    ) {
         $this->transactionService = $transactionService;
+        $this->bus = $bus;
+        $this->fullTransactionMapper = $fullTransactionMapper;
     }
 
     /**
@@ -55,19 +70,30 @@ class PaymentFailedService implements PayFS
      *
      * @return Transaction
      */
-    public function failed(Transaction $transaction): Transaction {
+    public function failed(Transaction $transaction): Transaction
+    {
         $transactionOp = $transaction;
 
-        $condition = Status::PROGRESS == $transactionOp->status ||
-            Status::PENDING == $transactionOp->status;
+        $transactionOp->status = Status::FAILED;
 
-        if ($condition) {
-            $transactionOp = $this->transactionService->updateStatus(
-                $transactionOp->id,
-                Status::FAILED
-            );
-        }
+        $this->updateToFailed($transactionOp);
 
         return $transactionOp;
+    }
+
+    /**
+     * UpdateToFailed.
+     *
+     * @param Transaction $transaction transactionOp
+     *
+     * @return void
+     */
+    protected function updateToFailed(Transaction $transaction): void
+    {
+        $this->bus->dispatch(
+            new UpdateStatusMessage(
+                $this->fullTransactionMapper->asDTO($transaction)
+            )
+        );
     }
 }

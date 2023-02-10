@@ -21,6 +21,7 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ConfirmRequest;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\IllegalProviderConfirmException as IllegalProviderException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\IllegalStatusConfirmException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredProviderIdException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\Status;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ConfirmService as BaseService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
@@ -37,6 +38,8 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentVerifyService;
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/ConfirmService.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
+ *
+ * @SuppressWarnings(PHPMD.Superglobals)
  */
 class ConfirmService implements BaseService
 {
@@ -107,7 +110,7 @@ class ConfirmService implements BaseService
             Status::SUCCESS
         );
 
-        if ($_ENV['REFERENCE_API_ENABLED']) {
+        if (AppConstants::PARAMETER_TRUE_VALUE == $_ENV['REFERENCE_API_ENABLED']) {
             $this->referenceService->updateStatus(
                 $transaction->reference,
                 $transaction->status

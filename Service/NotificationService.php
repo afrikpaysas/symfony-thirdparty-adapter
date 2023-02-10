@@ -16,14 +16,19 @@
 namespace Afrikpaysas\SymfonyThirdpartyAdapter\Service;
 
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;
-use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction as BaseTransaction;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\AppConstants;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\MessagingService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\NotificationService as NotfS;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\VerifyService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Messenger\Message\SendAdminEmailMessage;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Messenger\Message\SendAdminSMSMessage;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Messenger\Message\SendClientEmailMessage;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Messenger\Message\SendClientSMSMessage;
 use DateTimeZone;
 use DateTime;
+use Symfony\Component\Messenger\MessageBusInterface;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\TransactionMapper;
 
 /**
  * NotificationService.
@@ -35,36 +40,46 @@ use DateTime;
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/NotificationService.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
+ *
+ * @SuppressWarnings(PHPMD.Superglobals)
  */
 class NotificationService implements NotfS
 {
     protected MessagingService $messagingService;
     protected ReferenceService $referenceService;
     protected VerifyService $verifyService;
+    protected MessageBusInterface $bus;
+    protected TransactionMapper $transactionMapper;
 
     /**
      * Constructor.
      *
-     * @param MessagingService $messagingService messagingService
-     * @param ReferenceService $referenceService referenceService
-     * @param VerifyService    $verifyService    verifyService
+     * @param MessagingService    $messagingService  messagingService
+     * @param ReferenceService    $referenceService  referenceService
+     * @param VerifyService       $verifyService     verifyService
+     * @param MessageBusInterface $bus               bus
+     * @param TransactionMapper   $transactionMapper transactionMapper
      *
      * @return void
      */
     public function __construct(
         MessagingService $messagingService,
         ReferenceService $referenceService,
-        VerifyService $verifyService
+        VerifyService $verifyService,
+        MessageBusInterface $bus,
+        TransactionMapper $transactionMapper
     ) {
         $this->messagingService = $messagingService;
         $this->referenceService = $referenceService;
         $this->verifyService = $verifyService;
+        $this->bus = $bus;
+        $this->transactionMapper = $transactionMapper;
     }
 
     /**
      * Notification.
      *
-     * @param BaseTransaction $transaction transaction
+     * @param Transaction $transaction transaction
      *
      * @return void
      *
@@ -73,30 +88,147 @@ class NotificationService implements NotfS
      * @psalm-suppress PossiblyNullArgument
      * @psalm-suppress PossiblyUndefinedArrayOffset
      */
-    public function notification(BaseTransaction $transaction): void
+    public function notification(Transaction $transaction): void
     {
-        if (AppConstants::PARAMETER_TRUE_VALUE == $_ENV['PHONE_ENABLED']) {
+        $transactionDTO = $this->transactionMapper->asDTO($transaction);
+
+        $this->bus->dispatch(new SendClientSMSMessage($transactionDTO));
+        $this->bus->dispatch(new SendClientEmailMessage($transactionDTO));
+        $this->bus->dispatch(new SendAdminSMSMessage($transactionDTO));
+        $this->bus->dispatch(new SendAdminEmailMessage($transactionDTO));
+    }
+
+    /**
+     * GenerateClientSMS.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return array|null
+     *
+     * @SuppressWarnings(PHPMD.Superglobals)
+     */
+    public function generateClientSMS(Transaction $transaction): ?array
+    {
+        return [];
+    }
+
+    /**
+     * GenerateAdminSMS.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return array|null
+     *
+     * @SuppressWarnings(PHPMD.Superglobals)
+     */
+    public function generateAdminSMS(Transaction $transaction): ?array
+    {
+        return [];
+    }
+
+    /**
+     * GenerateClientEmail.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return string
+     */
+    public function generateClientEmail(Transaction $transaction): string
+    {
+        return $transaction->toEmailString(AppConstants::TRANSACTIONS_DETAILS);
+    }
+
+    /**
+     * GenerateAdminEmail.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return string
+     */
+    public function generateAdminEmail(Transaction $transaction): string
+    {
+        return $transaction->toEmailString(AppConstants::TRANSACTIONS_DETAILS);
+    }
+
+    /**
+     * SendClientSMS.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return void
+     */
+    public function sendClientSMS(Transaction $transaction): void
+    {
+        $condition = AppConstants::PARAMETER_TRUE_VALUE == $_ENV['PHONE_ENABLED'] &&
+            AppConstants::PARAMETER_TRUE_VALUE == $_ENV['SMS_ENABLED'];
+
+        if ($condition) {
             $this->verifyService->verifyPhone($transaction->phone);
+
             $this->messagingService->sendSMS(
                 $transaction->phone,
-                $this->generateClientSMS($transaction)
+                $this->generateClientSMSText($transaction)
             );
         }
-        if (AppConstants::PARAMETER_TRUE_VALUE == $_ENV['EMAIL_ENABLED']) {
+    }
+
+    /**
+     * SendAdminSMS.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return void
+     */
+    public function sendAdminSMS(Transaction $transaction): void
+    {
+        $condition = $_ENV['ADMIN_PHONES'] &&
+            AppConstants::PARAMETER_TRUE_VALUE == $_ENV['SMS_ENABLED'];
+
+        if ($condition) {
+            $this->messagingService->sendSMSList(
+                $_ENV['ADMIN_PHONES'],
+                $this->generateAdminSMSText($transaction)
+            );
+        }
+    }
+
+    /**
+     * SendClientEmail.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return void
+     */
+    public function sendClientEmail(Transaction $transaction): void
+    {
+        $condition = AppConstants::PARAMETER_TRUE_VALUE == $_ENV['EMAIL_ENABLED'] &&
+            AppConstants::PARAMETER_TRUE_VALUE == $_ENV['EMAIL_API_ENABLED'];
+
+        if ($condition) {
             $this->verifyService->verifyEmail($transaction->email);
+
             $this->messagingService->sendEmail(
                 $transaction->email,
                 $this->generateClientEmail($transaction),
                 $_ENV['EMAIL_CLIENT_OBJECT']
             );
         }
-        if (AppConstants::PARAMETER_TRUE_VALUE == $_ENV['NOTIF_ADMIN_PHONES']) {
-            $this->messagingService->sendSMSList(
-                $_ENV['ADMIN_PHONES'],
-                $this->generateAdminSMS($transaction)
-            );
-        }
-        if (AppConstants::PARAMETER_TRUE_VALUE == $_ENV['NOTIF_ADMIN_EMAILS']) {
+    }
+
+    /**
+     * sendAdminEmail.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return void
+     */
+    public function sendAdminEmail(Transaction $transaction): void
+    {
+        $condition = $_ENV['ADMIN_EMAILS'] &&
+            $_ENV['EMAIL_ADMIN_OBJECT'] &&
+            AppConstants::PARAMETER_TRUE_VALUE == $_ENV['EMAIL_API_ENABLED'];
+
+        if ($condition) {
             $this->messagingService->sendEmailList(
                 $_ENV['ADMIN_EMAILS'],
                 $this->generateAdminEmail($transaction),
@@ -106,82 +238,40 @@ class NotificationService implements NotfS
     }
 
     /**
-     * GenerateClientSMS.
+     * GenerateClientSMSText.
      *
-     * @param BaseTransaction $transaction transaction
+     * @param Transaction $transaction transaction
      *
-     * @return string
+     * @return array|null
      *
      * @SuppressWarnings(PHPMD.Superglobals)
      */
-    public function generateClientSMS(BaseTransaction $transaction): string
+    protected function generateClientSMSText(Transaction $transaction): string
     {
-        $reference = $this->referenceService->findByReferenceNumber(
-            $transaction->reference
-        );
+        $data = $this->generateClientSMS($transaction);
 
         return sprintf(
             $_ENV['NOTIF_SMS_MESSAGE'],
-            $reference->referenceNumber,
-            $reference->lastUpdatedDate->setTimezone(
-                new DateTimeZone($_ENV['TIME_ZONE_PROVIDER'])
-            )->format(
-                $_ENV['API_DATE_FORMAT']
-            ),
-            $reference->name ?? '',
-            $reference->amount ?? ''
+            ...$data
         );
     }
 
     /**
-     * GenerateAdminSMS.
+     * GenerateAdminSMSText.
      *
-     * @param BaseTransaction $transaction transaction
+     * @param Transaction $transaction transaction
      *
-     * @return string
+     * @return array|null
      *
      * @SuppressWarnings(PHPMD.Superglobals)
      */
-    public function generateAdminSMS(BaseTransaction $transaction): string
+    protected function generateAdminSMSText(Transaction $transaction): string
     {
-        $reference = $this->referenceService->findByReferenceNumber(
-            $transaction->reference
-        );
+        $data = $this->generateAdminSMS($transaction);
 
         return sprintf(
             $_ENV['NOTIF_SMS_ADMIN_MESSAGE'],
-            $reference->referenceNumber,
-            $reference->lastUpdatedDate->setTimezone(
-                new DateTimeZone($_ENV['TIME_ZONE_PROVIDER'])
-            )->format(
-                $_ENV['API_DATE_FORMAT']
-            ),
-            $reference->name ?? '',
-            $reference->amount ?? ''
+            ...$data
         );
-    }
-
-    /**
-     * GenerateClientEmail.
-     *
-     * @param BaseTransaction $transaction transaction
-     *
-     * @return string
-     */
-    public function generateClientEmail(BaseTransaction $transaction): string
-    {
-        return $transaction->toEmailString(AppConstants::TRANSACTIONS_DETAILS);
-    }
-
-    /**
-     * GenerateAdminEmail.
-     *
-     * @param BaseTransaction $transaction transaction
-     *
-     * @return string
-     */
-    public function generateAdminEmail(BaseTransaction $transaction): string
-    {
-        return $transaction->toEmailString(AppConstants::TRANSACTIONS_DETAILS);
     }
 }

@@ -22,7 +22,10 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\LogicNotImplementedExcept
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Entity\Transaction;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\NetworkException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentAPIException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\PaymentApplicationException;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Exception\RequiredProviderIdException;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\FullTransactionMapper;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Mapper\TransactionMapper;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Model\ProviderResponse;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ApiProcessService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\HttpService;
@@ -34,7 +37,12 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\NotificationService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\CallbackNotificationService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentFailedService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\PaymentErrorService;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Service\ReferenceService;
 use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderPaymentResponse;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Messenger\Message\CallbackMessage;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Messenger\Message\UpdateProviderDataMessage;
+use Afrikpaysas\SymfonyThirdpartyAdapter\Messenger\Message\UpdateProviderIdMessage;
+use Symfony\Component\Messenger\MessageBusInterface;
 
 /**
  * PHP Version 8.1
@@ -47,6 +55,13 @@ use Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Dto\ProviderPaymentResponse;
  * @link     https://github.com/afrikpaysas/symfony-thirdparty-adapter/blob/master/Service/PaymentProcessService.php
  *
  * @see https://github.com/afrikpaysas/symfony-thirdparty-adapter
+ *
+ * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ * @SuppressWarnings(PHPMD.LongVariable)
+ * @SuppressWarnings(PHPMD.ExcessiveParameterList)
+ * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
+ * @SuppressWarnings(PHPMD.Superglobals)
+ * @SuppressWarnings(PHPMD.EmptyCatchBlock)
  */
 class PaymentProcessService implements PyProS
 {
@@ -57,6 +72,10 @@ class PaymentProcessService implements PyProS
     protected CallbackNotificationService $callbackNotificationService;
     protected PaymentFailedService $paymentFailedService;
     protected PaymentErrorService $paymentErrorService;
+    protected MessageBusInterface $bus;
+    protected ReferenceService $referenceService;
+    protected TransactionMapper $transactionMapper;
+    protected FullTransactionMapper $fullTransactionMapper;
 
     /**
      * Constructor.
@@ -68,6 +87,10 @@ class PaymentProcessService implements PyProS
      * @param CallbackNotificationService $callbackNotificationService callbackNotificationService
      * @param PaymentFailedService        $paymentFailedService        paymentFailedService
      * @param PaymentErrorService         $paymentErrorService         paymentErrorService
+     * @param MessageBusInterface         $bus                         bus
+     * @param ReferenceService            $referenceService            referenceService
+     * @param TransactionMapper           $transactionMapper           transactionMapper
+     * @param FullTransactionMapper       $fullTransactionMapper       fullTransactionMapper
      *
      * @return void
      */
@@ -78,7 +101,11 @@ class PaymentProcessService implements PyProS
         NotificationService $notificationService,
         CallbackNotificationService $callbackNotificationService,
         PaymentFailedService $paymentFailedService,
-        PaymentErrorService $paymentErrorService
+        PaymentErrorService $paymentErrorService,
+        MessageBusInterface $bus,
+        ReferenceService $referenceService,
+        TransactionMapper $transactionMapper,
+        FullTransactionMapper $fullTransactionMapper
     ) {
         $this->httpService = $httpService;
         $this->transactionService = $transactionService;
@@ -87,6 +114,10 @@ class PaymentProcessService implements PyProS
         $this->callbackNotificationService = $callbackNotificationService;
         $this->paymentFailedService = $paymentFailedService;
         $this->paymentErrorService = $paymentErrorService;
+        $this->bus = $bus;
+        $this->referenceService = $referenceService;
+        $this->transactionMapper = $transactionMapper;
+        $this->fullTransactionMapper = $fullTransactionMapper;
     }
 
     /**
@@ -147,36 +178,29 @@ class PaymentProcessService implements PyProS
         bool $endProcess = true
     ): Transaction {
         $transactionOp = $transaction;
-
-        $status = false;
+        $status = true;
+        $providerResponse = null;
 
         try {
             $providerResponse = $apiProcessService->generateProviderResponse($apiResponse);
-
-            if (!$transactionOp) {
-                if (!$providerResponse->providerId) {
-                    throw new RequiredProviderIdException();
-                }
-                $transactionOp = $this->transactionService->findOneByProviderId($providerResponse->providerId);
+            if (!$providerResponse->providerId) {
+                throw new BadProviderResponseException();
             }
-
-            $transactionOp = $this->processRequest($apiProcessService, $providerResponse, $transactionOp, $endProcess);
-            $status = true;
-        } catch (RequiredProviderIdException|EntityNotFoundException $exception) {
+            $transactionOp = $this->refreshTransaction($providerResponse, $transactionOp);
+            $apiProcessService->decision($providerResponse);
+            if ($endProcess) {
+                $this->paySucService->decision($transactionOp, $providerResponse);
+            }
+            $transactionOp = $this->updateTransaction($providerResponse, $transactionOp);
+        } catch (RequiredProviderIdException | EntityNotFoundException | PaymentApplicationException $exception) {
             throw $exception;
         } catch (PaymentAPIException $exception) {
+            $status = false;
         } catch (\Throwable $exception) {
             throw $this->paymentErrorService->error($exception, $transactionOp);
         }
 
-        if($status && $endProcess) {
-            $this->callbackNotificationService->callbackNotification($transactionOp);
-        } elseif(!$status) {
-            $transactionOp = $this->paymentFailedService->failed($transactionOp);
-            $this->callbackNotificationService->callbackNotification($transactionOp);
-        }
-
-        return $transactionOp;
+        return $this->processAfterPayment($providerResponse, $transactionOp, $status, $endProcess);
     }
 
     /**
@@ -218,38 +242,132 @@ class PaymentProcessService implements PyProS
     }
 
     /**
-     * ProcessRequest.
+     * ProcessAfterPayment.
      *
-     * @param ApiProcessService       $apiProcessService apiProcessService
-     * @param Transaction             $transactionOp     transactionOp
      * @param ProviderPaymentResponse $providerResponse  providerResponse
+     * @param Transaction             $transaction       transaction
+     * @param bool                    $status            status
      * @param bool                    $endProcess        endProcess
      *
      * @return Transaction
      *
      * @throws PaymentAPIException
      */
-    protected function processRequest(
-        ApiProcessService $apiProcessService,
+    protected function processAfterPayment(
         ProviderPaymentResponse $providerResponse,
-        Transaction $transactionOp,
+        Transaction $transaction,
+        bool $status,
         bool $endProcess = true
     ): Transaction {
-        $apiProcessService->decision($providerResponse);
+        $transactionOp = $transaction;
 
-        if (!$endProcess) {
-            if (!$providerResponse->providerId) {
-                throw new BadProviderResponseException();
+        try {
+            if ($status && $endProcess) {
+                $transactionOp = $this->paySucService->success($transactionOp, $providerResponse);
+                $transactionOp = $this->paySucService->setBalance($transaction);
+                $this->notificationService->notification($transactionOp);
+                $this->callbackNotification($transactionOp);
+            } elseif (!$status) {
+                $transactionOp = $this->paymentFailedService->failed($transactionOp);
+                $this->callbackNotification($transactionOp);
             }
-            $transactionOp = $this->transactionService->updateProviderId(
-                $transactionOp->id,
-                $providerResponse->providerId
-            );
-        } else {
-            $transactionOp = $this->paySucService->success($transactionOp, $providerResponse);
-            $this->notificationService->notification($transactionOp);
+        } catch (\Throwable) {
+            //Send alert
         }
 
         return $transactionOp;
+    }
+
+    /**
+     * RefreshTransaction.
+     *
+     * @param ProviderPaymentResponse $providerResponse providerResponse
+     * @param Transaction|null        $transaction      transaction
+     *
+     * @throws RequiredProviderIdException|EntityNotFoundException
+     *
+     * @return void
+     */
+    protected function refreshTransaction(
+        ProviderPaymentResponse $providerResponse,
+        ?Transaction $transaction
+    ): Transaction {
+        $transactionOp = $transaction;
+
+        if (!$transactionOp) {
+            $transactionOp = $this->transactionService->findOneByProviderId($providerResponse->providerId);
+
+            if (AppConstants::PARAMETER_TRUE_VALUE == $_ENV['REFERENCE_API_ENABLED']) {
+                $transactionOp->referenceData = $this->referenceService->findByReferenceNumber(
+                    $transactionOp->reference ?? ''
+                );
+            }
+        }
+
+        return $transactionOp;
+    }
+
+    /**
+     * UpdateTransaction.
+     *
+     * @param ProviderPaymentResponse $response    response
+     * @param Transaction|null        $transaction $transactionOp
+     *
+     * @return void
+     */
+    protected function updateTransaction(
+        ProviderPaymentResponse $response,
+        ?Transaction $transactionOp
+    ): Transaction {
+        $transaction = $transactionOp;
+
+        try {
+            foreach (get_object_vars($response) as $key => $value) {
+                if (property_exists($transaction, $key) && null != $value) {
+                    $transaction->$key = $value;
+                }
+            }
+
+            $this->bus->dispatch(
+                new UpdateProviderDataMessage(
+                    $this->fullTransactionMapper->asDTO($transaction)
+                )
+            );
+        } catch (\Throwable $trowable) {
+        }
+
+        return $transaction;
+    }
+
+    /**
+     * UpdateProviderId.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return void
+     */
+    protected function updateProviderId(Transaction $transaction): void
+    {
+        $this->bus->dispatch(
+            new UpdateProviderIdMessage(
+                $this->fullTransactionMapper->asDTO($transaction)
+            )
+        );
+    }
+
+    /**
+     * CallbackNotification.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return void
+     */
+    protected function callbackNotification(Transaction $transaction): void
+    {
+        $this->bus->dispatch(
+            new CallbackMessage(
+                $this->transactionMapper->asDTO($transaction)
+            )
+        );
     }
 }

@@ -57,6 +57,8 @@ interface PaymentProcessService
      * @return Transaction
      *
      * @throws PaymentAPIException
+     *
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      */
     public function process(
         ApiProcessService $apiProcessService,

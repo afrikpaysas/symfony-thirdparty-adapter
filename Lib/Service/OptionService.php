@@ -119,4 +119,14 @@ interface OptionService
      * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      */
     public function findOneBySlug(string $slug, bool $throw = true): ?Option;
+
+    /**
+     * ExistOption.
+     *
+     * @param string $reference reference
+     * @param string $slug      slug
+     *
+     * @return bool
+     */
+    public function existOption(string $reference, string $slug): bool;
 }

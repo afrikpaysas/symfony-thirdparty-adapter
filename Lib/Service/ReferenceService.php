@@ -143,4 +143,26 @@ interface ReferenceService
      * @return array|null
      */
     public function bodyRequest(string $reference): ?array;
+
+    /**
+     * ExistReferenceWithOption.
+     *
+     * @param string      $referenceNumber referenceNumber
+     * @param string|null $option          option
+     *
+     * @return bool
+     */
+    public function existReferenceWithOption(
+        string $referenceNumber,
+        ?string $option = null
+    ): bool;
+
+    /**
+     * ExistReference.
+     *
+     * @param string $referenceNumber referenceNumber
+     *
+     * @return bool
+     */
+    public function existReference(string $referenceNumber): bool;
 }

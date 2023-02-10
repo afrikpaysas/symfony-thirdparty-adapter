@@ -217,7 +217,8 @@ class PaymentService implements BasePaymSv
      *
      * @throws LogicNotImplementedException
      */
-    public function generateProviderResponse(?array $apiResponse): ProviderPaymentResponse {
+    public function generateProviderResponse(?array $apiResponse): ProviderPaymentResponse
+    {
         throw new LogicNotImplementedException(__FUNCTION__);
     }
 
@@ -230,7 +231,8 @@ class PaymentService implements BasePaymSv
      *
      * @throws PaymentAPIException|LogicNotImplementedException
      */
-    public function decision(ProviderPaymentResponse $providerResponse): void {
+    public function decision(ProviderPaymentResponse $providerResponse): void
+    {
         throw new LogicNotImplementedException(__FUNCTION__);
     }
 }

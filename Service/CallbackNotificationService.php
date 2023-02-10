@@ -46,7 +46,7 @@ class CallbackNotificationService implements CNotfS
     protected HttpService $httpService;
     protected ReferenceMapper $referenceMapper;
     protected TransactionMapper $transactionMapper;
-    protected ReferenceService  $referenceService;
+    protected ReferenceService $referenceService;
 
     /**
      * Constructor.
@@ -62,7 +62,7 @@ class CallbackNotificationService implements CNotfS
         HttpService $httpService,
         ReferenceMapper $referenceMapper,
         TransactionMapper $transactionMapper,
-        ReferenceService  $referenceService
+        ReferenceService $referenceService
     ) {
         $this->httpService = $httpService;
         $this->referenceMapper = $referenceMapper;
@@ -76,16 +76,34 @@ class CallbackNotificationService implements CNotfS
      * @param Transaction $transaction transaction
      *
      * @return void
+     *
+     * @SuppressWarnings(PHPMD.EmptyCatchBlock)
      */
-    public function callbackNotification(Transaction $transaction): void {
-        if(!isset($transaction->callbackUrl) || !$transaction->callbackUrl) {
+    public function callbackNotification(Transaction $transaction): void
+    {
+        try {
+            $this->callback($transaction);
+        } catch (\Throwable $exception) {
+        }
+    }
+
+    /**
+     * CallbackNotification.
+     *
+     * @param Transaction $transaction transaction
+     *
+     * @return void
+     */
+    public function callback(Transaction $transaction): void
+    {
+        if (!isset($transaction->callbackUrl) || !$transaction->callbackUrl) {
             return ;
         }
 
         $bodyRequest = $this->bodyRequest($transaction);
         $headersRequest = $this->headersRequest($transaction);
 
-        $response = $this->httpService->sendAsyncPost(
+        $this->httpService->sendPOSTWithTokenSet(
             $transaction->callbackUrl,
             $bodyRequest,
             $headersRequest
@@ -98,6 +116,8 @@ class CallbackNotificationService implements CNotfS
      * @param Transaction $transaction transaction
      *
      * @return string
+     *
+     * @SuppressWarnings(PHPMD.Superglobals)
      */
     public function generateSignature(Transaction $transaction): string
     {
@@ -108,7 +128,7 @@ class CallbackNotificationService implements CNotfS
 
         $text = '';
 
-        foreach($signatureVars as $value) {
+        foreach ($signatureVars as $value) {
             $text .= $value;
         }
 
@@ -129,7 +149,7 @@ class CallbackNotificationService implements CNotfS
     public function headersRequest(Transaction $transaction): ?array
     {
         return [
-            AppConstants::SIGNATURE.':'.$this->generateSignature($transaction)
+            AppConstants::SIGNATURE . ':' . $this->generateSignature($transaction)
         ];
     }
 
@@ -139,12 +159,14 @@ class CallbackNotificationService implements CNotfS
      * @param Transaction $transaction transaction
      *
      * @return array|null
+     *
+     * @SuppressWarnings(PHPMD.Superglobals)
      */
     public function bodyRequest(Transaction $transaction): ?array
     {
         $referenceDTO = null;
 
-        if ($_ENV['REFERENCE_API_ENABLED']) {
+        if (AppConstants::PARAMETER_TRUE_VALUE == $_ENV['REFERENCE_API_ENABLED']) {
             $transaction->referenceData = $this
                 ->referenceService
                 ->findByReferenceNumber(

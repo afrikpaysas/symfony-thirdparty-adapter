@@ -365,6 +365,8 @@ class HttpService implements BaseHttpService
      * @return void
      *
      * @throws NetworkException|GeneralNetworkException
+     *
+     * @SuppressWarnings(PHPMD.EmptyCatchBlock)
      */
     protected function sendAsyncRequest(
         string $url,
@@ -373,7 +375,7 @@ class HttpService implements BaseHttpService
         ?string $token = null,
         ?int $timeout = null
     ): void {
-        try{
+        try {
             $this->sendRequestWithHeaders($url, $params, $headers, $token, $timeout);
         } catch (\Throwable $throwable) {
         }

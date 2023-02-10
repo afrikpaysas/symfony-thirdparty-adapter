@@ -315,4 +315,29 @@ class OptionService implements BaseOptServ
     {
         return $this->optionRepository->findOneBySlug($slug, $throw);
     }
+
+    /**
+     * ExistOption.
+     *
+     * @param string $reference reference
+     * @param string $slug      slug
+     *
+     * @return bool
+     */
+    public function existOption(string $reference, string $slug): bool
+    {
+        $option = $this->optionRepository->findOneByReferenceAndSlug(
+            $reference,
+            $slug,
+            false
+        );
+
+        $result = false;
+
+        if ($option) {
+            $result = true;
+        }
+
+        return $result;
+    }
 }
