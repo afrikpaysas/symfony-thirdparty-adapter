@@ -233,85 +233,95 @@ framework:
     # failure_transport: failed
 
     transports:
-      #serializer: Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Serializer\ExternalJsonMessageSerializer
       # https://symfony.com/doc/current/messenger.html#transport-configuration
       set_balance:
         dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        serializer: Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Serializer\ExternalJsonMessageSerializer
         retry_strategy:
-          max_retries: ~
-          delay: ~
-          multiplier: ~
-          max_delay: ~
+          max_retries: 3
+          delay: 1000
+          multiplier: 10
+          max_delay: 0
       upload_provider_data:
         dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        serializer: Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Serializer\ExternalJsonMessageSerializer
         retry_strategy:
-          max_retries: ~
-          delay: ~
-          multiplier: ~
-          max_delay: ~
+          max_retries: 3
+          delay: 1000
+          multiplier: 10
+          max_delay: 0
       upload_provider_id:
         dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        serializer: Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Serializer\ExternalJsonMessageSerializer
         retry_strategy:
-          max_retries: ~
-          delay: ~
-          multiplier: ~
-          max_delay: ~
+          max_retries: 5
+          delay: 1000
+          multiplier: 5
+          max_delay: 0
       update_reference_status:
         dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        serializer: Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Serializer\ExternalJsonMessageSerializer
         retry_strategy:
-          max_retries: ~
-          delay: ~
-          multiplier: ~
-          max_delay: ~
+          max_retries: 3
+          delay: 1000
+          multiplier: 10
+          max_delay: 0
       send_admin_email:
         dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        serializer: Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Serializer\ExternalJsonMessageSerializer
         retry_strategy:
-          max_retries: ~
-          delay: ~
-          multiplier: ~
-          max_delay: ~
+          max_retries: 3
+          delay: 1000
+          multiplier: 60
+          max_delay: 0
       send_admin_sms:
         dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        serializer: Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Serializer\ExternalJsonMessageSerializer
         retry_strategy:
-          max_retries: ~
-          delay: ~
-          multiplier: ~
-          max_delay: ~
+          max_retries: 3
+          delay: 1000
+          multiplier: 60
+          max_delay: 0
       send_client_email:
         dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        serializer: Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Serializer\ExternalJsonMessageSerializer
         retry_strategy:
-          max_retries: ~
-          delay: ~
-          multiplier: ~
-          max_delay: ~
+          max_retries: 3
+          delay: 1000
+          multiplier: 60
+          max_delay: 0
       send_client_sms:
         dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        serializer: Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Serializer\ExternalJsonMessageSerializer
         retry_strategy:
-          max_retries: ~
-          delay: ~
-          multiplier: ~
-          max_delay: ~
+          max_retries: 3
+          delay: 1000
+          multiplier: 60
+          max_delay: 0
       callback_message:
         dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        serializer: Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Serializer\ExternalJsonMessageSerializer
         retry_strategy:
-          max_retries: ~
-          delay: ~
-          multiplier: ~
-          max_delay: ~
+          max_retries: 3
+          delay: 1000
+          multiplier: 60
+          max_delay: 0
       update_status_message:
         dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        serializer: Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Serializer\ExternalJsonMessageSerializer
         retry_strategy:
-          max_retries: ~
-          delay: ~
-          multiplier: ~
-          max_delay: ~
+          max_retries: 3
+          delay: 1000
+          multiplier: 10
+          max_delay: 0
       log_message:
         dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        serializer: Afrikpaysas\SymfonyThirdpartyAdapter\Lib\Serializer\ExternalJsonMessageSerializer
         retry_strategy:
-          max_retries: ~
-          delay: ~
-          multiplier: ~
-          max_delay: ~
+          max_retries: 3
+          delay: 1000
+          multiplier: 10
+          max_delay: 0
     routing:
       # Route your messages to the transports
       'Afrikpaysas\SymfonyThirdpartyAdapter\Messenger\Message\SetBalanceMessage': set_balance

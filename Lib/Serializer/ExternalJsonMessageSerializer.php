@@ -35,20 +35,12 @@ use Symfony\Component\Messenger\Transport\Serialization\PhpSerializer;
 class ExternalJsonMessageSerializer extends PhpSerializer
 {
     /**
-     * Decode.
-     *
-     * @param array $encodedEnvelope encodedEnvelope
-     *
-     * @throws MessageDecodingFailedException
-     *
-     * @return Envelope
+     * {@inheritdoc}
      */
     public function decode(array $encodedEnvelope): Envelope
     {
         if (empty($encodedEnvelope['body'])) {
-            throw new MessageDecodingFailedException(
-                'Encoded envelope should have at least a "body", or maybe you should implement your own serializer.'
-            );
+            throw new MessageDecodingFailedException('Encoded envelope should have at least a "body", or maybe you should implement your own serializer.');
         }
 
         if (!str_ends_with($encodedEnvelope['body'], '}')) {
@@ -61,11 +53,7 @@ class ExternalJsonMessageSerializer extends PhpSerializer
     }
 
     /**
-     * Encode.
-     *
-     * @param Envelope $envelope envelope
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function encode(Envelope $envelope): array
     {
@@ -82,44 +70,20 @@ class ExternalJsonMessageSerializer extends PhpSerializer
         ];
     }
 
-
-    /**
-     * SafelyUnserialize.
-     *
-     * @param string $contents contents
-     *
-     * @return mixed
-     *
-     * @throws MessageDecodingFailedException
-     *
-     * @SuppressWarnings(PHPMD.UnusedLocalVariable)
-     * @SuppressWarnings(PHPMD.LongVariable)
-     */
-    protected function safelyUnserialize(string $contents): mixed
+    private function safelyUnserialize(string $contents)
     {
         if ('' === $contents) {
             throw new MessageDecodingFailedException('Could not decode an empty message using PHP serialization.');
         }
 
-        return $contents;
-
-        $signalingException = new MessageDecodingFailedException(
-            sprintf(
-                'Could not decode message using PHP serialization: %s.',
-                $contents
-            )
-        );
-        $prevUnserializeHandler = ini_set('unserialize_callback_func', self::class . '::handleUnserializeCallback');
-        $prevErrorHandler = set_error_handler(
-            function ($type, $msg, $file, $line, $context = []) use (&$prevErrorHandler, $signalingException) {
-                return $prevErrorHandler ? $prevErrorHandler($type, $msg, $file, $line, $context) : false;
-            }
-        );
+        $signalingException = new MessageDecodingFailedException(sprintf('Could not decode message using PHP serialization: %s.', $contents));
+        $prevUnserializeHandler = ini_set('unserialize_callback_func', self::class.'::handleUnserializeCallback');
+        $prevErrorHandler = set_error_handler(function ($type, $msg, $file, $line, $context = []) use (&$prevErrorHandler, $signalingException) {
+            return $prevErrorHandler ? $prevErrorHandler($type, $msg, $file, $line, $context) : false;
+        });
 
         try {
             $meta = unserialize($contents);
-        } catch (\Throwable $t) {
-            dump($t);
         } finally {
             restore_error_handler();
             ini_set('unserialize_callback_func', $prevUnserializeHandler);
@@ -129,11 +93,7 @@ class ExternalJsonMessageSerializer extends PhpSerializer
     }
 
     /**
-     * HandleUnserializeCallback.
-     *
-     * @param string $class class
-     *
-     * @throws MessageDecodingFailedException
+     * @internal
      */
     public static function handleUnserializeCallback(string $class)
     {
